@@ -456,8 +456,8 @@
                   <br>
 				  <a href="https://tlesort.github.io/" target="_blank">Timothée Lesort</a>,
 				  <a href="https://scholar.google.de/citations?user=mqLVUGgAAAAJ&hl=de" target="_blank">Oleksiy Ostapenko</a>,
+				  <strong>Diganta Misra</strong>,
 				  <a href="https://mila.quebec/personne/32484/" target="_blank">Md Rifat Arefin</a>,
-                  <strong>Diganta Misra</strong>,
 				  <a href="https://scholar.google.com/citations?user=IwBx73wAAAAJ&hl=fr" target="_blank">Pau Rodriguez</a>,
 				  <a href="http://www.cs.toronto.edu/~lcharlin/" target="_blank">Laurent Charlin</a>,
 				  <a href="https://sites.google.com/site/irinarish/" target="_blank">Irina Rish</a>
@@ -465,16 +465,27 @@
                   <p></p>
                   <em>CoLLAs workshop, 2022</em>
                   <div class="paper" id="scole2022">
-                      <a class="tog" href="javascript:toggleblock('scole_abs')">abstract</a>
+					  <a href="https://arxiv.org/abs/2207.04543" target="_blank">paper</a> /
+                      <a class="tog" href="javascript:toggleblock('scole_abs')">abstract</a> /
+					  <a class="tog" href="javascript:toggleblock('scole_bib')">bibtex</a>
                       <p align="justify">
                         <i id="scole_abs">
-                            Standard gradient descent algorithms applied to sequences of tasks are known to produce catastrophic forgetting in deep neural networks. When trained on a new task in a sequence, the model updates its parameters on the current task, forgetting past knowledge. This article explores scenarios where we scale the number of tasks with reoccurring data. We show that in such a setting, stochastic gradient descent can learn, progress, and converge to a solution that previously needed a continual learning algorithm. In other words, we show that the model performs knowledge retention and accumulation without specific memorization mechanisms. We created a new framework of experimentation, SCoLe (Scaling Continual Learning), to study this phenomena. We also propose slight modifications to the vanilla stochastic gradient descent to knowledge accumulation. The SCoLe framework represents a good simulation of practical training environments with recurrent situations and allows the study of convergence behavior in long sequences. Our experiments show that previous results on short scenarios cannot always be extrapolated to longer scenarios.
+                            Standard gradient descent algorithms applied to sequences of tasks are known to produce catastrophic forgetting in deep neural networks. When trained on a new task in a sequence, the model updates its parameters on the current task, forgetting past knowledge. This article explores scenarios where we scale the number of tasks in a finite environment. Those scenarios are composed of a long sequence of tasks with reoccurring data. We show that in such setting, stochastic gradient descent can learn, progress, and converge to a solution that according to existing literature needs a continual learning algorithm. In other words, we show that the model performs knowledge retention and accumulation without specific memorization mechanisms. We propose a new experimentation framework, SCoLe (Scaling Continual Learning), to study the knowledge retention and accumulation of algorithms in potentially infinite sequences of tasks. To explore this setting, we performed a large number of experiments on sequences of 1,000 tasks to better understand this new family of settings. We also propose a slight modifications to the vanilla stochastic gradient descent to facilitate continual learning in this setting. The SCoLe framework represents a good simulation of practical training environments with reoccurring situations and allows the study of convergence behavior in long sequences. Our experiments show that previous results on short scenarios cannot always be extrapolated to longer scenarios.
                         </i>
                       </p>
 
+					  <bibtext xml:space="preserve" id="scole_bib">
+						@article{lesort2022scaling,<br />
+							title   = {Scaling the Number of Tasks in Continual Learning},<br />
+							author  = {Timothée Lesort and Oleksiy Ostapenko and Diganta Misra and Md Rifat Arefin and Pau Rodríguez and Laurent Charlin and Irina Rish},<br />
+							year    = {2022},<br />
+							journal = {arXiv preprint arXiv: Arxiv-2207.04543}<br />
+						}
+                        </bibtext>
+
 					<br>
                     </div>              
-                    <script language="JavaScript">hideblock('scole_abs');</script>
+                    <script language="JavaScript">hideblock('scole_abs');;hideblock('scole_bib');</script>
             </td>
 			</tr>
 
@@ -1272,7 +1283,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:left;font-size:small;">
-                  Updated on: 8th July, 2022
+                  Updated on: 11th July, 2022
     
               <span style="float:right;">
                 Merci, <a href="https://jonbarron.info/" target="_blank">Jon Barron</a>!
