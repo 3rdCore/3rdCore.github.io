@@ -53,7 +53,7 @@
 						<a href="#seapearl" target="_self">SeaPearl</a>
 					</td>
 					<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
-						<a href="#experience" target="_self">Experience</a>
+						<a href="#projects" target="_self">Projects</a>
 					</td>
 					<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
 						<a href="#education" target="_self">Education</a>
@@ -148,8 +148,7 @@
 	<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		<tr>
 		<td style="padding:0px;width:100%;vertical-align:middle">
-		  <heading><a id="seapearl"><heading>SeaPearl</heading></a>
-		</heading>
+		  <a id="seapearl"><heading>SeaPearl</heading></a>
 		</td>
 	  </tr>
 	</tbody></table>
@@ -157,7 +156,7 @@
 	  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		<tr>
 		<td style="padding:0px;width:100%;vertical-align:middle">
-		  <heading>Open Source Frameworks & Projects</heading>
+		  <a id="projects"><heading>Open Source Frameworks & Projects</heading></a>
 		</td>
 	  </tr>
 	</tbody></table>
@@ -184,20 +183,44 @@
             
           </td>
         </tr>
-		<td width="25%" valign="center" align="center"><img src="" alt="nthu" width="140" height="150"></td>
+		<td width="25%" valign="center" align="center"><img src="images/adversarial.png" alt="nthu" width="200" height="120"></td>
 		<td style="padding:20px;width:75%;vertical-align:middle">
-		<a class="tog" href="" target="_blank">
-			<papertitle>Adversarial Attacks on Sentiment Classification models</papertitle>
+		<a class="tog" href=href="data/IFT6167.pdf" target="_blank">
+			<papertitle>Adversarial Attacks on Sentiment Analysis models</papertitle>
 		</a>
 		<br>
 		Mar' 22 - May' 22
 		<br>
 		<br>
-		To Complete
+		This project was carried out in the framework of the IFT6167 seminar led by Prof. <a class="tog" href="https://mila.quebec/personne/irina-rish/" target="_blank">Irina Rish</a> (Mila, Québec).
 		<br>
 		<br>
+		In this paper, we aim to show, regarding <a class="tog" href="https://en.wikipedia.org/wiki/Sentiment_analysis" target="_blank">Natural Language Sentiment Analysis</a>, that there exists a relationship between model size and robustness to adversarial attacks. Ultimately, uncovering the emergence of power laws and testing the robustness of language model with scale. We evaluate the performance of various <a class="tog" href="https://github.com/EleutherAI/" target="_blank">Eleuther AI</a> GPT models such as GPT-Neo 125M, GPT-Neo 1.3B, GPT-Neo 2.7B, GPT-J 6B against adversarial attacks. We fined-tuned (trained on adversarial example) our different GPT models on common datasets (Rotten Tomatoes, IMDB...) and evaluated them separately to quantify the effects of scale on adversarial training.
+		<p style="padding:0%;text-align:center">
+			<a href="data/IFT6167.pdf" target="_blank">Report </a> &nbsp/&nbsp
+			<a href="data/IFT6167_slides.pdf" target="_blank">Slides</a>
+		  </p>	
 		<p></p>
 		
+		</td>
+	</tr>
+		<td width="25%" valign="center" align="center"><img src="images/geodesic.gif" alt="nthu" width="220" height="190"></td>
+		<td style="padding:20px;width:75%;vertical-align:middle">
+		<a class="tog" href="https://github.com/3rdCore/MAT6215-project/" target="_blank">
+			<papertitle>Diffusion Geodesic : a new distance for non-linear dimensionality reduction</papertitle>
+		</a>
+		<br>
+		Sep' 21 - Jan' 22
+		<br>
+		<br>
+		In collaboration with Ph.D. candidate <a class="tog" href="https://mila.quebec/personne/guillaume-huguet/" target="_blank">Guillaume Huguet</a> (Mila, Québec), we present our method for non-linear dimensionality reduction called Diffusion Geodesic. 
+		<br>
+		<br>
+		Dimensionality reduction techniques are often used to visualize the underlying geometry of a high-dimensional dataset. These methods usually rely on specific similarity measures. In this project, we first approximate the geodesic distance using a diffusion process over the underlying manifold, then we use <a class="tog" href="https://en.wikipedia.org/wiki/Multidimensional_scaling" target="_blank">Multi-Dimentionnal Scaling</a> combined with our previously defined pairwise 'distances' to embed our Manifold in a lower dimensional space. We compare our model with popular algorithms such as PHATE, UMAP, and Isomap on toy datasets and RNA-seq dataset.
+		<p style="padding:0%;text-align:center">
+			<a href="data/MAT6495.pdf" target="_blank">Report </a> &nbsp/&nbsp
+			<a href="https://github.com/3rdCore/MAT6215-project/" target="_blank">GitHub</a>
+		  </p>	
 		</td>
 	</tr>
 		<td width="25%" valign="center" align="center"><img src="" alt="nthu" width="140" height="150"></td>
@@ -241,7 +264,7 @@
 		Sep' 20 – Dec' 20
 		<br>
 		<br>
-		In collaboration with Pierre Tessier, the objective of our project is to enable an efficient search in a 3D model bank models from simple hand drawings. The project is based on <a class="tog" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjR2cDUto36AhXUGlkFHaB1A5wQFnoECA0QAQ&url=https%3A%2F%2Fcybertron.cg.tu-berlin.de%2Feitz%2Fpdf%2F2012_siggraph_sbsr.pdf&usg=AOvVaw1ubNbM8eL7juourwr9P-9N" target="_blank">this paper</a> SIGGRAPH2012. 
+		In collaboration with Pierre Tessier (MS, Columbia University), the objective of our project is to enable an efficient search in a 3D model bank models from simple hand drawings. The project is based on <a class="tog" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjR2cDUto36AhXUGlkFHaB1A5wQFnoECA0QAQ&url=https%3A%2F%2Fcybertron.cg.tu-berlin.de%2Feitz%2Fpdf%2F2012_siggraph_sbsr.pdf&usg=AOvVaw1ubNbM8eL7juourwr9P-9N" target="_blank">this paper</a> SIGGRAPH2012. 
 		<br>
 		<br>
 		The project lies on differents techniques such Suggestive Contouring (Canny filter), Gabor filtering (gaussian convolution on Fourier Transformation of the input image) and histogram representation using Visual Vocabulary. 
@@ -252,6 +275,22 @@
 			<a href="https://github.com/3rdCore/Shape_Retrieval/" target="_blank">GitHub</a>
 		  </p>		
 		</td>
+	</tr>
+	<td width="25%" valign="center" align="center"><img src="images/443.gif" alt="nthu" width="220" height="200"></td>
+	<td style="padding:20px;width:75%;vertical-align:middle">
+	<a class="tog" href="" target="_blank">
+		<papertitle>Boid Simulation</papertitle>
+	</a>
+	<br>
+	Nov' 20 – Mar' 21
+	<br>
+	<br>
+	To Complete
+	<br>
+	<br>
+	<p></p>
+	
+	</td>
 	</tr>
 
         </tbody></table>
