@@ -50,27 +50,98 @@
 				</table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          test
+        In a nutshell, SeaPearl is an intelligent generic solver guided by <b class="term">Reinforcement Learning</b> (RL) to solve NP-hard <b class="term">discrete optimization problems</b> using <b class="term">Constraint Programming</b>. 
+		<br>
+		<br>
+		At that moment, you can feel a little confused with all these concepts if you've never heard of them before. No worries, let's start from the beginning :). 
         </tbody></table>
+		<br>
+		<table width="100%" border="0" cellspacing="15" cellpadding="10">
+			<heading>What are discrete optimization problems ?</heading>
+			<br>
+			<br>
+			<tr>
+			Discrete optimization problems are problems for which an outcome is to be optimized and for which there is a finite number of solutions. For example, consider the following problem : 
+			<br>
+			<br>
+			A deliveryman has to deliver products from a factory to all the customers at varying distances from each other as detailed below (left).In practice, we represent the problem as a graph with values on edges (right). The goal for the deliveryman is to <b class="term">minimise the total distance</b> travelled to deliver all the customers, this is the objective function of the problem under the constraint that <b class="term">every customer must be delivered</b>.
+			<br>
+			<br>
+			<img src="images/tsp_1.png" alt="nthu"  width="800" height="250">
+			</tr>
+			<tr>
+				<br>
+				<br>
+				Of course, there are several solutions to this problem and some are better than others : Here <b class="term">solution 1 is better than solution 2</b> because its route has a shorter total distance. For each problem, it could exist one or more optimal solutions, but prooving its optimality (ie. solving the problem) requires to have listed all possible solutions. 
+				<br>
+				<br>
+			</tr>
+  
+			<tr>
+			<img src="images/tsp2.drawio.png" alt="nthu"  width="800" height="280">
+			</tr>
+			<tr>
+				<br>
+				<br>
+				In this small problem it is possible to list all possible solutions and choose the best one, which become not possible anymore when considering larger problems with more nodes, as NP-complete class of problems, which TSP belongs to, could not be solved in polynomial time ( unless P = NP <img src="images/blink.png" width="18px">). 
+				<br>
+				<br>
+				That said, it may not be interesting to prove the optimality of a solution but simply to find good enough solutions. The proof of optimality is sacrificed for the benefit of execution time. 
+			</tr>
+			</table>
+			<br>
+		<table width="100%" border="0" cellspacing="15" cellpadding="10">
+			<heading>Constraint Programming</heading>
+			<br>
+			<br>
+			<tr>
+			Now that we have introduced the notion of discrete optimisation problems, we will discuss a method used for searching solutions : <b class="term">constraint programming</b> (CP). CP is a paradigm to solve discrete optimization problems. It lies on methods for  <b class="term">problem declaration</b> and <b class="term">problem solving</b> using a solver that automates the constraint propagation mechanism. For more information about it, please look at <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjb1KrqiZX6AhU-FVkFHaUACBkQFnoECCoQAQ&url=https%3A%2F%2Fwww.cs.upc.edu%2F~erodri%2Fwebpage%2Fcps%2Ftheory%2Fcp%2Fintro%2Fslides.pdf&usg=AOvVaw3uGZ4zJqrdVZ5Z9THZWZNP" target="_blank">this presentation from Enric Rodrıguez-Carbonell </a>.
+			<br>
+			the strength of the CP comes from the diversity of the problems it is able to solve. It allows, among other things, to manage non-linear constraints or variables of different types (boolean, integer ...).
+			<br>
+			<br>
+			To understand how the research works, let's go back to our problem above. Let's consider the deliveryman starts his delivery tour at the factory. 
+			<br>
+			<br>
+			Each node of the graph can be considered as a <b class="term">variable</b> of the problem. Each variable can take for values the node they are connected to, this define their <b class="term">domain of definition</b>. FInally,  <b class="term">constraints</b> governs the values taken simultaneously by the variables (ex : You can't go through the same node twice.) 
+			<br>
+			<br>
+			Below is how a search is conducted in a CP solver, which alternates <b class="term">decision phases</b> and <b class="term">fix-point phases</b> (constraints propagations) : 
+			<ul>
+				<li>The <i style="color:red;">red</i> assignations are the one obtained after a variable/value assignation</li> 
+				<li>The <i style="color:green;">green</i> assignations are the one infered directly by the constraint propagation mechanism</li> 
+			</ul>
+			</tr>
+			<tr>
+				<img src="images/solve.gif" alt="nthu"  width="800" height="280">
+			</tr>
+			As can be seen, constraint propagation is a very powerful mechanism that allowed us to automatically infer the only possible values for 3 of the 5 variables in the problem.
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:left;font-size:small;">
-				Updated on: 13th September, 2022
-
-              <span style="float:right;">
-                Merci, <a href="https://jonbarron.info/" target="_blank">Jon Barron</a> et <a href="https://digantamisra98.github.io/" target="_blank">Diganta Misra</a> !
-              </span>
-			  
-              </p>
-            </td>
-          </tr>
+			<br>
+			<br>
+			My website is still under construction. Be patient I will add the end of the explanations soon !
         </tbody></table>
       </td>
     </tr>
   </table>
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+	<tr>
+		<td style="padding:0px">
+		  <br>
+		  <p style="text-align:left;font-size:small;">
+			Updated on: 14th September, 2022
+
+		  <span style="float:right;">
+			Merci, <a href="https://jonbarron.info/" target="_blank">Jon Barron</a> et <a href="https://digantamisra98.github.io/" target="_blank">Diganta Misra</a> !
+		  </span>
+		  
+		  </p>
+		</td>
+	  </tr>
+	</tbody></table>
+  </td>
+</tr>
+</table>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </body>
