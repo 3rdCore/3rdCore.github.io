@@ -140,13 +140,13 @@
 				<br>
 				The RL algorithm used is <a href="https://www.researchgate.net/figure/The-Q-learning-algorithm-taken-from-Sutton-Barto-1998_fig1_337089781" target="_blank">Deep Q-Learning </a> (DQN). The associated <b class="term">reward</b> is based on the objective function/quality of the solution returned. 
 
-				<h3>Generic Graph representation</h3>
+				<h3>Generic Graph representation :</h3>
 				Every CP problems is defined by a set of variable, values that can be taken by these variables and a set of Constraints on these variables. The idea is to encode each of these entities as node in a graph and connect these nodes according to whether :
 				<ul>
 					<li>A <b class="term">Value</b> is part of a <b class="term">Variable</b>'s domain of definition</li> 
 					<li>A <b class="term">Variable</b> is involved in a <b class="term">Constraint</b></li> 
 				</ul>
-				Here is a little example just to get a sense of things : 
+				This graph is naturally dynamically updated throughout the resolution of instances during the training process. Here is a little example just to get a sense of things : 
 				</tr>
 				<br>
 				<br>
@@ -157,10 +157,66 @@
 				</tr>
 				<br>
 				<tr>
-					The advantage of this method is that it allows the entire information to be encoded in a structure (a graph) that can be processed by a Neural Networks. Each node comes with a feature vector allowing to identify -among others- the type of constraints of a Constraint node or the value of a Value node.
-					<br>
-					<br>
+					The advantage of this method is that it allows the entire information to be encoded in a structure (a graph) that can be processed by a Neural Network. Each node comes with node embeddings allowing to identify -among others- the type of constraints of a Constraint node or the value of a Value node. 
+
+				<h3>Neural Pipeline for Variable/Value assignation :</h3>
+
 					Now that we defined our input, recall that our goal is to infer a variable/value assignation. Let's consider for the moment that the variable selection heuristic is deterministic, so that the input is the graph representation <b class="term">and</b> a variable on which to branch. This is where we are :
+					</tr>
+					<br>
+					<br>
+					<tr>
+						<div style="text-align: center;">
+							<img src="images/scheme.drawio.png" alt="nthu"  width="650" height="240">
+						</div>
+					</tr>
+					<br>
+					<tr>
+						Given a state, the RL agent is parameterized by a DQN-network that outputs the Q-values associated with every possible value selection in the domain of the selected variable $v$. The tripartite state is fed into a neural approximator model, the <b class="term">learner</b> $\hat{Q}$, which consists of two parts : an <b class="term">encoder</b> for learning contextual embeddings of the nodes of the graph representation, and a <b class="term">decoder</b> which, given these node embeddings, estimates the optimal policy to design a powerful heuristic.
+					
+						<h4>Graph neural network encoder :</h4>
+
+						Graph convolutional networks (GCN) constitute a very convenient solution to learn contextual node embeddings, and have been largely used for this purpose in reinforcement learning for discrete optimization. Due to the heterogeneous nature of our representation we opted for a heterogeneous GCN composed of several Graph convolutional layers. 
+						<br>
+						<br>	 
+						Considering a variable $v_i$, a constraint $c_j$ and a value $u_k$, they are respectively defined by raw feature $V_i, C_j, U_k$, with respective dimension $d_v, d_c, d_u$ . First, a type-wise linear combination of raw features compute the input features of dimension $d$ for the GNN such that : $\mathbf{h}_{v_{i}}^{0} = V_{i}w_v$, $\mathbf{h}_{c_{j}}^{0} = C_{j}w_v$ and $\mathbf{h}_{u_{k}}^{0} = U_{k}w_v$. 
+						Then, we perform recursively $N$ operations of graph convolution on the nodes of the graph representation. At step $t$, a convolution can be formulated as :
+						<br>
+						<br>
+						\begin{align*}
+							\mathbf{h}_{v_{i}}^{t+1}&=\phi_{v}\left(\mathbf{V}_{i}: \mathbf{h}_{v_{i}}^{t}: \bigoplus_{c_{j} \in \mathcal{N}_{c}\left(v_{i}\right)} \mathbf{h}_{c_{j}}^{t}: \bigoplus_{u_{k} \in \mathcal{N}_{u}\left(v_{i}\right)} \mathbf{h}_{u_{k}}^{t}\right)\\
+							\mathbf{h}_{c_{j}}^{t+1}&=\phi_{c}\left(\mathbf{C}_{j}: \mathbf{h}_{c_{j}}^{t}: \bigoplus_{v_{i} \in \mathcal{N}_{v}\left(v_{i}\right)} \mathbf{h}_{v_{i}}^{t}\right)\\
+							\mathbf{h}_{u_{k}}^{t+1}&=\phi_{u}\left(\mathbf{U}_{k}: \mathbf{h}_{u_{k}}^{t}: \bigoplus_{v_{i} \in \mathcal{N}_{v}\left(v_{i}\right)} \mathbf{h}_{v_{i}}^{t}\right)
+							\end{align*}
+
+						Where $\phi_{v}, \phi_{c}, \phi_{u}$ are one-layer perceptron, composed by an affine transformation followed by an activation function, $:$ is the concatenation operation, $\mathcal{N}_{v},\mathcal{N}_{c},\mathcal{N}_{u}$ represents the type-specific neighborhood,  and $\bigoplus$ is the feature-wise aggregation function.
+						<br>
+						<br>			
+						<h4>Downstream neural network decoder :</h4>
+						
+						Once the contextual node embeddings are computed, a decoder should be used to convert them into an actionable policy.
+						<br>
+						<br>
+						Our architecture consists in first transforming the embeddings of the variable $v$ currently branched on and all the possible values by feeding them into two different multi-layer perceptrons. The transformed embedding of each value $u \in \mathcal{D}_v$ concatenated with the transformed embedding of the branching variable $v$ passes trough a last multi-layer perceptron that outputs the approximated Q-value for each pair ($v$,$u$).
+						<br>
+						<br>			
+						\begin{equation}
+						\hat{Q}(S_t,a) = \hat{Q}\left(\{s_t,v\},u) = \phi_q(\phi_v( \mathbf{h}_{v}^{N}):\phi_u( \mathbf{h}_{u}^{N})\right)
+						\end{equation}
+						where $\phi_{q}, \phi_{u}, \phi_{v}$ are multi-layer perceptron. 
+						<br>
+						<br>	
+						Once the Q-values are approximated, the <b class="term">explorer</b> can exploit the learned values and voraciously choose the best action or decide otherwise (for example, a random action with probability $\epsilon$). This tradeoff between exploitation and exploration is necessary in early learning when the estimate of Q-values is very poor and many states have never been visited before.
+					</tr>
+					<br>
+					<br>
+					<tr>
+						<div style="text-align: center;">
+							<img src="images/SeaPearl_recap.png" alt="nthu"  width="650" height="330">
+						</div>
+					</tr>
+					<br>
+					<tr>
 					<br>
 					<br>
 					My website is still under construction. I will add the end of the explanations soon  :) !	
