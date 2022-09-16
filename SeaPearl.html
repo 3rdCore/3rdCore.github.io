@@ -182,9 +182,8 @@
 						Considering a variable $v_i$, a constraint $c_j$ and a value $u_k$, they are respectively defined by raw feature $V_i, C_j, U_k$, with respective dimension $d_v, d_c, d_u$ . First, a type-wise linear combination of raw features compute the input features of dimension $d$ for the GNN such that : $\mathbf{h}_{v_{i}}^{0} = V_{i}w_v$, $\mathbf{h}_{c_{j}}^{0} = C_{j}w_v$ and $\mathbf{h}_{u_{k}}^{0} = U_{k}w_v$. 
 						Then, we perform recursively $N$ operations of graph convolution on the nodes of the graph representation. At step $t$, a convolution can be formulated as :
 						<br>
-						<br>
 						\begin{align*}
-							\mathbf{h}_{v_{i}}^{t+1}&=\phi_{v}\left(\mathbf{V}_{i}: \mathbf{h}_{v_{i}}^{t}: \bigoplus_{c_{j} \in \mathcal{N}_{c}\left(v_{i}\right)} \mathbf{h}_{c_{j}}^{t}: \bigoplus_{u_{k} \in \mathcal{N}_{u}\left(v_{i}\right)} \mathbf{h}_{u_{k}}^{t}\right)\\
+							\mathbf{h}_{v_{i}}^{t+1}&=\phi_{v}\left(\mathbf{V}_{i}: \mathbf{h}_{v_{i}}^{t}: \bigoplus_{c_{j} \in \mathcal{N}_{c}\left(v_{i}\right)} \mathbf{h}_{c_{j}}^{t}: \bigoplus_{u_{k} \in \mathcal{N}_{u}\left(v_{i}\right)} \mathbf{h}_{u_{k}}^{t}V\right)\\
 							\mathbf{h}_{c_{j}}^{t+1}&=\phi_{c}\left(\mathbf{C}_{j}: \mathbf{h}_{c_{j}}^{t}: \bigoplus_{v_{i} \in \mathcal{N}_{v}\left(v_{i}\right)} \mathbf{h}_{v_{i}}^{t}\right)\\
 							\mathbf{h}_{u_{k}}^{t+1}&=\phi_{u}\left(\mathbf{U}_{k}: \mathbf{h}_{u_{k}}^{t}: \bigoplus_{v_{i} \in \mathcal{N}_{v}\left(v_{i}\right)} \mathbf{h}_{v_{i}}^{t}\right)
 							\end{align*}
@@ -207,6 +206,20 @@
 						<br>
 						<br>	
 						Once the Q-values are approximated, the <b class="term">explorer</b> can exploit the learned values and voraciously choose the best action or decide otherwise (for example, a random action with probability $\epsilon$). This tradeoff between exploitation and exploration is necessary in early learning when the estimate of Q-values is very poor and many states have never been visited before.
+						<br>
+						<br>	
+						Here is a summary of the value decision pipeline: 
+					</tr>
+					<br>
+					<br>
+					<tr>
+						<div style="text-align: center;">
+							<img src="images/full_pipeline.png" alt="nthu"  width="800" height="340">
+						</div>
+					</tr>
+					<br>
+					<tr>
+						Finally : 
 					</tr>
 					<br>
 					<br>
