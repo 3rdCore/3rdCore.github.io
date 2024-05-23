@@ -4,6 +4,7 @@ on: [push]
 jobs:
   test-all:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'github-actions[bot]' && github.event_name != 'push' || github.event.pusher.name != 'github-actions[bot]' }}
 
     steps:
         - name: Set up SSH
