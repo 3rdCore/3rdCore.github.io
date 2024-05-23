@@ -1,0 +1,12 @@
+name: Python Package Pytest
+on: [push]
+
+jobs:
+  test-all:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Github Action for LaTeX
+          uses: xu-cheng/latex-action@3.2.0
+          with:
+              root_file: data/latex/TomResume/main.tex
