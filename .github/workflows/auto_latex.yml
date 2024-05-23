@@ -1,4 +1,4 @@
-name: Python Package Pytest
+name: Latex auto build
 on: [push]
 
 jobs:
