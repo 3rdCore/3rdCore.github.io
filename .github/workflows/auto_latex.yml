@@ -29,8 +29,13 @@ jobs:
             path: data/latex/TomResume/main.pdf
         - name: Commit and push
           run: |
+            cd data/latex/TomResume
             git config --global user.name '3rdCore'
             git config --global user.email 'tom.marty@mila.quebec'
-            git add data/latex/TomResume/main.pdf
+            git add main.pdf
             git commit -m "Add generated PDF"
+            git push
+            cd ../..
+            git add data/latex/TomResume
+            git commit -m "Update submodule reference"
             git push
