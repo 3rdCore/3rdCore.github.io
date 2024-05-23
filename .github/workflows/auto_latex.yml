@@ -13,7 +13,8 @@ jobs:
         - name: Github Action for LaTeX
           uses: xu-cheng/latex-action@3.2.0
           with:
-              root_file: data/latex/main.tex
+              working_directory: data/latex
+              root_file: main.tex
         - name: Upload PDF file
           uses: actions/upload-artifact@v4
           with:
