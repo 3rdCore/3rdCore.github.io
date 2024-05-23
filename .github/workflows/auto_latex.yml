@@ -28,6 +28,6 @@ jobs:
           run: |
             git config --global user.name '3rdCore'
             git config --global user.email 'tom.marty@mila.quebec'
-            git add data/latex/TomResume/main.pdf
+            git add data/latex/main.pdf
             git commit -m "Add generated PDF"
             git push
