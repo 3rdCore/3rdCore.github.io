@@ -13,14 +13,14 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v2
           with:
-            submodules: false
+            submodules: true
         - name: Github Action for LaTeX
           uses: xu-cheng/latex-action@3.2.0
           with:
-              working_directory: data/latex
+              working_directory: data/latex/TomResume
               root_file: main.tex
         - name: Upload PDF file
           uses: actions/upload-artifact@v4
           with:
             name: PDF
-            path: data/latex/main.pdf
+            path: data/latex/TomResume/main.pdf
