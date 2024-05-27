@@ -1,0 +1,41 @@
+name: Latex auto build
+on: [push]
+
+jobs:
+  test-all:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'github-actions[bot]' && github.event_name != 'push' || github.event.pusher.name != 'github-actions[bot]' }}
+
+    steps:
+        - name: Set up SSH
+          uses: webfactory/ssh-agent@v0.5.3
+          with:
+            ssh-private-key: ${{ secrets.SUBMODULES_PRIVATE_KEY }}
+        - name: Checkout repository
+          uses: actions/checkout@v2
+          with:
+            submodules: true
+        - name: List directory contents
+          run: ls -R data/latex/TomResume
+        - name: Github Action for LaTeX
+          uses: xu-cheng/latex-action@3.2.0
+          with:
+              working_directory: data/latex/TomResume
+              root_file: main.tex
+        - name: Upload PDF file
+          uses: actions/upload-artifact@v4
+          with:
+            name: PDF
+            path: data/latex/TomResume/main.pdf
+        - name: Commit and push
+          run: |
+            cd data/latex/TomResume
+            git config --global user.name '3rdCore'
+            git config --global user.email 'tom.marty@mila.quebec'
+            git add main.pdf
+            git commit -m "Add generated PDF"
+            git push
+            cd ../..
+            git add data/latex/TomResume
+            git commit -m "Update submodule reference"
+            git push
