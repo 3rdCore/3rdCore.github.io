@@ -38,6 +38,7 @@ jobs:
             git checkout main # Change this line to checkout to main branch
             git add main.pdf
             git commit -m "Add generated PDF"
+            git remote set-url origin git@github.com:3rdCore/TomResume.git
             git push origin main # Push the changes in the submodule
             cd ../..
             git add data/latex/TomResume # Stage the submodule
