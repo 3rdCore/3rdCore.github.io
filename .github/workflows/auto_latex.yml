@@ -46,6 +46,7 @@ jobs:
             git config --global user.name '3rdCore'
             git config --global user.email 'tom.marty@mila.quebec'
             git checkout main # Change this line to checkout to main branch
+            git status
             git add data/latex/TomResume/main.pdf
             git commit -m "Add generated PDF"
 
