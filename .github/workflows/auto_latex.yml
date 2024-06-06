@@ -11,8 +11,8 @@ jobs:
           uses: webfactory/ssh-agent@v0.5.3
           with:
             ssh-private-key: |
-              ${{ secrets.SUBMODULES_PRIVATE_KEY }}
               ${{ secrets.PRIVATE_KEY }}
+              ${{ secrets.SUBMODULES_PRIVATE_KEY }}
 
         - name: Checkout repository
           uses: actions/checkout@v2
@@ -25,12 +25,6 @@ jobs:
             git remote -v
             git remote set-url origin git@github.com:3rdCore/3rdCore.github.io.git
             git remote -v
-
-            cd data/latex/TomResume
-            git remote -v
-            git remote set-url origin git@github.com:3rdCore/TomResume.git
-            git remote -v
-
         - name: Github Action for LaTeX
           uses: xu-cheng/latex-action@3.2.0
           with:
@@ -43,8 +37,7 @@ jobs:
             path: data/latex/TomResume/main.pdf
         - name: Commit and push
           run: |
-            git config --global user.name '3rdCore'
-            git config --global user.email 'tom.marty@mila.quebec'
+            ssh -T git@github.com
             git status
             cp data/latex/TomResume/main.pdf data/latex/main.pdf
             git add data/latex/main.pdf
