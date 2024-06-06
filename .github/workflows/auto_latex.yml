@@ -49,6 +49,6 @@ jobs:
             cp data/latex/TomResume/main.pdf data/latex/main.pdf
             git add data/latex/main.pdf
             git commit -m "Add generated PDF"
-
+            git remote -v
             git push origin master # Push the changes
 
