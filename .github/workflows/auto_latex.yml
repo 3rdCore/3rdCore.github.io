@@ -23,9 +23,13 @@ jobs:
         - name: Check remote URL
           run: |
             git remote -v
+            git remote set-url origin git@github.com:3rdCore/3rdCore.github.io.git
+            git remote -v
+
             cd data/latex/TomResume
             git remote -v
-            
+            git remote set-url origin git@github.com:3rdCore/TomResume.git
+            git remote -v
         - name: Github Action for LaTeX
           uses: xu-cheng/latex-action@3.2.0
           with:
@@ -38,13 +42,12 @@ jobs:
             path: data/latex/TomResume/main.pdf
         - name: Commit and push
           run: |
-            cd data/latex/TomResume
             git config --global user.name '3rdCore'
             git config --global user.email 'tom.marty@mila.quebec'
             git checkout main # Change this line to checkout to main branch
             git add main.pdf
             git commit -m "Add generated PDF"
-            git remote set-url origin git@github.com:3rdCore/TomResume.git
+
             git push origin main # Push the changes in the submodule
             git submodule update --init --recursive
 
