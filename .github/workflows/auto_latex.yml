@@ -32,10 +32,11 @@ jobs:
             cd data/latex/TomResume
             git config --global user.name '3rdCore'
             git config --global user.email 'tom.marty@mila.quebec'
+            git checkout master # Add this line to checkout to master branch
             git add main.pdf
             git commit -m "Add generated PDF"
-            git push
+            git push origin master # Specify the branch to push
             cd ../..
             git add data/latex/TomResume
             git commit -m "Update submodule reference"
-            git push
+            git push origin master # Specify the branch to push
