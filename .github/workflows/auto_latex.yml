@@ -37,7 +37,6 @@ jobs:
             path: data/latex/TomResume/main.pdf
         - name: Commit and push
           run: |
-            ssh -T git@github.com
             git status
             git remote -v
             cp data/latex/TomResume/main.pdf data/latex/main.pdf
