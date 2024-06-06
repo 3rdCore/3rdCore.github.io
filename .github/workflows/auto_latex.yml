@@ -4,7 +4,7 @@ on: [push]
 jobs:
   test-all:
     runs-on: ubuntu-latest
-    if: ${{ github.actor != 'github-actions[bot]' && github.event_name != 'push' || github.event.pusher.name != 'github-actions[bot]' }}
+    if: ${{ !(github.actor == 'github-actions[bot]' && github.event.head_commit.message == 'Add generated PDF') }}
 
     steps:
         - name: Set up SSH
@@ -24,6 +24,7 @@ jobs:
           run: |
             git remote -v
             git remote set-url origin git@github.com:3rdCore/3rdCore.github.io.git
+            git submodule update --remote 
             git remote -v
         - name: Github Action for LaTeX
           uses: xu-cheng/latex-action@3.2.0
