@@ -4,8 +4,7 @@ on: [push]
 jobs:
   test-all:
     runs-on: ubuntu-latest
-    if: ${{ github.event.head_commit.message != 'Add generated PDF' }}
-
+    if: ${{ github.event_name == 'repository_dispatch' || github.event.head_commit.message != 'Add generated PDF' }}
     steps:
         - name: Set up SSH
           uses: webfactory/ssh-agent@v0.5.3
