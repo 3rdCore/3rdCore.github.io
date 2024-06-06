@@ -38,7 +38,8 @@ jobs:
         - name: Commit and push
           run: |
             git status
-            git remote -v
+            git config --global user.name '3rdCore'
+            git config --global user.email 'tom.marty@mila.quebec'
             cp data/latex/TomResume/main.pdf data/latex/main.pdf
             git add data/latex/main.pdf
             git commit -m "Add generated PDF"
