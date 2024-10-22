@@ -1,5 +1,8 @@
 name: Latex auto build
-on: [push]
+on:
+  push:
+  repository_dispatch:
+    types: [trigger-event]
 
 jobs:
   test-all:
