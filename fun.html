@@ -30,6 +30,42 @@
 		</script>
 	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
+
+	<style>
+		.photo-wrapper {
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+
+		.caption {
+			position: absolute;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.5);
+			/* Semi-transparent background */
+			color: #fff;
+			width: 100%;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 0.3s;
+			padding: 10px 0;
+		}
+
+		.photo-wrapper:hover .caption {
+			opacity: 1;
+		}
+
+		table.inner {
+			width: 100%;
+		}
+
+		td.photo-cell {
+			width: 33.33%;
+			/* Adjust based on the number of images per row */
+			padding: 5px;
+			/* Spacing between images */
+		}
+	</style>
 </head>
 
 <body style="background-color: #662E7D">
@@ -44,7 +80,7 @@
 							style="width:100%;border:0px;border-spacing:0px;"> <br>
 						<br>
 						<email>
-							<font id="email" size="+1" style="display:inline">tom.marty@mila.quebec
+							<font id="email" size="+2" style="display:inline">tom.marty@mila.quebec
 							</font>
 							<script>
 								emailScramble = new scrambledString(document.getElementById('email'),
@@ -92,17 +128,36 @@
 					<table width="100%" border="0" cellspacing="15" cellpadding="10">
 						<tr>
 							<td>
-								<a id="Surf">
-									<heading>Surf</heading>
-								</a>
+
+								<heading>Surf</heading>
+
 								<br>
-								<table width="100%" align="center" border="0" cellpadding="20">
+								<table class="inner" align="center" border="0" cellpadding="5">
 									<tbody>
 										<tr>
-											<td width="75%" valign="center">
-												To be completed
+											<!-- First row of images -->
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/surf_1.jpg" alt="River surf in Habitat 67"
+														style="width:100%">
+													<div class="caption">River surf in Habitat 67</div>
+												</div>
+											</td>
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/surf_2.jpg" alt="Me" style="width:100%">
+													<div class="caption">Me pretending to do a roller</div>
+												</div>
+											</td>
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/surf_3.jpg" alt="River surf in Habitat 67"
+														style="width:100%">
+													<div class="caption">River surf in Habitat 67</div>
+												</div>
 											</td>
 										</tr>
+										<!-- You can add more rows similarly -->
 									</tbody>
 								</table>
 								<br>
@@ -112,15 +167,58 @@
 					<table width="100%" border="0" cellspacing="15" cellpadding="10">
 						<tr>
 							<td>
-								<a id="climbing">
-									<heading>Climbing</heading>
-								</a>
+
+								<heading>Climbing & Mountain stuff</heading>
+
 								<br>
-								<table width="100%" align="center" border="0" cellpadding="20">
+								<table class="inner" align="center" border="0" cellpadding="5">
 									<tbody>
 										<tr>
-											<td width="75%" valign="center">
-												To be completed
+											<!-- First row of images -->
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/mountain_5.jpg"
+														alt="Climb in Massif du Beaufortain" style="width:100%">
+													<div class="caption">Climb in the Massif du Beaufortain</div>
+												</div>
+											</td>
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/mountain_2.jpg" alt="Some bouldering in Quebec"
+														style="width:100%">
+													<div class="caption">Some bouldering in Quebec</div>
+												</div>
+											</td>
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/mountain_3.jpg" alt="Hike in Guatemala"
+														style="width:100%">
+													<div class="caption">Hiking Acatenango, Guatemala</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<!-- Second row of images -->
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/mountain_4.jpg"
+														alt="Fun climb in the Blueys, Australia" style="width:100%">
+													<div class="caption">Fun climb in the Blueys, Australia</div>
+												</div>
+											</td>
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/mountain_1.jpg"
+														alt="Ski in the Massif du Beaufortain" style="width:100%">
+													<div class="caption">Ski in the Massif du Beaufortain</div>
+												</div>
+											</td>
+											<td class="photo-cell">
+												<div class="photo-wrapper">
+													<img src="images/mountain_6.jpg" alt="Downhill bike in Utah, US"
+														style="width:100%">
+													<div class="caption">Downhill bike in Utah, U.S.</div>
+												</div>
 											</td>
 										</tr>
 									</tbody>
