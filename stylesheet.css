@@ -7,6 +7,31 @@
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+.accepted-paper {
+  background-color: #eafaf1;
+  padding: 15px;
+  border-left: 5px solid #2ecc71;
+  margin-bottom: 10px;
+}
+
+.rejected-paper {
+  background-color: #fbeaea;
+  padding: 15px;
+  border-left: 5px solid #e74c3c;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.rejected-paper::before {
+  content: "✗";
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 24px;
+  position: absolute;
+  left: -30px;
+  top: 12px;
+}
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -135,4 +160,29 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+.accepted-paper {
+  background-color: #eafaf1;
+  padding: 0px;
+  border-left: 5px solid #2ecc71;
+  margin-bottom: 1px;
+}
+
+.rejected-paper {
+  background-color: #fbeaea;
+  padding: 15px;
+  border-left: 5px solid #e74c3c;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.rejected-paper::before {
+  content: "✗";
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 24px;
+  position: absolute;
+  left: -30px;
+  top: 12px;
 }
