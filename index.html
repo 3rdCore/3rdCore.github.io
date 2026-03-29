@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,12 +8,10 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
-
 		gtag('config', 'G-X33P28J5R5');
 	</script>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<!--<base target="_blank">-->
+	<meta charset="UTF-8">
 	<title>Tom Marty</title>
 
 	<meta name="author" content="Tom Marty">
@@ -23,7 +21,6 @@
 	<meta property="og:title" content="Tom Marty | PhD student in Machine Learning">
 	<meta property="og:description" content="PhD student at Mila & UdeM focusing on compression theory, generalization, and protein design.">
 	<meta property="og:image" content="https://3rdcore.github.io/images/profile.jpg">
-
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Tom Marty | PhD student in Machine Learning">
 	<meta name="twitter:description" content="Research in ML, In-Context Learning & Structural Biology.">
@@ -32,1250 +29,801 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="icon" type="image/png" href="images/icon.png">
 	<script src="scramble.js"></script>
-	<!-- Place this tag in your head or just before your close body tag. -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<script src="hidebib.js" type="text/javascript"></script>
 	<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-		</script>
-	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 	</script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
 
-	</head>
-
-<body style="background-color: #FFFFFF">
-	<table
-		style="width:100%;max-width:920px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto; background-color: #FFFFFF">
+<body style="background-color:#FFFFFF">
+	<table class="page-wrapper">
 		<tbody>
 			<tr>
-				<td style="  padding: 0;">	
-					<p style="text-align:center;margin: 0; ">
+				<td style="padding:0;">
 
-						<img src="images/mila_full.jpg" alt="nav_sign"
-							style="width:100%;border:0px;border-spacing:0px;"> <br>
+					<!-- Banner + Email -->
+					<p style="text-align:center; margin:0;">
+						<img src="images/mila_full.jpg" alt="Mila banner" style="width:100%; display:block;">
 						<br>
-						<email>
-							<font id="email" size="+2" style="display:inline">tom.marty@mila.quebec
-							</font>
-							<script>
-								emailScramble = new scrambledString(document.getElementById('email'),
-									'emailScramble', 'tom.marty@mila.quebec',
-									[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]);
-							</script>
-						</email>
+						<span id="email" style="font-size:1.2em;">tom.marty@mila.quebec</span>
+						<script>
+							emailScramble = new scrambledString(document.getElementById('email'),
+								'emailScramble', 'tom.marty@mila.quebec',
+								[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]);
+						</script>
 					</p>
 
-					<!--<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">-->
-					<table
-						style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-						<tr style="padding:0px">
-							<td style="padding:0px">
+					<table class="content-wrapper">
+						<tbody>
+							<tr>
+								<td style="padding:0;">
 
-								<table
-									style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-									<tr style="padding:0px">
-										<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
-											<a href="index.html" target="_self"
-												style="font-size: 20px; color: #662E7D;">Home</a>
-										</td>
-										<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
-											<a href="#research" target="_self"
-												style="font-size: 20px; color: #662E7D;">Research</a>
-										</td>
-										<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
-											<a href="#projects" target="_self"
-												style="font-size: 20px; color: #662E7D;">Projects</a>
-										</td>
-										<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
-											<a href="#education" target="_self"
-												style="font-size: 20px; color: #662E7D;">Education</a>
-										</td>
-										<td style="padding:1.5%;width:16%;vertical-align:middle;text-align:center">
-											<a href="fun.html" target="_self"
-												style="font-size: 20px; color: #662E7D;">Fun</a>
-										</td>
-									</tr>
-								</table>
+									<!-- Navigation (no Home link) -->
+									<nav>
+										<table id="nav-table">
+											<tbody>
+												<tr>
+													<td><a href="#research" target="_self">Research</a></td>
+													<td><a href="#projects" target="_self">Projects</a></td>
+													<td><a href="#education" target="_self">Education</a></td>
+													<td><a href="fun.html" target="_self">Fun</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</nav>
 
-								<table
-									style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-									<tbody>
-
-										<tr style="padding:0px">
-
-											<td style="padding:2.5% 2.5% 0%; width:63%; vertical-align:top">
-												<h1 style="margin:0; padding:10px 0; font-size:24px; color:#333;">Tom
-													Marty</h1>
-												<p>
-													I’m a <i style="color:red;">Ph.D. student</i> in Deep Learning at <a
-														href="https://mila.quebec/en/" target="_blank">Mila</a> under
-													the supervision of <a href="https://www.dsridhar.com/"
-														target="_blank">Dhanya Sridhar</a>.
-													I'm originally from <a href="#maps" target="_self">Réunion
-														Island <img src="images/reunion.png" width="18px"></a>. I own an
-													engineering
-													degree from <a href="https://www.polytechnique.edu/en"
-														target="_blank">École
-														Polytechnique</a> (X2018) in Paris, and a Master's degree in
-													Operational Research from <a href="https://www.polymtl.ca/en"
-														target="_blank">Polytechnique Montréal</a>.
-												</p>
-												<p>
-													I'm grateful to be supported by a <a
-													href="https://frq.gouv.qc.ca/en/program/frqnt-2024-2025-doctoral-training-scholarships/"
-													target="_blank">FRQNT</a> <b>doctoral scholarship for four years.</b>
-												</p>
-												<p>
-													My current research interest falls at the crossroad of probabilistic modelling, and learning theory. I'm interested in the role of simplicity and compression in the design of robust learning algorithms.
-												<ul>
-													<li><b class="term">In-distribution and Out-Of-Distribution generalization</b></li>
-													<li><b class="term">Amortized learning and Meta-learning</b></li>
-												</ul>
-
-												<p>
+									<!-- Bio + Profile Photo -->
+									<table id="bio-table">
+										<tbody>
+											<tr>
+												<td id="bio-text-col">
+													<h1>Tom Marty</h1>
+													<p>
+														I'm a <i style="color:red;">Ph.D. student</i> in Deep Learning at <a href="https://mila.quebec/en/" target="_blank">Mila</a> under the supervision of <a href="https://www.dsridhar.com/" target="_blank">Dhanya Sridhar</a>. I own an <b>Engineering degree</b> from <a href="https://www.polytechnique.edu/en" target="_blank">École Polytechnique</a> in Paris, and a <b>Master of Science degree</b> in Deep Learning from <a href="https://www.polymtl.ca/en" target="_blank">Polytechnique Montréal</a>.
+													</p>
+													<p>
+														I'm grateful to be supported by a <a href="https://frq.gouv.qc.ca/en/program/frqnt-2024-2025-doctoral-training-scholarships/" target="_blank">FRQNT</a> <b>doctoral scholarship for four years.</b>
+													</p>
+													<p>
+														My current research interest falls at the crossroad of probabilistic modelling, and learning theory. I'm interested in the role of simplicity and compression in shaping the inductive biases of modern learning algorithms.
+													</p>
+													<ul>
+														<li><b class="term">In-distribution and Out-Of-Distribution generalization</b></li>
+														<li><b class="term">Amortized learning and Meta-learning</b></li>
+													</ul>
+													<p>
 														I'm also interested in generative modelling and flow-matching, especially for applications in cancer immunotherapy.
-												</p>
-												<p>
-													<div style="background:#fff0f0;border:2px solid #d9534f;color:#7a1919;border-radius:12px;padding:12px;margin:8px 0;display:inline-block;max-width:100%;">
-														<p style="margin:0;">
- I am currently seeking a <b>Full-time Research Engineer</b> position — please contact me if you have opportunities.
-														</p>
-													</div></p>
-												</p>
-												In a previous researcher life, I worked on Web agents research at <a href="https://www.servicenow.com/research/" target="_blank">Service Now Research</a>. My master's thesis focused on Reinforcement Learning
-												and Combinatorial Optimization. I developed <a
-													href="https://github.com/corail-research/SeaPearl.jl"
-													target="_blank">SeaPearl</a>, a fully
-												functional Open-Source Constraint Programming solver.
-												</p>
-												<p>
-													Feel free to reach out to me via email if you have any
-													questions or for
-													potential collaborations.
-												</p>
-												<p style="padding:2.5%;text-align:center">
-													<a href="https://scholar.google.com/citations?user=-YXor_wAAAAJ&hl"
-														target="_blank">Scholar</a>
-													&nbsp;/&nbsp;
-													<a href="data/latex/main.pdf" target="_blank">CV</a>
-													&nbsp;/&nbsp;
-													<a href="https://github.com/3rdCore" target="_blank">GitHub</a>
-													&nbsp;/&nbsp;
-													<a href="https://twitter.com/Tom__Marty" target="_blank">Twitter</a>
-													&nbsp;/&nbsp;
-													<a href="https://www.linkedin.com/in/tom-marty/"
-														target="_blank">LinkedIn</a>
-												</p>
-											</td>
-											<td style="padding:0%;width:37%;max-width:33%">
-												<a href="images/profile.png">
-													<img style="width:80%; max-width:100%; border-radius:45%; display: block; margin-left: auto; margin-right: auto"
-														alt="profile photo" src="images/profile.jpg"
-														class="hoverZoomLink">
-												</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<table
-									style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-									<tbody>
-										<tr>
-											<h2>News</h2>
-											<p>
-											<div style="width:100%;overflow-y:scroll; height:210px;">
-												<ul id="news" style="line-height: 1.4;">
-													<li>September 2025:  I will be serving as a teaching assistant for
-														the course <a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-															target="_blank"> IFT6390 : Fundamentals of machine learning</a> at
-														Université de Montréal taught by Dhanya Sridhar and Ioannis Mitliagkas for the Fall
-														2025 semester.
-													<li>April 2025: <b> My paper <a
-																href="https://arxiv.org/abs/2410.14086"
-																target="_blank">In-Context Learning and Occam's razor
-															</a>
-															has been accepted
-															at <a href="https://www.icml.cc/"
-																target="_blank">ICML2025</a>.</b>
-													<li>March 2025: I've been granted the <a
-															href="https://frq.gouv.qc.ca/en/program/frq-doctoral-training-scholarships/"
-															target="_blank"> FRQNT doctoral scholarship</a> for a period
-														of 4 years to support my research.
-													<li>February 2025: I joined the <a
-															href="https://mila.quebec/en/mila-tea-talks/"
-															target="_blank">Tea Talks</a> organising Committee at Mila, and we're hosting weekly talks with international AI researcher.
-													<li>January 2025: I've released an open-source codebase template to
-														quick start
-														your own Research Project at lightning speed.⚡Check it out <a
-															href="https://github.com/3rdCore/Research_Project_Template/"
-															target="_blank">here</a>.
-													<li>November 2024: My first Journal paper <a
-															href="https://link.springer.com/article/10.1007/s10601-024-09377-4"
-															target="_blank">Learning and fine-tuning a generic
-															value-selection heuristic inside a constraint programming
-															solver</a> got accepted in the Constraint Journal.
-													<li>October 2024: Presented the poster "In-Context
-														Learning and Occam's razor" at <a
-															href="http://montrealaisymposium.com/"
-															target="_blank">MAIS2024</a>.
-													<li>May 2024: My paper <a
-															href="https://openreview.net/forum?id=BRfqYrikdo"
-															target="_blank">WorkArena: How Capable are Web Agents at
-															Solving Common Knowledge Work Tasks?</a> has been accepted
-														to <a href="https://icml.cc/" target="_blank">ICML2024</a>.
-													<li>January 2024: I started my Ph.D. at Mila under the supervision
-														of
-														<a href="https://www.dsridhar.com/" target="_blank">Dhanya
-															Sridhar</a>.
-													<li>November 2023 : My first-author paper <a
-															href="https://openreview.net/group?id=NeurIPS.cc/2023/Workshop/FMDM#tab-accept"
-															target="_blank">The
-															Unsolved Challenges of LLMs as Generalist Web Agents: A Case
-															Study</a> <b>has been accepted at the </b><a
-															href="https://neurips.cc/virtual/2023/workshop/66525"
-															target="_blank">NeurIPS 2023 FMDM Workshop</a>, New Orleans.
-													</li>
-													<li>August 2023: My paper at CP2023 received a Distinguished Paper
-														Award 🏆🏆.</li>
-													<li>July 2023: I'm proud to announce that I successfully defended my
-														Master Thesis in person at Polytechnique Montréal.</li>
-													<li>July 2023: My application to the Doctoral Program of CP2023 has
-														been accepted. In the same time, I have been granted a financial
-														grant to attend the conference in person.</li>
-													<li>July 2023: <b>My first paper as a first author : <a
-																href="https://arxiv.org/abs/2301.01913"
-																target="_blank">Learning a Generic Value-Selection
-																Heuristic Inside a Constraint Programming Solver</a> has
-															been accepted to The 29th International Conference on
-															Principles and Practice of Constraint Programming <a
-																href="https://cp2023.a4cp.org/"
-																target="_blank">CP2023</a></b> (A grade conference -
-														ERA). I will be presenting my results in person in Toronto.</li>
-													<li>March 2023: I received a <a
-															href="https://www.mitacs.ca/en/programs/accelerate"
-															target="_blank">Mitacs</a> Accelerate scholarship of two
-														units (30K) for my work as a visiting researcher at Service Now.
-													</li>
-													<li>February 2023: I will be starting a research internship at <a
-															href="https://www.servicenow.com/research/"
-															target="_blank">Service Now Research</a> (Montréal) working
-														on RL-based method for generating adversarial attacks to
-														showcase current LLMs bias and limitations in term of fairness.
-													</li>
-													<li>December 2022: I was invited to present a poster for my work on
-														<a href="#adversarial" target="_blank">Adversarial Attacks on
-															Sentiment Analysis models</a> during the <a
-															href="https://sites.google.com/mila.quebec/scaling-laws-workshop/"
-															target="_blank">Neural Scaling Laws Workshop</a>, colocated
-														with NeurIPS2022.
-													</li>
-													<li>September 2022: I will be serving for another semester as a
-														teaching assistant for the course <a
-															href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-															target="_blank">INF8215 : AI : Methods and Algorithms</a>
-														for the Fall 2022 semester.</li>
-													<li>September 2021: I will be serving as a teaching assistant for
-														the course <a
-															href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-															target="_blank">INF8215 : AI : Methods and Algorithms</a> at
-														Polytechnique Montréal taught by Quentin Cappart for the Fall
-														2021 semester.</li>
-													<li>May 2021: I will be joining <a href="https://www.polymtl.ca/"
-															target="_blank">Polytechnique Montréal</a> as a graduate
-														student this fall '21.</li>
-													<li>February 2021: I will be joining <a
-															href="https://github.com/corail-research/SeaPearl.jl"
-															target="_blank">Corail Research Group</a> as a Research
-														Intern on SeaPearl (CPuRL).</li>
-												</ul>
-											</div>
-											</p>
-										</tr>
-									</tbody>
-								</table>
-
-								<table width="100%" border="0" cellspacing="15" cellpadding="10">
-									<a id="research">
-										<heading>Research Experience</heading>
-									</a>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img src="images/servicnow.png"
-												alt="nthu" width="120" height="120"></td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>Visiting Researcher</strong></span><span
-													style="float:right">March. 2023 - October 2023</span> <br>
-												<br>
-												<em><a href="https://www.servicenow.com/research/"
-														target="_blank">Service Now Research</a>, Montréal, Canada</em>
-												<br>
-												Supervisor: <a
-													href="https://www.servicenow.com/research/author/alexandre-piche.html"
-													target="_blank"> Alexandre Piche</a>, <a
-													href="https://www.servicenow.com/research/author/maxime-gasse.html"
-													target="_blank">Maxime Gasse</a>, <a
-													href="https://www.polymtl.ca/expertises/cappart-quentin-0/"
-													target="_blank"> Quentin Cappart</a>
-												<br>
-												Research Area: LLM, Task solving, Webpage processing
-												<br>
-											</p>
-										</td>
-									</tr>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img src="images/favicon.png"
-												alt="nthu" width="120" height="120"></td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>Research Coordinator</strong></span><span
-													style="float:right">February. 2022 - July 2022</span>
-												<br><br>
-												<span><strong>Research Intern</strong></span><span
-													style="float:right">February. 2021 - July 2021</span> <br>
-												<br>
-												<em><a href="https://corail-research.github.io/" target="_blank">Corail
-														Research Group</a>, Montréal, Canada</em>
-												<br>
-												Supervisor: <a
-													href="https://www.polymtl.ca/expertises/cappart-quentin-0/"
-													target="_blank"> Quentin Cappart</a>, <a
-													href="https://www.polymtl.ca/expertises/rousseau-louis-martin/"
-													target="_blank">Louis-Martin Rousseau</a>
-												<br>
-												Research Area: Constraint Programming, Reinforcement Learning, GNN
-												<br>
-											</p>
-										</td>
-									</tr>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img src="images/dronisos.jpg"
-												alt="nthu" width="120" height="120"></td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>Software Development Intern</strong></span><span
-													style="float:right">Jun. 2020 - Sept. 2020</span> <br>
-												<em><a href="https://fr.dronisos.com/" target="_blank">Dronisos</a>,
-													Bordeaux, France</em>
-												<br>
-												Developed Harmony, a particle based meta-heuristic that secures massive
-												drone swarms (+500 agents) <br>
-
-												Research Area: Meta-heuristics, Force fields.
-												<br>
-											</p>
-										</td>
-									</tr>
-								</table>
-
-								<br>
-
-								<table
-									style="width:100%; border:0; border-spacing:0; border-collapse:collapse; margin:auto;">
-
-									<a id="projects">
-										<heading>Papers</heading>
-									</a>
-									<br>
-									You can also find the most up-to-date publications on my Google Scholar
-									page.
-									<br>
-									<br>
-
-									<!-- Under Review -->
-									<tr>
-										<td colspan="2" style="padding-bottom: 5px;">
-											<div class="accepted-paper"
-												style="display: flex; background-color: #f9f9f9; border-left: none; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 6px 6px rgba(0,0,0,0.1); overflow: hidden;">
-												<div
-													style="background-color: #969696; writing-mode: vertical-rl; text-orientation: mixed; color: white; font-weight: bold; font-size: 18px; display: flex; align-items: center; justify-content: center; padding:10px; width: 12px;">
-													PRE PRINT
-												</div>
-												<div style="display: flex; align-items: center; width: 100%;">
-													<div style="width: 25%; text-align: center; padding: 15px;">
-														<img src="images/square.gif" alt="ICML" width="150"
-															height="150" style="border-radius: 8px;">
+													</p>
+													<div class="hiring-banner">
+														I am currently seeking a <b>Full-time Research Scientist / Engineer</b> position — please contact me if you have opportunities.
 													</div>
-													<div style="padding: 10px; width: 75%;">
-														<a class="tog" href="" target="_blank">
-															<papertitle>A Compression Perspective on Simplicity Bias
-															</papertitle>
-														</a>
-														<br><br>
-														We frame the dynamic feature preferences of neural networks as a trade-off between predictive power and model complexity, deriving insights from compression theory. 
-														<br><br>
-														<b>Keywords:</b> Learning Theory, Compression, Generalization.
-														<br><br>
-														<p style="text-align:center; margin: 0;">
-															<a href="data/complicity.pdf"
-																target="_blank">Paper</a>
-														</p>
+													<p>
+														In a previous researcher life, I worked on Web agents research at <a href="https://www.servicenow.com/research/" target="_blank">Service Now Research</a>. My master's thesis focused on Reinforcement Learning and Combinatorial Optimization. I developed <a href="https://github.com/corail-research/SeaPearl.jl" target="_blank">SeaPearl</a>, a fully
+														functional Open-Source Constraint Programming solver.
+													</p>
+													<p>
+														Feel free to reach out to me via email if you have any questions or for potential collaborations.
+													</p>
+													<p class="social-links">
+														<a href="https://scholar.google.com/citations?user=-YXor_wAAAAJ&hl" target="_blank">Scholar</a>
+														&nbsp;/&nbsp;
+														<a href="data/latex/main.pdf" target="_blank">CV</a>
+														&nbsp;/&nbsp;
+														<a href="https://github.com/3rdCore" target="_blank">GitHub</a>
+														&nbsp;/&nbsp;
+														<a href="https://twitter.com/Tom__Marty" target="_blank">Twitter</a>
+														&nbsp;/&nbsp;
+														<a href="https://www.linkedin.com/in/tom-marty/" target="_blank">LinkedIn</a>
+													</p>
+												</td>
+												<td id="bio-photo-col">
+													<a href="images/profile.png">
+														<img class="profile-photo hoverZoomLink" alt="profile photo" src="images/profile.jpg">
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<!-- News -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td>
+													<h2 class="section-heading">News</h2>
+													<div class="news-scroll">
+														<ul id="news">
+															<li>September 2025: I will be serving as a teaching assistant for
+																the course <a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">IFT6390 : Fundamentals of machine learning</a> at
+																Université de Montréal taught by Dhanya Sridhar and Ioannis Mitliagkas for the Fall 2025 semester.
+															</li>
+															<li>April 2025: <b>My first-author paper <a href="https://arxiv.org/abs/2410.14086" target="_blank">In-Context Learning and Occam's razor</a> has been accepted at <a href="https://www.icml.cc/" target="_blank">ICML2025</a>.</b></li>
+															<li>March 2025: I've been granted the <a href="https://frq.gouv.qc.ca/en/program/frq-doctoral-training-scholarships/" target="_blank">FRQNT doctoral scholarship</a> for a period of 4 years to support my research.</li>
+															<li>February 2025: I joined the <a href="https://mila.quebec/en/mila-tea-talks/" target="_blank">Tea Talks</a> organising Committee at Mila, and we're hosting weekly talks with international AI researchers.</li>
+															<li>January 2025: I've released an open-source codebase template to quick start your own Research Project at lightning speed.⚡ Check it out <a href="https://github.com/3rdCore/Research_Project_Template/" target="_blank">here</a>.</li>
+															<li>November 2024: My first Journal paper <a href="https://link.springer.com/article/10.1007/s10601-024-09377-4" target="_blank">Learning and fine-tuning a generic value-selection heuristic inside a constraint programming solver</a> got accepted in the Constraint Journal.</li>
+															<li>October 2024: Presented the poster "In-Context Learning and Occam's razor" at <a href="http://montrealaisymposium.com/" target="_blank">MAIS2024</a>.</li>
+															<li>May 2024: My paper <a href="https://openreview.net/forum?id=BRfqYrikdo" target="_blank">WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?</a> has been accepted to <a href="https://icml.cc/" target="_blank">ICML2024</a>.</li>
+															<li>January 2024: I started my Ph.D. at Mila under the supervision of <a href="https://www.dsridhar.com/" target="_blank">Dhanya Sridhar</a>.</li>
+															<li>November 2023: My first-author paper <a href="https://openreview.net/group?id=NeurIPS.cc/2023/Workshop/FMDM#tab-accept" target="_blank">The Unsolved Challenges of LLMs as Generalist Web Agents: A Case Study</a> <b>has been accepted at the </b><a href="https://neurips.cc/virtual/2023/workshop/66525" target="_blank">NeurIPS 2023 FMDM Workshop</a>, New Orleans.</li>
+															<li>August 2023: My paper at CP2023 received a Distinguished Paper Award 🏆🏆.</li>
+															<li>July 2023: I'm proud to announce that I successfully defended my Master Thesis in person at Polytechnique Montréal.</li>
+															<li>July 2023: My application to the Doctoral Program of CP2023 has been accepted. In the same time, I have been granted a financial grant to attend the conference in person.</li>
+															<li>July 2023: <b>My first paper as a first author: <a href="https://arxiv.org/abs/2301.01913" target="_blank">Learning a Generic Value-Selection Heuristic Inside a Constraint Programming Solver</a> has been accepted to The 29th International Conference on Principles and Practice of Constraint Programming <a href="https://cp2023.a4cp.org/" target="_blank">CP2023</a></b> (A grade conference - ERA). I will be presenting my results in person in Toronto.</li>
+															<li>March 2023: I received a <a href="https://www.mitacs.ca/en/programs/accelerate" target="_blank">Mitacs</a> Accelerate scholarship of two units (30K) for my work as a visiting researcher at Service Now.</li>
+															<li>February 2023: I will be starting a research internship at <a href="https://www.servicenow.com/research/" target="_blank">Service Now Research</a> (Montréal) working on RL-based method for generating adversarial attacks to showcase current LLMs bias and limitations in term of fairness.</li>
+															<li>December 2022: I was invited to present a poster for my work on <a href="#adversarial">Adversarial Attacks on Sentiment Analysis models</a> during the <a href="https://sites.google.com/mila.quebec/scaling-laws-workshop/" target="_blank">Neural Scaling Laws Workshop</a>, colocated with NeurIPS2022.</li>
+															<li>September 2022: I will be serving for another semester as a teaching assistant for the course <a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">INF8215 : AI : Methods and Algorithms</a> for the Fall 2022 semester.</li>
+															<li>September 2021: I will be serving as a teaching assistant for the course <a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">INF8215 : AI : Methods and Algorithms</a> at Polytechnique Montréal taught by Quentin Cappart for the Fall 2021 semester.</li>
+															<li>May 2021: I will be joining <a href="https://www.polymtl.ca/" target="_blank">Polytechnique Montréal</a> as a graduate student this fall '21.</li>
+															<li>February 2021: I will be joining <a href="https://github.com/corail-research/SeaPearl.jl" target="_blank">Corail Research Group</a> as a Research Intern on SeaPearl (CPuRL).</li>
+														</ul>
 													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-									<!-- ICML 2025 -->
-									<tr>
-										<td colspan="2" style="padding-bottom: 5px;">
-											<div class="accepted-paper"
-												style="display: flex; background-color: #f9f9f9; border-left: none; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 6px 6px rgba(0,0,0,0.1); overflow: hidden;">
-												<div
-													style="background-color: #845797; writing-mode: vertical-rl; text-orientation: mixed; color: white; font-weight: bold; font-size: 18px; display: flex; align-items: center; justify-content: center; padding:10px; width: 12px;">
-													ICML 2025
-												</div>
-												<div style="display: flex; align-items: center; width: 100%;">
-													<div style="width: 25%; text-align: center; padding: 15px;">
-														<img src="images/geometric.gif" alt="ICML" width="125"
-															height="125" style="border-radius: 8px;">
+									<!-- Research Experience -->
+									<table class="section-table exp-table" id="research">
+										<tbody>
+											<tr>
+												<td colspan="2">
+													<h2 class="section-heading">Research Experience</h2>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/servicnow.png" alt="ServiceNow" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>Visiting Researcher</strong><span class="date-right">March. 2023 - October 2023</span><br><br>
+														<em><a href="https://www.servicenow.com/research/" target="_blank">Service Now Research</a>, Montréal, Canada</em><br>
+														Supervisor: <a href="https://www.servicenow.com/research/author/alexandre-piche.html" target="_blank">Alexandre Piche</a>,
+														<a href="https://www.servicenow.com/research/author/maxime-gasse.html" target="_blank">Maxime Gasse</a><br>
+														Research Area: LLM, Task solving, Webpage processing
+													</p>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/favicon.png" alt="Corail Research" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>Research Coordinator</strong><span class="date-right">February. 2022 - July 2022</span><br><br>
+														<strong>Research Intern</strong><span class="date-right">February. 2021 - July 2021</span><br><br>
+														<em><a href="https://corail-research.github.io/" target="_blank">Corail Research Group</a>, Montréal, Canada</em><br>
+														Supervisor: <a href="https://www.polymtl.ca/expertises/cappart-quentin-0/" target="_blank">Quentin Cappart</a>,
+														<a href="https://www.polymtl.ca/expertises/rousseau-louis-martin/" target="_blank">Louis-Martin Rousseau</a><br>
+														Research Area: Constraint Programming, Reinforcement Learning, GNN
+													</p>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/dronisos.jpg" alt="Dronisos" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>Software Development Intern</strong><span class="date-right">Jun. 2020 - Sept. 2020</span><br>
+														<em><a href="https://fr.dronisos.com/" target="_blank">Dronisos</a>, Bordeaux, France</em><br>
+														Developed Harmony, a particle based meta-heuristic that secures massive drone swarms (+500 agents)<br>
+														Research Area: Meta-heuristics, Force fields.
+													</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<!-- Papers -->
+									<table class="section-table" id="projects">
+										<tbody>
+											<tr>
+												<td colspan="2">
+													<h2 class="section-heading">Papers</h2>
+													<p>You can also find the most up-to-date publications on my <a href="https://scholar.google.com/citations?user=-YXor_wAAAAJ&hl" target="_blank">Google Scholar</a> page.</p>
+												</td>
+											</tr>
+
+											<!-- PRE PRINT -->
+											<tr>
+												<td colspan="2" style="padding-bottom:5px;">
+													<div class="accepted-paper">
+														<div class="paper-venue" style="background-color:#969696;">PRE PRINT</div>
+														<div style="display:flex; align-items:center; width:100%;">
+															<div class="paper-img-col">
+																<img src="images/square.gif" alt="Preprint" class="paper-img">
+															</div>
+															<div class="paper-text-col">
+																<a class="tog" href="" target="_blank">
+																	<span class="papertitle">A Compression Perspective on Simplicity Bias</span>
+																</a>
+																<br><br>
+																We frame the dynamic feature preferences of neural networks as a trade-off between predictive power and model complexity, deriving insights from compression theory.
+																<br><br>
+																<b>Keywords:</b> Learning Theory, Compression, Generalization.
+																<br><br>
+																<em>Currently under review.</em>
+																<p style="text-align:center; margin:0;">
+																	<a href="data/complicity.pdf" target="_blank">Paper</a>
+																&nbsp;/&nbsp;
+																	<a href="https://github.com/3rdCore/complicty" target="_blank">Code</a>
+																</p>
+															</div>
+														</div>
 													</div>
-													<div style="padding: 10px; width: 75%;">
-														<a class="tog" href="" target="_blank">
-															<papertitle>In-Context Learning and Occam's Razor
-															</papertitle>
-														</a>
-														<br><br>
-														We propose an explanation for the strong generalization
-														abilities of in-context learning at test
-														time, drawing connections between meta-learning and information theory.
-														<br><br>
-														<b>Keywords:</b> Learning Theory, Compression, Meta Learning
-														<br><br>
-														<p style="text-align:center; margin: 0;">
-															<a href="images/poster_occam.png"
-																target="_blank">Poster</a>
-															&nbsp;/&nbsp;
-															<a href="https://arxiv.org/abs/2410.14086"
-																target="_blank">Paper</a>
-															&nbsp;/&nbsp;
-															<a href="https://github.com/3rdCore/PrequentialCode"
-																target="_blank">Code</a>
-														</p>
+												</td>
+											</tr>
+
+											<!-- ICML 2025 -->
+											<tr>
+												<td colspan="2" style="padding-bottom:5px;">
+													<div class="accepted-paper">
+														<div class="paper-venue" style="background-color:#845797;">ICML 2025</div>
+														<div style="display:flex; align-items:center; width:100%;">
+															<div class="paper-img-col">
+																<img src="images/geometric.gif" alt="ICML 2025" class="paper-img">
+															</div>
+															<div class="paper-text-col">
+																<a class="tog" href="" target="_blank">
+																	<span class="papertitle">In-Context Learning and Occam's Razor</span>
+																</a>
+																<br><br>
+																We propose an explanation for the strong generalization abilities of in-context learning at test time, drawing connections between meta-learning and information theory.
+																<br><br>
+																<b>Keywords:</b> Learning Theory, Compression, Meta Learning
+																<br><br>
+																<p style="text-align:center; margin:0;">
+																	<a href="images/poster_occam.png" target="_blank">Poster</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://arxiv.org/abs/2410.14086" target="_blank">Paper</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://github.com/3rdCore/PrequentialCode" target="_blank">Code</a>
+																</p>
+															</div>
+														</div>
 													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
+												</td>
+											</tr>
 
-									<!-- TMLR 2024 -->
-									<tr>
-										<td colspan="2" style="padding-bottom: 5px;">
-											<div class="accepted-paper"
-												style="display: flex; background-color: #f9f9f9; border-left: none; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 6px 6px rgba(0,0,0,0.1); overflow: hidden;">
-												<div
-													style="background-color: #845797; writing-mode: vertical-rl; text-orientation: mixed; color: white; font-weight: bold; font-size: 18px; display: flex; align-items: center; justify-content: center; padding:10px; width: 12px;">
-													TMLR 2024
-												</div>
-												<div style="display: flex; align-items: center; width: 100%;">
-													<div style="width: 25%; text-align: center; padding: 15px;">
-														<img src="images/BrowserGym.png" alt="BrowserGym" width="170"
-															style="border-radius: 8px;">
+											<!-- TMLR 2024 -->
+											<tr>
+												<td colspan="2" style="padding-bottom:5px;">
+													<div class="accepted-paper">
+														<div class="paper-venue" style="background-color:#845797;">TMLR 2024</div>
+														<div style="display:flex; align-items:center; width:100%;">
+															<div class="paper-img-col">
+																<img src="images/BrowserGym.png" alt="BrowserGym" class="paper-img">
+															</div>
+															<div class="paper-text-col">
+																<a class="tog" href="https://arxiv.org/abs/2412.05467" target="_blank">
+																	<span class="papertitle">The BrowserGym Ecosystem for Web Agent Research</span>
+																</a>
+																<br><br>
+																BrowserGym is a fully deployed Open-Source Gym environment for Web-Automation.
+																It serves to evaluate Web Agents at solving a wide range of tasks on the web.
+																It's a collaboration between
+																<a class="tog" href="https://www.servicenow.com/research/" target="_blank">ServiceNow Research</a>,
+																<a class="tog" href="https://csd.cmu.edu/research" target="_blank">CMU</a>,
+																and <a class="tog" href="https://www.mila.quebec/en/" target="_blank">Mila</a>.
+																<br><br>
+																<b>Keywords:</b> Agent, Task solving, Benchmark.
+																<br>
+																<p style="text-align:center; margin:5px 0;">
+																	<a href="https://arxiv.org/abs/2412.05467" target="_blank">Journal Paper</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://github.com/ServiceNow/BrowserGym" target="_blank">Code</a>
+																	&nbsp;
+																	<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ServiceNow/BrowserGym">
+																</p>
+															</div>
+														</div>
 													</div>
-													<div style="padding: 10px; width: 75%;">
-														<a class="tog" href="https://arxiv.org/abs/2412.05467"
-															target="_blank">
-															<papertitle>The BrowserGym Ecosystem for Web Agent Research
-															</papertitle>
-														</a>
-														<br><br>
-														BrowserGym is a fully deployed Open-Source Gym environment for
-														Web-Automation.
-														It serves to evaluate Web Agents at solving a wide range of
-														tasks on the web.
-														It’s a collaboration between
-														<a class="tog" href="https://www.servicenow.com/research/"
-															target="_blank">ServiceNow Research</a>,
-														<a class="tog" href="https://csd.cmu.edu/research"
-															target="_blank">CMU</a>,
-														and <a class="tog" href="https://www.mila.quebec/en/"
-															target="_blank">Mila</a>.
-														<br><br>
-														<b>Keywords:</b> Agent, Task solving, Benchmark.
-														<br>
-														<p style="text-align:center;margin:5px 0;">
-															<a href="https://arxiv.org/abs/2412.05467"
-																target="_blank">Journal Paper</a>
-															&nbsp;/&nbsp;
-															<a href="https://github.com/ServiceNow/BrowserGym"
-																target="_blank">Code</a>
-															&nbsp;
-															<img alt="GitHub Repo stars"
-																src="https://img.shields.io/github/stars/ServiceNow/BrowserGym">
-														</p>
+												</td>
+											</tr>
+
+											<!-- ICML 2024 -->
+											<tr>
+												<td colspan="2" style="padding-bottom:5px;">
+													<div class="accepted-paper">
+														<div class="paper-venue" style="background-color:#845797;">ICML 2024</div>
+														<div style="display:flex; align-items:center; width:100%;">
+															<div class="paper-img-col">
+																<img src="data/work_arena_2.gif" alt="WorkArena" class="paper-img">
+															</div>
+															<div class="paper-text-col">
+																<a class="tog" href="https://openreview.net/forum?id=BRfqYrikdo" target="_blank">
+																	<span class="papertitle">WorkArena: LLMs as Generalist Web Agents</span>
+																</a>
+																<br><br>
+																WorkArena is an Open-Source Gym benchmark for evaluating Web Agents on common knowledge tasks in a browser. This research was conducted at ServiceNow Research.
+																<br><br>
+																<b>Keywords:</b> Agent, Task solving, Benchmark.
+																<br>
+																<p style="text-align:center;">
+																	<a href="images/poster_occam.png" target="_blank">Poster</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://openreview.net/forum?id=BRfqYrikdo" target="_blank">Paper</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://servicenow.github.io/WorkArena/" target="_blank">Website</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://github.com/ServiceNow/WorkArena" target="_blank">Code</a>
+																	&nbsp;
+																	<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ServiceNow/WorkArena">
+																</p>
+															</div>
+														</div>
 													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
+												</td>
+											</tr>
 
-									<!-- ICML 2024 -->
-									<tr>
-										<td colspan="2" style="padding-bottom: 5px;">
-											<div class="accepted-paper"
-												style="display: flex; background-color: #f9f9f9; border-left: none; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 6px 6px rgba(0,0,0,0.1); overflow: hidden;">
-												<div
-													style="background-color: #845797; writing-mode: vertical-rl; text-orientation: mixed; color: white; font-weight: bold; font-size: 18px; display: flex; align-items: center; justify-content: center; padding:10px; width: 12px;">
-													ICML 2024
-												</div>
-												<div style="display: flex; align-items: center; width: 100%;">
-													<div style="width: 25%; text-align: center; padding: 15px;">
-														<img src="data/work_arena_2.gif" alt="WorkArena" width="170"
-															height="140" style="border-radius: 8px;">
-
-
+											<!-- CP 2023 -->
+											<tr>
+												<td colspan="2" style="padding-bottom:5px;">
+													<div class="accepted-paper">
+														<div class="paper-venue" style="background-color:#845797;">CP 2023</div>
+														<div style="display:flex; align-items:center; width:100%;">
+															<div class="paper-img-col">
+																<img src="images/SeaPearl.png" alt="SeaPearl" class="paper-img">
+															</div>
+															<div class="paper-text-col">
+																<a class="tog" href="https://github.com/corail-research/SeaPearl.jl" target="_blank">
+																	<span class="papertitle">Learning a Generic Value-Selection Heuristic Inside a Constraint Programming Solver</span>
+																</a>
+																<br><br>
+																I co-maintained the Open-Source project SeaPearl. It aims to develop an intelligent constraint solver that learns to solve Constraint Optimization Problems via RL on Graphs.
+																<br>
+																Entirely written in <strong>Julia</strong> <img src="images/julia.gif" width="18px" alt="Julia">.
+																<a href="SeaPearl.html" target="_self">More details here</a>.
+																<br><br>
+																<b>Keywords:</b> Combinatorial Optimization, Reinforcement Learning, GNNs.
+																<br>
+																<p style="text-align:center;">
+																	<a href="https://link.springer.com/article/10.1007/s10601-024-09377-4" target="_blank"><b>Journal Paper</b></a>
+																	&nbsp;/&nbsp;
+																	<a href="https://arxiv.org/abs/2301.01913" target="_blank">Conference Paper</a>
+																	&nbsp;/&nbsp;
+																	<a href="https://github.com/corail-research/SeaPearl.jl" target="_blank">Code</a>
+																	&nbsp;
+																	<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/corail-research/SeaPearl.jl?style=social">
+																</p>
+															</div>
+														</div>
 													</div>
-													<div style="padding: 10px; width: 75%;">
-														<a class="tog" href="https://openreview.net/forum?id=BRfqYrikdo"
-															target="_blank">
-															<papertitle>WorkArena: LLMs as Generalist Web Agents
-															</papertitle>
-														</a>
-														<br><br>
-														WorkArena is an Open-Source Gym benchmark for evaluating Web
-														Agents
-														on common knowledge tasks in a browser. This research was
-														conducted at ServiceNow Research.
-														<br><br>
-														<b>Keywords:</b> Agent, Task solving, Benchmark.
-														<br>
-														<p style="text-align:center;"><a href="images/poster_occam.png"
-																target="_blank">Poster</a>
-															&nbsp;/&nbsp;
-															<a href="https://openreview.net/forum?id=BRfqYrikdo"
-																target="_blank">Paper</a>
-															&nbsp;/&nbsp;
-															<a href="https://servicenow.github.io/WorkArena/"
-																target="_blank">Website</a>
-															&nbsp;/&nbsp;
-															<a href="https://github.com/ServiceNow/WorkArena"
-																target="_blank">Code</a>
-															&nbsp;
-															<img alt="GitHub Repo stars"
-																src="https://img.shields.io/github/stars/ServiceNow/WorkArena">
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-														</p>
+									<!-- Other open-source projects (scrollable) -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td colspan="2">
+													<h2 class="section-heading">Other open-source projects</h2>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" style="padding:0;">
+													<div class="projects-scroll">
+														<table class="proj-inner-table">
+															<tbody>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/molecule.gif" alt="TCR-pMHC" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="https://3rdcore.github.io/" target="_blank">
+																			<span class="papertitle">Generative Co-design for TCR:pMHC Interactions</span>
+																		</a>
+																		<br>
+																		<em>Ongoing Research @ Mila &amp; Université de Montréal</em>
+																		<br><br>
+																		I am developing a multi-modal <strong>Discrete Diffusion Transformer</strong> for the co-design of protein sequences and structures.
+																		Targeting the specific task of <strong>TCR/Peptide/MHC binding</strong>. The aim is to generate de-novo TCR sequences conditioned on a tumor-specific neoantigen.
+																		<p style="text-align:center; margin:10px 0;">
+																			<b>Keywords:</b> Discrete Diffusion, Protein design, Immunotherapy
+																		</p>
+																	</td>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/hexagon_2.gif" alt="Research Template" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="" target="_blank">
+																			<span class="papertitle">A simple research project code template</span>
+																		</a>
+																		<br>
+																		Jan' 25
+																		<br><br>
+																		I made a code template to <a class="tog" href="https://github.com/3rdCore/Research_Project_Template" target="_blank">quick-start your research project</a> with a fully functional environment and backbones for your codebase. S/o to my amazing collaborators Eric Elmoznino and Tejas Kasetty.
+																		<br>
+																		The template includes a lot of nice features such as: Pytorch Lightning ⚡, pre-commit, Hydra, Weights &amp; Biases integration, Github Actions CI ...
+																		<br><br>
+																		<p style="text-align:center; margin:5px 0;">
+																			<a href="https://github.com/3rdCore/Research_Project_Template" target="_blank">Code</a>
+																			&nbsp;
+																			<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/3rdCore/Research_Project_Template">
+																		</p>
+																	</td>
+																</tr>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/adversarial.png" alt="Adversarial Attacks" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" id="adversarial" href="data/IFT6167.pdf" target="_blank">
+																			<span class="papertitle">Adversarial Attacks on Sentiment Analysis models</span>
+																		</a>
+																		<br>
+																		Mar' 22 - May' 22
+																		<br><br>
+																		This project was carried out in the framework of the IFT6167 seminar led by
+																		Prof. <a class="tog" href="https://mila.quebec/personne/irina-rish/" target="_blank">Irina Rish</a> (Mila, Québec).
+																		<br><br>
+																		In this work, we aim to show, regarding <a class="tog" href="https://en.wikipedia.org/wiki/Sentiment_analysis" target="_blank">Natural Language Sentiment Analysis</a>, that there exists a relationship between model size and robustness to adversarial attacks. Ultimately, uncovering the emergence of power laws and testing the robustness of language model with scale. We evaluate the performance of various <a class="tog" href="https://github.com/EleutherAI/" target="_blank">Eleuther AI</a> GPT models such as GPT-Neo 125M, GPT-Neo 1.3B, GPT-Neo 2.7B, GPT-J 6B against adversarial attacks. We fined-tuned (trained on adversarial example) our different GPT models on common datasets (Rotten Tomatoes, IMDB...) and evaluated them separately to quantify the effects of scale on adversarial training.
+																		<p style="text-align:center;">
+																			<a href="data/IFT6167.pdf" target="_blank">Report</a> &nbsp;/&nbsp;
+																			<a href="data/IFT6167_slides.pdf" target="_blank">Slides</a>
+																		</p>
+																	</td>
+																</tr>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/geodesic.gif" alt="Diffusion Geodesic" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="https://github.com/3rdCore/MAT6215-project/" target="_blank">
+																			<span class="papertitle">Diffusion Geodesic : a new Metric for non-linear Dimensionality Reduction</span>
+																		</a>
+																		<br>
+																		Sep' 21 - Jan' 22
+																		<br><br>
+																		In collaboration with Ph.D. candidate <a class="tog" href="https://mila.quebec/personne/guillaume-huguet/" target="_blank">Guillaume Huguet</a> (Mila, Québec), we present our method for non-linear dimensionality reduction called Diffusion Geodesic.
+																		<br><br>
+																		Dimensionality reduction techniques are often used to visualize the underlying geometry of a high-dimensional dataset. These methods usually rely on specific similarity measures. In this project, we first approximate the geodesic distance using a diffusion process over the underlying manifold, then we use <a class="tog" href="https://en.wikipedia.org/wiki/Multidimensional_scaling" target="_blank">Multi-Dimentionnal Scaling</a> combined with our previously defined pairwise 'distances' to embed our Manifold in a lower dimensional space. We compare our model with popular algorithms such as PHATE, UMAP, and Isomap on toy datasets and RNA-seq dataset.
+																		<p style="text-align:center;">
+																			<a href="data/MAT6495.pdf" target="_blank">Report</a> &nbsp;/&nbsp;
+																			<a href="https://github.com/3rdCore/MAT6215-project/" target="_blank">Code</a>
+																		</p>
+																	</td>
+																</tr>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/swarm.gif" alt="Drone Swarm" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="" target="_blank">
+																			<span class="papertitle">Autonomous Drone Swarm Deployment</span>
+																		</a>
+																		<br>
+																		Dec' 20 – Mar' 21
+																		<br><br>
+																		In collaboration with Sariah Al Saati (ENS), Mehdi Benharrats (X-HEC), Swann Chelly (Sorbonne University) and Pierre Tessier, this report proposes a method for the coverage of a rescue zone with a swarm of UAVs.
+																		<br><br>
+																		The method is based on <a class="tog" href="https://ieeexplore.ieee.org/document/8963663" target="_blank">Collaborative Reinforcement Learning</a>. It also presents a pipeline to locate points of interest in 3D from a set of 2D images using <a class="tog" href="https://towardsdatascience.com/inverse-projection-transformation-c866ccedef1c" target="_blank">Inverse Projection Transformation</a> and 3D ray clustering.
+																		<p style="text-align:center;">
+																			<a href="data/Challenge.pdf" target="_blank">Report</a>
+																		</p>
+																	</td>
+																</tr>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/INF573.gif" alt="Motion Capture" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="" target="_blank">
+																			<span class="papertitle">Realtime 3D Deep Motion Capture</span>
+																		</a>
+																		<br>
+																		Oct' 20 – Dec' 20
+																		<br><br>
+																		In collaboration with Pierre Tessier (MS, Columbia University), the objective of our project was to implement an intelligent 2D to 3D Motion Capture mechanism that uses only the video stream of a webcam as input. We were able to animate relatively accurately this Mk-44 Iron Man 3D model.
+																		<br><br>
+																		The project is based on the model DOPE presented in <a class="tog" href="https://arxiv.org/abs/2008.09457" target="_blank">this paper</a> for the automatic 3D rig generation from video input coupled with a <a class="tog" href="https://www.researchgate.net/publication/230600780_Closed-Form_Solution_of_Absolute_Orientation_Using_Unit_Quaternions" target="_blank">quaternion</a>-based 3D rotation inference pipeline for 3D model animation.
+																		<p style="text-align:center;">
+																			<a href="data/INF573.pdf" target="_blank">Report (french)</a>
+																			&nbsp;/&nbsp;
+																			<a href="data/video_INF573.mp4" target="_blank">Video</a>
+																			&nbsp;/&nbsp;
+																			<a href="https://github.com/PierreTsr/dope/" target="_blank">Code</a>
+																			&nbsp;/&nbsp;
+																			<a href="data/INF573_slides.pdf" target="_blank">Slides</a>
+																		</p>
+																	</td>
+																</tr>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/INF574.gif" alt="Shape Retrieval" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="https://github.com/3rdCore/Shape_Retrieval/" target="_blank">
+																			<span class="papertitle">Sketch-based Shape Retrieval</span>
+																		</a>
+																		<br>
+																		Sep' 20 – Dec' 20
+																		<br><br>
+																		In collaboration with Pierre Tessier (MS, Columbia University), the objective of our project is to enable an efficient search in a 3D model bank from simple hand drawings. The project is based on
+																		<a class="tog" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjR2cDUto36AhXUGlkFHaB1A5wQFnoECA0QAQ&url=https%3A%2F%2Fcybertron.cg.tu-berlin.de%2Feitz%2Fpdf%2F2012_siggraph_sbsr.pdf&usg=AOvVaw1ubNbM8eL7juourwr9P-9N" target="_blank">this paper</a> SIGGRAPH2012.
+																		<br><br>
+																		The project lies on different techniques such as Suggestive Contouring (Canny filter), Gabor filtering (gaussian convolution on Fourier Transformation of the input image) and histogram representation using Visual Vocabulary.
+																		<br>
+																		Looking back at this project, I saw that <a class="tog" href="https://arxiv.org/abs/1504.03504" target="_blank">another paper</a> with much more impressive results came out a few years later using <strong>Siamese convolutional Neural Networks</strong> for feature extraction.
+																		<p style="text-align:center;">
+																			<a href="data/INF574.pdf" target="_blank">Report (french)</a>
+																			&nbsp;/&nbsp;
+																			<a href="https://github.com/3rdCore/Shape_Retrieval/" target="_blank">Code</a>
+																			&nbsp;/&nbsp;
+																			<a href="data/INF574_slides.pdf" target="_blank">Slides</a>
+																		</p>
+																	</td>
+																</tr>
+																<tr class="proj-row">
+																	<td class="proj-img-col">
+																		<img src="images/443.gif" alt="3D Scene" class="proj-img">
+																	</td>
+																	<td class="proj-text-col">
+																		<a class="tog" href="" target="_blank">
+																			<span class="papertitle">Procedural modeling of a 3D rendered scene</span>
+																		</a>
+																		<br>
+																		Mar' 20 – June' 20
+																		<br><br>
+																		In collaboration with Elsa Deville <img src="images/whale.png" width="18px" alt="whale"> (MS, Imperial College), the objective of our project is to fully render a realistic 3D marine scene using only randomized <a class="tog" href="https://en.wikipedia.org/wiki/Procedural_modeling" target="_blank">procedural modeling</a> (OpenGL).
+																		<br><br>
+																		The project implements different visual elements among them terrain generation using <a class="tog" href="https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/perlin-noise-part-2/perlin-noise-terrain-mesh" target="_blank">Perlin Noise</a>, a realistic simulation of a fish swarm movement based on <a class="tog" href="https://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/" target="_blank">this paper</a> and realistic-looking ocean waves (<a class="tog" href="https://en.wikipedia.org/wiki/Trochoidal_wave" target="_blank">Trochoidal Waves</a>: exact solution of the Euler equations for periodic surface gravity waves).
+																		<p style="text-align:center;">
+																			<a href="data/INF443.pdf" target="_blank">Report (french)</a>
+																		</p>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
 													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-									<!-- CP 2023 -->
-									<tr>
-										<td colspan="2" style="padding-bottom: 5px;">
-											<div class="accepted-paper"
-												style="display: flex; background-color: #f9f9f9; border-left: none; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 6px 6px rgba(0,0,0,0.1); overflow: hidden;">
-												<div
-													style="background-color: #845797; writing-mode: vertical-rl; text-orientation: mixed; color: white; font-weight: bold; font-size: 18px; display: flex; align-items: center; justify-content: center; padding:10px; width: 12px;">
-													CP 2023
-												</div>
-												<div style="display: flex; align-items: center; width: 100%;">
-													<div style="width: 25%; text-align: center; padding: 15px;">
-														<img src="images/SeaPearl.png" alt="SeaPearl" width="140"
-															style="border-radius: 8px;">
-													</div>
-													<div style="padding: 10px; width: 75%;">
-														<a class="tog"
-															href="https://github.com/corail-research/SeaPearl.jl"
-															target="_blank">
-															<papertitle>Learning a Generic Value-Selection Heuristic
-																Inside a Constraint Programming Solver</papertitle>
-														</a>
-														<br><br>
-														I co-maintained the Open-Source project SeaPearl. It aims to
-														develop an intelligent constraint solver that
-														learns to solve Constraint Optimization Problems via RL on
-														Graphs.
-														<br>
-														Entirely written in <strong>Julia</strong> <img
-															src="images/julia.gif" width="18px">.
-														<a href="SeaPearl.html" target="_self">More details here</a>.
-														<br><br>
-														<b>Keywords:</b> Combinatorial Optimization, Reinforcement
-														Learning, GNNs.
-														<br>
-														<p style="text-align:center;">
-															<a href="https://link.springer.com/article/10.1007/s10601-024-09377-4"
-																target="_blank"><b>Journal Paper </b></a>
-															&nbsp;/&nbsp;
+									<!-- Education -->
+									<table class="section-table exp-table" id="education">
+										<tbody>
+											<tr>
+												<td colspan="2">
+													<h2 class="section-heading">Education</h2>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/MILA.png" alt="Mila" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>Ph.D. in Machine Learning</strong><span class="date-right">January 2024 - March 2026</span><br>
+														<em><a href="https://mila.quebec/en/" target="_blank">Mila - Université de Montréal</a><span class="date-right">(On leave)</span></em><br>
+														Advisor: <a href="https://www.dsridhar.com/" target="_blank">Dhanya Sridhar</a><br>
+														Montréal, Canada
+													</p>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg/1200px-%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg.png" alt="Polytechnique Montréal" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>Master of Science in Machine Learning</strong><span class="date-right">September 2021 - July 2023</span><br>
+														<em><a href="https://www.polymtl.ca/" target="_blank">Polytechnique Montréal</a></em><br>
+														Advisor: <a href="https://www.polymtl.ca/expertises/cappart-quentin-0/" target="_blank">Quentin Cappart</a>,
+														<a href="https://www.polymtl.ca/expertises/rousseau-louis-martin/" target="_blank">Louis-Martin Rousseau</a><br>
+														Montréal, Canada
+													</p>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/X.png" alt="École Polytechnique" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>Bachelor of Science in Applied Mathematics</strong><span class="date-right">Jun. 2018 - May. 2021</span><br>
+														<em><a href="https://www.polytechnique.edu/" target="_blank">Ecole Polytechnique</a></em><br>
+														Ingénieur Polytechnicien X2018<br><br>
+														Minor in Computer Science. Ranked 3rd out of 3000+ candidates at the national entrance exam for Ecole Polytechnique, the most prestigious and selective engineering school in France.<br>
+														Palaiseau, France
+													</p>
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/cpge.png" alt="CPGE" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<p>
+														<strong>CPGE : Higher School Preparatory Classes</strong><span class="date-right">Jun. 2016 - May. 2018</span><br>
+														<em>Lycée public Jean-Baptiste Say</em><br>
+														Intensive multi-disciplinary program leading to competitive entrance exams of french <em class="emphasized">Grande Ecoles</em>.<br>
+														Paris XVI, France
+													</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-															<a href="https://arxiv.org/abs/2301.01913"
-																target="_blank">Conference Paper </a>
-															&nbsp;/&nbsp;
-															<a href="https://github.com/corail-research/SeaPearl.jl"
-																target="_blank">Code</a>
-															&nbsp;
-															<img alt="GitHub Repo stars"
-																src="https://img.shields.io/github/stars/corail-research/SeaPearl.jl?style=social">
-														</p>
-													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
-								</table>
+									<!-- Initiatives and Academic Services -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td>
+													<h2 class="section-heading">Initiatives and Academic Services</h2>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="section-table exp-table">
+										<tbody>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/UdeM.png" height="120" width="120" alt="UdeM" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">IFT6390: Fundamentals of machine learning</a>
+													<span class="date-right">Fall 25</span>
+													<br><br>
+													I am a TA for the <a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">IFT6390: Fundamentals of machine learning</a> at University of Montreal taught by
+													<a href="https://mitliagkas.github.io/" target="_blank">Ioannis Mitliagkas</a> and
+													<a href="https://mila.quebec/en/directory/dhanya-sridhar" target="_blank">Dhanya Sridhar</a>
+													for the Autumn 2025 semester.
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg/1200px-%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg.png" height="120" width="120" alt="Polytechnique" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">INF8215 : AI : Methods and Algorithms</a> <span class="date-right">Fall 22</span>
+													<br><br>
+													<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">INF8215 : AI : Methods and Algorithms</a> <span class="date-right">Fall 21</span>
+													<br><br>
+													I am a TA for the <a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes" target="_blank">INF8215 : AI : Methods and Algorithms</a> at Polytechnique University taught by
+													<a href="https://www.polymtl.ca/expertises/cappart-quentin-0/" target="_blank">Quentin Cappart</a> for the Autumn 2022 semester.
+												</td>
+											</tr>
+											<tr class="exp-row">
+												<td class="exp-img-col">
+													<img src="images/education_nationale.png" height="110" width="120" alt="Education Nationale" class="exp-logo">
+												</td>
+												<td class="exp-text-col">
+													<a href="https://internat-excellence-noyon.ac-amiens.fr/" target="_blank">Assistant Professor in Maths and Physics</a>
+													<span class="date-right">Nov. 2019 - Mar. 2020</span>
+													<br><br>
+													I became a teaching assistant for 6 months (Full Time) for both High School and undergraduate students with underprivileged backgrounds at the <a href="https://internat-excellence-noyon.ac-amiens.fr/" target="_blank">Boarding School of Success</a> of Noyon, France.
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
+									<!-- Grants, Scholarships and Awards -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td>
+													<h2 class="section-heading">Grants, Scholarships and Awards</h2>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="section-table exp-table">
+										<tbody>
+											<tr>
+												<td class="award-img-col">
+													<img src="images/FRQNT.png" alt="FRQNT">
+												</td>
+												<td class="award-text-col">
+													<span class="date-right">Mar. 2025</span>
+													FRQNT doctoral training scholarship (4 years)
+												</td>
+											</tr>
+											<tr>
+												<td class="award-img-col">
+													<img src="images/acp.png" alt="ACP">
+												</td>
+												<td class="award-text-col">
+													<span class="date-right">Sep. 2023</span>
+													Distinguished Paper Award at CP2023, Toronto
+												</td>
+											</tr>
+											<tr>
+												<td class="award-img-col">
+													<img src="images/mitacs.png" alt="Mitacs">
+												</td>
+												<td class="award-text-col">
+													<span class="date-right">Mar. 2023</span>
+													Mitacs Accelerate scholarship (30k$)
+												</td>
+											</tr>
+											<tr>
+												<td class="award-img-col">
+													<img src="images/vallet.jfif" alt="Vallet">
+												</td>
+												<td class="award-text-col">
+													<span class="date-right">2018</span>
+													Vallet Fondation scholarship
+												</td>
+											</tr>
+											<tr>
+												<td class="award-img-col">
+													<img src="images/education_nationale_2.png" alt="French State">
+												</td>
+												<td class="award-text-col">
+													<span class="date-right">2016</span>
+													French State scholarship
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-								<table
-									style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-									<tr>
-										<td colspan="2" style="padding-bottom: 20px;">
-											<a id="projects">
-												<heading> Other open-source projects </heading>
-											</a>
+									<!-- Outside of research -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td>
+													<h2 class="section-heading">
+														<a href="fun.html" target="_self">Outside of research (click here)</a>
+													</h2>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-										</td>
-									</tr>
-									<br>
-									<tr onmouseout="nthu_stop()" onmouseover="nthu_start()">
-										<td width="25%" valign="center" align="center">
-											<img src="images/molecule.gif" alt="TCR-pMHC" width="190" height="190" style="border-radius:10px;">
-										</td>
-
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="https://3rdcore.github.io/" target="_blank">
-												<papertitle>Generative Co-design for TCR:pMHC Interactions</papertitle>
-											</a>
-											<br>
-											<em>Ongoing Research @ Mila & Université de Montréal</em>
-											<br>
-											<br>
-											I am developing a multi-modal <strong>Discrete Diffusion Transformer</strong> for the co-design of protein sequences and structures. 
-											Targeting the specific task of <strong>TCR/Peptide/MHC binding</strong>. The aim is to generate de-novo TCR sequences conditioned on a tumor-specific neoantigen.
-											<br>
-											<p style="text-align:center;margin:5px 0;">
-														<b>Keywords:</b> Discrete Diffusion, Protein design, Immunotherapy
-
-											</p>
-										</td>
-									</tr>
-									<tr>
-
-										<td width="25%" valign="center" align="center"><img src="images/hexagon_2.gif"
-												alt="nthu" width="190" height="190">
-										</td>
-
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="" target="_blank">
-												<papertitle>A simple research project code template
-												</papertitle>
-											</a>
-											<br>
-											Jan' 25
-											<br>
-											<br>
-											I made a code template to <a class="tog" href="https://github.com/3rdCore/Research_Project_Template
-											" target="_blank">quick-start your research project</a> with a fully functional environment and backbones
-											for your codebase. S/o to my amazing collaborators Eric Elmoznino and Tejas
-											Kasetty.
-											<br>
-											The template includes a lot of nice features such as:
-											Pytorch Lightning ⚡, pre-commit, Hydra, Weights & Biases integration, Github Actions CI ...
-											<br> <br>
-
-											<p style="text-align:center;margin:5px 0;">
-												<a href="https://github.com/3rdCore/Research_Project_Template"
-													target="_blank">Code</a>
-												&nbsp;
-												<img alt="GitHub Repo stars"
-													src="https://img.shields.io/github/stars/3rdCore/Research_Project_Template">
-											</p>
-										</td>
-									</tr>
-									<tr>
-
-										<td width="25%" valign="center" align="center"><img src="images/adversarial.png"
-												alt="nthu" width="200" height="120"></td>
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" id="adversarial" href="data/IFT6167.pdf" target="_blank">
-												<papertitle>Adversarial Attacks on Sentiment Analysis models
-												</papertitle>
-											</a>
-											<br>
-											Mar' 22 - May' 22
-											<br>
-											<br>
-											This project was carried out in the framework of the IFT6167 seminar led by
-											Prof. <a class="tog" href="https://mila.quebec/personne/irina-rish/"
-												target="_blank">Irina
-												Rish</a> (Mila, Québec).
-											<br>
-											<br>
-											In this work, we aim to show, regarding <a class="tog"
-												href="https://en.wikipedia.org/wiki/Sentiment_analysis"
-												target="_blank">Natural
-												Language
-												Sentiment Analysis</a>, that there exists a relationship between model
-											size and
-											robustness to adversarial attacks. Ultimately, uncovering the emergence of
-											power laws
-											and
-											testing the robustness of language model with scale. We evaluate the
-											performance of
-											various
-											<a class="tog" href="https://github.com/EleutherAI/"
-												target="_blank">Eleuther AI</a> GPT
-											models such as GPT-Neo 125M, GPT-Neo 1.3B, GPT-Neo 2.7B, GPT-J 6B against
-											adversarial
-											attacks. We fined-tuned (trained on adversarial example) our different GPT
-											models on
-											common
-											datasets (Rotten Tomatoes, IMDB...) and evaluated them separately to
-											quantify the
-											effects of
-											scale on adversarial training.
-											<p style="padding:0%;text-align:center">
-												<a href="data/IFT6167.pdf" target="_blank">Report </a> &nbsp/&nbsp
-												<a href="data/IFT6167_slides.pdf" target="_blank">Slides</a>
-											</p>
-											<p></p>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td width="25%" valign="center" align="center"><img src="images/geodesic.gif"
-												alt="nthu" width="200" height="170"></td>
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="https://github.com/3rdCore/MAT6215-project/"
-												target="_blank">
-												<papertitle>Diffusion Geodesic : a new Metric for non-linear
-													Dimensionality
-													Reduction
-												</papertitle>
-											</a>
-											<br>
-											Sep' 21 - Jan' 22
-											<br>
-											<br>
-											In collaboration with Ph.D. candidate <a class="tog"
-												href="https://mila.quebec/personne/guillaume-huguet/"
-												target="_blank">Guillaume
-												Huguet</a>
-											(Mila,
-											Québec), we present our method for non-linear dimensionality reduction
-											called Diffusion
-											Geodesic.
-											<br>
-											<br>
-											Dimensionality reduction techniques are often used to visualize the
-											underlying geometry
-											of a
-											high-dimensional dataset. These methods usually rely on specific similarity
-											measures. In
-											this
-											project,
-											we first approximate the geodesic distance using a diffusion process over
-											the underlying
-											manifold,
-											then
-											we use <a class="tog"
-												href="https://en.wikipedia.org/wiki/Multidimensional_scaling"
-												target="_blank">Multi-Dimentionnal Scaling</a> combined with our
-											previously defined
-											pairwise
-											'distances' to embed our Manifold in a lower dimensional space. We compare
-											our model
-											with popular
-											algorithms such as PHATE, UMAP, and Isomap on toy datasets and RNA-seq
-											dataset.
-											<p style="padding:0%;text-align:center">
-												<a href="data/MAT6495.pdf" target="_blank">Report </a> &nbsp/&nbsp
-												<a href="https://github.com/3rdCore/MAT6215-project/"
-													target="_blank">Code</a>
-											</p>
-										</td>
-									</tr>
-									<tr>
-
-										<td width="25%" valign="center" align="center"><img src="images/swarm.gif"
-												alt="nthu" width="220" height="180"></td>
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="" target="_blank">
-												<papertitle>Autonomous Drone Swarm Deployment</papertitle>
-											</a>
-											<br>
-											Dec' 20 – Mar' 21
-											<br>
-											<br>
-											In collaboration with Sariah Al Saati (ENS), Mehdi Benharrats (X-HEC), Swann
-											Chelly
-											(Sorbonne
-											University) and Pierre Tessier, this report proposes a method for the
-											coverage of a
-											rescue zone with
-											a
-											swarm of UAVs.
-											<br>
-											<br>
-											The method is based on <a class="tog"
-												href="https://ieeexplore.ieee.org/document/8963663"
-												target="_blank">Collaborative
-												Reinforcement Learning</a>. It also presents a pipeline to locate
-											points of interest in 3D from a set of 2D images using <a class="tog"
-												href="https://towardsdatascience.com/inverse-projection-transformation-c866ccedef1c"
-												target="_blank">Inverse Projection Transformation</a> and 3D ray
-											clustering.
-											<br>
-											<br>
-											<p style="padding:0%;text-align:center">
-												<a href="data/Challenge.pdf" target="_blank">Report</a>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td width="25%" valign="center" align="center"><img src="images/INF573.gif"
-												alt="nthu" width="220" height="180"></td>
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="" target="_blank">
-												<papertitle>Realtime 3D Deep Motion Capture</papertitle>
-											</a>
-											<br>
-											Oct' 20 – Dec' 20
-											<br>
-											<br>
-											In collaboration with Pierre Tessier (MS, Columbia University), the
-											objective of our
-											project was to
-											implement a intelligent 2D to 3D Motion Capture mechanism that uses only the
-											video
-											stream of a
-											webcam as
-											input. We were able to animate relatively accurately this Mk-44 Iron Man 3D
-											model.
-											<br>
-											<br>
-											The project is based on the model DOPE presented in <a class="tog"
-												href="https://arxiv.org/abs/2008.09457" target="_blank">this paper</a>
-											for the
-											automatic 3D rig
-											generation from video input coupled with a <a class="tog"
-												href="https://www.researchgate.net/publication/230600780_Closed-Form_Solution_of_Absolute_Orientation_Using_Unit_Quaternions"
-												target="_blank">quaternion</a>-based 3D rotation inference pipeline for
-											3D model
-											animation.
-											<p style="padding:0%;text-align:center">
-												<a href="data/INF573.pdf" target="_blank">Report (french)</a>
-												&nbsp/&nbsp
-												<a href="data/video_INF573.mp4" target="_blank">Video</a> &nbsp/&nbsp
-												<a href="https://github.com/PierreTsr/dope/" target="_blank">Code</a>
-												&nbsp/&nbsp
-												<a href="data/INF573_slides.pdf" target="_blank">Slides</a>
-
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td width="25%" valign="center" align="center"><img src="images/INF574.gif"
-												alt="nthu" width="220" height="210"></td>
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="https://github.com/3rdCore/Shape_Retrieval/"
-												target="_blank">
-												<papertitle>Sketch-based Shape Retrieval</papertitle>
-											</a>
-											<br>
-											Sep' 20 – Dec' 20
-											<br>
-											<br>
-											In collaboration with Pierre Tessier (MS, Columbia University), the
-											objective of our
-											project is to
-											enable an efficient search in a 3D model bank models from simple hand
-											drawings. The
-											project is based
-											on
-											<a class="tog"
-												href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjR2cDUto36AhXUGlkFHaB1A5wQFnoECA0QAQ&url=https%3A%2F%2Fcybertron.cg.tu-berlin.de%2Feitz%2Fpdf%2F2012_siggraph_sbsr.pdf&usg=AOvVaw1ubNbM8eL7juourwr9P-9N"
-												target="_blank">this paper</a> SIGGRAPH2012.
-											<br>
-											<br>
-											The project lies on differents techniques such Suggestive Contouring (Canny
-											filter),
-											Gabor filtering
-											(gaussian convolution on Fourier Transformation of the input image) and
-											histogram
-											representation
-											using
-											Visual Vocabulary.
-											<br>
-											Looking back at this project, I saw that <a class="tog"
-												href="https://arxiv.org/abs/1504.03504" target="_blank">another
-												paper</a> with much
-											more impressive results came out a few years later
-											using
-											<strong>Siamese convolutional Neural Networks</strong> for feature
-											extraction.
-											<p style="padding:0%;text-align:center">
-												<a href="data/INF574.pdf" target="_blank">Report (french)</a>
-												&nbsp/&nbsp
-												<a href="https://github.com/3rdCore/Shape_Retrieval/"
-													target="_blank">Code</a>
-												&nbsp/&nbsp
-												<a href="data/INF574_slides.pdf" target="_blank">Slides</a>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td width="25%" valign="center" align="center"><img src="images/443.gif"
-												alt="nthu" width="220" height="180"></td>
-										<td style="padding:20px;width:75%;vertical-align:middle">
-											<a class="tog" href="" target="_blank">
-												<papertitle>Procedural modeling of a 3D rendered scene</papertitle>
-											</a>
-											<br>
-											Mar' 20 – June' 20
-											<br>
-											<br>
-											In collaboration with Elsa Deville <img src="images/whale.png" width="18px">
-											(MS,
-											Imperial College),
-											the
-											objective of our project is to fully render a realistic 3D marine scene
-											using only
-											randomized <a class="tog"
-												href="https://en.wikipedia.org/wiki/Procedural_modeling"
-												target="_blank">procedural
-												modeling</a> (OpenGL).
-											<br>
-											<br>
-											The project implements different visual elements among them terrain
-											generation using <a class="tog"
-												href="https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/perlin-noise-part-2/perlin-noise-terrain-mesh"
-												target="_blank">Perlin Noise</a>, a realistic simulation of a fish swarm
-											movement
-											based on <a class="tog"
-												href="https://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/"
-												target="_blank">this
-												paper</a> and realistic-looking ocean waves. (<a class="tog"
-												href="	https://en.wikipedia.org/wiki/Trochoidal_wave"
-												target="_blank">Trochoidal
-												Waves</a> :
-											exact
-											solution of the Euler equations for periodic surface gravity waves).
-											<p style="padding:0%;text-align:center">
-												<a href="data/INF443.pdf" target="_blank">Report (french)</a>
-											</p>
-										</td>
-									</tr>
-
-								</table>
-
-								<table width="100%" border="0" cellspacing="15" cellpadding="10">
-									<a id="education">
-										<heading>&nbsp;&nbsp;&nbsp;Education</heading>
-									</a>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img src="images/MILA.png"
-												alt="nthu" width="120" height="120"></td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>Ph.D. in Machine Learning</strong></span><span
-													style="float:right">January
-													2024 - Present</span> <br>
-												<em><a href="https://mila.quebec/en/" target="_blank">Mila - Université de Montréal</a></em>
-												<br>
-												Advisor: <a href="https://www.dsridhar.com/" target="_blank"> Dhanya
-													Sridhar</a>
-												<br>
-												Montréal, Canada
-											</p>
-										</td>
-
-									</tr>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img
-												src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg/1200px-%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg.png"
-												alt="nthu" width="120" height="120"></td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>Master Thesis in Machine Learning</strong></span><span
-													style="float:right">September
-													2021 - July 2023</span> <br>
-												<em><a href="https://www.polymtl.ca/" target="_blank">Polytechnique
-														Montréal</a></em>
-												<br>
-												Advisor: <a href="https://www.polymtl.ca/expertises/cappart-quentin-0/"
-													target="_blank"> Quentin
-													Cappart</a>, <a
-													href="https://www.polymtl.ca/expertises/rousseau-louis-martin/"
-													target="_blank">Louis-Martin Rousseau</a>
-												<br>
-												Montréal, Canada
-											</p>
-										</td>
-									</tr>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img src="images/X.png"
-												alt="nthu" width="115" height="130">
-										</td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>Bachelor of Science - Ingénieur Polytechnicien
-														X2018</strong></span><span style="float:right">Jun. 2018 -
-													May. 2021</span> <br>
-												<em><a href="https://www.polytechnique.edu/" target="_blank">Ecole
-														Polytechnique</a></em>
-												<br>
-												Major in Computer Science
-												<br>
-												Minor in Applied Mathematics
-												<br>
-												<br>
-												Ranked 3rd out of 3000+ candidates at the national entrance exam for
-												Ecole Polytechnique, the most
-												prestigious and selective engineering school in France.
-												<br>
-												Palaiseau, France
-											</p>
-										</td>
-									</tr>
-
-									<tr>
-										<td width="15%" valign="center" align="center"><img src="images/cpge.png"
-												alt="nthu" width="125" height="115"></td>
-										<td width="85%" valign="top">
-											<p>
-												<span><strong>CPGE : Higher School Preparatory
-														Classes</strong></span><span style="float:right">Jun.
-													2016 - May. 2018</span> <br>
-												<em>Lycée public Jean-Baptiste Say</em>
-												<br>
-												Intensive multi-disciplinary program leading to competitive entrance
-												exams of french <em class="emphasized">Grande Ecoles</em>.
-												<br>
-												Paris XVI, France
-											</p>
-										</td>
-									</tr>
-								</table>
-
-								<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td>
-												<heading>Initiatives and Academic Services</heading>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<table width="100%" align="center" border="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td style="padding:20px;width:25%" valign="center" align="center">
-												<img src="images/UdeM.png" height="160" width="160">
-											</td>
-											<td width="75%" valign="center">
-												<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-													target="_blank">IFT6390: Fundamentals of machine learning</a>
-												<span style="float:right">Fall 25</span>
-												<br><br>
-												I am a TA for the
-												<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-													target="_blank">IFT6390: Fundamentals of machine learning</a>
-												at University of Montreal taught by
-												<a href="https://mitliagkas.github.io/" target="_blank">Ioannis Mitliagkas</a>
-												and
-												<a href="https://mila.quebec/en/directory/dhanya-sridhar" target="_blank">Dhanya Sridhar</a>
-												for the Autumn 2025 semester.
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<table width="100%" align="center" border="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td style="padding:20px;width:25%" valign="center" align="center"><img
-													src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg/1200px-%C3%89cole_Polytechnique_de_Montr%C3%A9al_Logo.svg.png"
-													height="140" width="150"></td>
-											<td width="75%" valign="center">
-												<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-													target="_blank">INF8215 : AI : Methods and Algorithms</a> <span
-													style="float:right"> Fall
-													22</span>
-												<br>
-												<br>
-												<a href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-													target="_blank">INF8215 : AI : Methods and Algorithms</a> <span
-													style="float:right"> Fall
-													21</span>
-												<br>
-												<br>
-												I am a TA for the <a
-													href="https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes"
-													target="_blank">INF8215 : AI : Methods and Algorithms</a> at
-												Polytechnique University taught by
-												<a href="https://www.polymtl.ca/expertises/cappart-quentin-0/"
-													target="_blank"> Quentin Cappart</a>
-												for the Autumn 2022 semester.
-
-											</td>
-										</tr>
-								</table>
-
-								<table width="100%" align="center" border="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td style="padding:20px;width:25%" valign="center" align="center"><img
-													src="images/education_nationale.png" height="110" width="150">
-											</td>
-											<td width="75%" valign="center">
-												<a href="https://internat-excellence-noyon.ac-amiens.fr/"
-													target="_blank">Assistant
-													Professor in Maths and Physics </a> <span style="float:right">Nov.
-													2019 - Mar.
-													2020</span>
-												<br>
-												<br>
-												I became a teaching assistant for 6 months (Full Time) for both High
-												School and undergraduate
-												students with
-												underprivileged backgrounds at the <a
-													href="https://internat-excellence-noyon.ac-amiens.fr/"
-													target="_blank">Boarding School of Success</a> of Noyon, France.
-
-											</td>
-										</tr>
-									</tbody>
-								</table>
-
-								<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td>
-												<heading>Grants, Scholarships and Awards</heading>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<table width="100%" align="center" border="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td style="padding:0px;width:25%" valign="center" align="center">
-												<img src="images/FRQNT.png" height="70" style="position: relative;">
-											</td>
-											<td width="75%" valign="center">
-												FRQNT doctoral training scholarship (4 years)
-												<span style="float:right">Mar.
-													2025</span>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:0px;width:25%" valign="center" align="center">
-												<img src="images/acp.png" height="35" style="position: relative;">
-											</td>
-											<td width="75%" valign="center">
-												Distinguished Paper Award at CP2023, Toronto <span
-													style="float:right">Sep.
-													2023</span>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:0px;width:25%" valign="center" align="center">
-												<img src="images/mitacs.png" height="35"
-													style="position: relative; top: -5px;">
-											</td>
-											<td width="75%" valign="center">
-												Mitacs Accelerate scholarship (30k$) <span
-													style="float:right">Mar.
-													2023</span>
-												<br>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:0px;width:25%" valign="center" align="center">
-												<img src="images/vallet.jfif" height="55" style="position: relative">
-											</td>
-											<td width="75%" valign="center">
-												Vallet Fondation scholarship <span
-													style="float:right">2018</span>
-												<br>
-											</td>
-										</tr>
-										<tr>
-											<td style="padding:0px;width:25%" valign="center" align="center">
-												<img src="images/education_nationale_2.png" height="55"
-													style="position: relative">
-											</td>
-											<td width="75%" valign="center">
-												French State scholarship<span
-													style="float:right">2016</span>
-												<br>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-
-								<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-									<tbody>
-										<tr>
-											<td>
-												<heading> <a href="fun.html" target="_self"
-														style="font-size: 20px; color: #662E7D;">Outside of
-														research (click here)</a></heading>
-												</heading>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-
-								<table
-									style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-									<tbody>
-										<tr>
-
-
-											<br>
-											<td style="padding:20px;width:75%" valign="center" align="left	">This is
-												where I
-												come
-												from ! <img src="images/reunion.png" width="18px"><img
-													src="images/reunion.png" width="18px"><img src="images/reunion.png"
-													width="18px"></td>
-
-											<td width="25%" valign="center">
-												<p style="text-align:right;font-size:small;">
-													<a id="maps"></a><iframe
+									<!-- Map section -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td class="maps-text-col">
+													This is where I come from!
+													<img src="images/reunion.png" width="18px" alt="Réunion">
+													<img src="images/reunion.png" width="18px" alt="Réunion">
+													<img src="images/reunion.png" width="18px" alt="Réunion">
+												</td>
+												<td class="maps-iframe-col">
+													<a id="maps"></a>
+													<iframe
 														src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56661988.52805833!2d-26.457165857893173!3d16.105823645583836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2178778110b8e43b%3A0x4a7f8e89ecdbeaf9!2sLa%20R%C3%A9union!5e0!3m2!1sfr!2sca!4v1663169856058!5m2!1sfr!2sca"
-														width="300" height="225" style="border:0;" allowfullscreen=""
-														loading="lazy"
-														referrerpolicy="no-referrer-when-downgrade"></iframe></a>
-												</p>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+														width="300" height="225" style="border:0; max-width:100%;" allowfullscreen="" loading="lazy"
+														referrerpolicy="no-referrer-when-downgrade">
+													</iframe>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-								<table
-									style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-									<tbody>
-										<tr>
-											<td style="padding:0px">
-												<br>
-												<p style="text-align:left;font-size:small;">
-													Updated on: 9th September, 2025
+									<!-- Footer -->
+									<table class="section-table">
+										<tbody>
+											<tr>
+												<td style="padding:0;">
+													<p style="text-align:left; font-size:small;">
+														Updated on: 21th March, 2026
+														<span style="float:right;">
+															Merci, <a href="https://jonbarron.info/" target="_blank">Jon Barron</a> et
+															<a href="https://github.com/digantamisra98" target="_blank">Diganta Misra</a>!
+														</span>
+													</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 
-													<span style="float:right;">
-														Merci, <a href="https://jonbarron.info/" target="_blank">Jon
-															Barron</a> et
-														<a href="https://github.com/digantamisra98"
-															target="_blank">Diganta
-															Misra</a>
-														!
-													</span>
-												</p>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</td>
-						</tr>
+								</td>
+							</tr>
+						</tbody>
 					</table>
+
 				</td>
 			</tr>
 		</tbody>
