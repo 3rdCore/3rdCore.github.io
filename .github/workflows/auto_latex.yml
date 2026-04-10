@@ -47,8 +47,8 @@ jobs:
             git status
             git config --global user.name '3rdCore'
             git config --global user.email 'tom.marty@mila.quebec'
-            cp data/latex/TomResume/CV_Tom_Marty.pdf data/latex/main.pdf
-            git add data/latex/main.pdf
+            cp data/latex/TomResume/CV_Tom_Marty.pdf data/latex/CV_Tom_Marty.pdf
+            git add data/latex/CV_Tom_Marty.pdf
             git commit -m "Add generated PDF"
             git push
 
