@@ -169,13 +169,13 @@ a:focus, a:hover {
 
 h2.section-heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   margin: 18px 0 12px 0;
 }
 
 h3.subsection-heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   color: #662E7D;
   margin: 14px 0 8px 0;
 }
@@ -554,6 +554,7 @@ p.social-links a {
   border-radius: 14px;
   padding: 22px 30px;
   margin: 16px 0;
+  font-size: 17px;
 }
 
 .toc-box ol {
