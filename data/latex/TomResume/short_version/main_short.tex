@@ -1,0 +1,411 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{fontawesome5} % for icons
+\usepackage{xcolor} % for link coloring
+\usepackage[margin=1in]{geometry}
+\usepackage{tcolorbox}
+\usepackage{array}
+
+% To align elements horizontally
+\tcbuselibrary{skins}
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Tom Marty} \\[10pt]
+    \begin{tabular}{c@{\hspace{1cm}}c@{\hspace{1cm}}c}
+        % Top row with globe, email, and location
+        \faIcon{globe} \href{https://3rdcore.github.io/}{\underline{3rdcore.github.io}} & 
+        \faIcon{envelope} \href{mailto:tom.marty@mila.quebec}{tom.marty@mila.quebec} & 
+        Montreal, Canada \\
+        
+        % Bottom row for social media icons
+        \href{https://github.com/3rdCore}{\faGithub\,\,Github} & % Aligned with globe
+        \href{https://www.linkedin.com/in/tom-marty/}{\faLinkedin \,\,LinkedIn} & % Aligned with envelope
+        \href{https://twitter.com/Tom__Marty}{\faTwitter \,\, Twitter} % Aligned with location
+    \end{tabular}
+\end{center}
+
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+        \resumeSubheading
+      {Ph.D. in Machine Learning}{Jan. 2024 -- }
+      {Université de Montréal (Mila) - GPA 4.00}{Montréal, Canada}
+      \vspace{.2pt}
+      %\begin{itemize}
+      %    \item \textbf{Courses :} Causal Inference (Dhanya Sridhar)
+      %\end{itemize}
+      \resumeSubheading
+      {M.Sc. in Machine Learning}{Sep. 2021 -- Jun. 2023}
+      {Polytechnique Montréal - GPA 3.91}{Montréal, Canada}
+      \vspace{.2pt}
+      %\begin{itemize}
+          %\item \textbf{Courses :} Représentation Learning (Aaron Courville) $|$ Spectral Graph %Theory (Guy Wolf) $|$ Continual Learning (Irina Rish)  
+      %\end{itemize}
+    \resumeSubheading
+      {B.Sc. in Computer Science, minor in Applied Mathematics}{Sep. 2018 -- Jun. 2021}
+      {\textbf{X 2018}, Ecole Polytechnique - GPA 3.84}{Palaiseau, France}
+      %\vspace{.2pt}
+    %\begin{itemize}
+       %   \item \textbf{Theoretical Computer Science} : Graph Theory $|$ Computational Geometry $|$ Advanced Algorithmic
+    %  \item \textbf{Applied Mathematics} : Optimisation $|$ Statistical modeling $|$ Deep Learning
+    % \item \textbf{Computer Graphics} : Computer Vision $|$ Image Processing and Rendering
+      %\end{itemize}
+    \resumeSubheading
+      {Advanced Preparatory Class for Competitive Exams}{Sep. 2016 -- Jun. 2018}
+      {Lycée Jean-Baptiste Say - GPA 4.00 - Top 0.1\% national}{Paris, France}
+      
+  \resumeSubHeadingListEnd
+%-----------Research Interest-----------
+\section{Research Interest}
+        \begin{itemize}
+            \item \textbf{Broad interest} : Artificial intelligence, Machine Learning, Generative AI and Operational Research
+            \vspace{-5pt}
+            \item \textbf{Methodological interest} : \textbf{Causality}, Bayesian Statistics, OOD Generalization, Information Theory
+            \vspace{-5pt}
+            \item \textbf{Applications} : Fairness, Robust Machine Learning, Open-Ended Decision Making, AI for video-games
+        \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Industry and Academic Experience}
+  \resumeSubHeadingListStart
+      \resumeSubheading
+      {Visiting Researcher}{Apr. 2023 -- Sept. 2023}
+      {\href{https://corail-research.github.io/}{ServiceNow Research}}{Montréal, Canada}
+    \resumeItemListStart
+        \resumeItem{Developped WorkArena (ICML2024): an open-source Benchmark and Gym environment for evaluating Agent at solving common-knowledge tasks on a Web Browser}
+      \resumeItemListEnd
+      \resumeSubheading
+      {Research Supervisor}{Jan. 2022 -- Sept. 2022}
+      {\href{https://corail-research.github.io/}{Corail Research Group}}{Montréal, Canada}
+    \resumeItemListStart
+        \resumeItem{Supervised five interns on the development of the open-source project \href{https://github.com/corail-research/SeaPearl.jl}{SeaPearl}}
+        \resumeItem{Teaching Assistant for the course \href{https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes}{INF8215} given by Quentin Cappart in Fall 21 and Fall 22 }
+      \resumeItemListEnd
+    \resumeSubheading
+      {Research Engineer Intern}{Jan. 2021 -- Sept. 2021}
+      {\href{https://corail-research.github.io/}{Corail Research Group}}{Montréal, Canada}
+    \resumeItemListStart
+        \resumeItem{Developped {\textit{SeaPearl}} : an open-source RL-driven generic Constraint Programming solver}
+        \resumeItem{Used Deep Q-networks and Heterogeneous GNNs to approximate optimal decision process}
+    \resumeItemListEnd
+    \resumeSubheading
+      {Software Engineer Intern}{Jun. 2020 -- Sept. 2020}
+      {Dronisos, drone light show company}{Bordeaux, France}
+      \resumeItemListStart
+        \resumeItem{Developed \textit{Harmony}, a Physics based meta-heuristic that secures massive drone swarms }
+                \resumeItem{\textit{Harmony} - currently in use - reduced the allocated securing time from 2 weeks (handmade) to 2 seconds}
+        \resumeItem{Achieved automatic securing on the company first 1000 drones choreography (+500k\$ show)}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+
+
+%-----------Invited Talks-----------
+\section{Conference and Journal Publications}
+% You can adjust the formatting here as needed
+\begin{tcolorbox}[enhanced, rounded corners, colback=white, colframe=black!10!white, boxrule=0.5mm, left=10pt, right=10pt, top=6pt, bottom=3pt]
+    \textbf{In-Context Learning and Occam's Razor} \\
+    Eric Elmoznino*, \textbf{Tom Marty}*,Tejas Kasetty, Leo Gagnon, Sarthak Mittal, Mahan Fathi, Dhanya Sridhar, Guillaume Lajoie \\
+    \textit{*under review} \hfill  \faCode  \, \href{https://github.com/3rdCore/PrequentialCode}{Code} \quad
+    \faFilePdf \, \href{https://arxiv.org/abs/2410.14086}{PDF}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced, rounded corners, colback=white, colframe=black!10!white, boxrule=0.5mm, left=10pt, right=10pt, top=6pt, bottom=3pt]
+    \textbf{Learning and Fine-Tuning a Generic Value-Selection Heuristic Inside a Constraint Programming Solver} \\
+    \textbf{Tom Marty}*, Léo Bois-Vert*, Tristan François, Pierre Tessier, Louis Gautier, Léo-Boisvert, Louis-Martin Rousseau, Quentin Cappart, Constraint \textbf{Journal} 2024.
+ \hfill \faCode  \, \href{https://github.com/corail-research/SeaPearl.jl}{Code} \quad\faFilePdf \, \href{https://link.springer.com/article/10.1007/s10601-024-09377-4}{PDF}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced, rounded corners, colback=white, colframe=black!10!white, boxrule=0.5mm, left=10pt, right=10pt, top=6pt, bottom=3pt]
+    \textbf{The BrowserGym Ecosystem for Web Agent Research} \\
+    Thibault Le Sellier De Chezelles, Maxime Gasse, Alexandre Drouin, Massimo Caccia, Léo Boisvert, Megh Thakkar, \textbf{Tom Marty}, Rim Assouel, Sahar Omidi Shayegan, Lawrence Keunho Jang, Xing Han Lù, Ori Yoran, Dehan Kong, Frank F. Xu, Siva Reddy, Quentin Cappart, Graham Neubig, Ruslan Salakhutdinov, Nicolas Chapados, Alexandre Lacoste \\
+        Transactions on Machine Learning Research (TMLR) 2025. \hfill  \faCode  \, \href{https://github.com/ServiceNow/BrowserGym}{Code} \quad
+    \faFilePdf \, \href{https://arxiv.org/abs/2412.05467}{PDF}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced, rounded corners, colback=white, colframe=black!10!white, boxrule=0.5mm, left=10pt, right=10pt, top=6pt, bottom=3pt]
+    \textbf{WorkArena: How Capable Are Web Agents at Solving Common Knowledge Work Tasks?} \\
+    Alexandre Drouin, Maxime Gasse, Massimo Caccia, Issam H Laradji, Manuel Del Verne, \textbf{Tom Marty}, Léo Boisvert, Megh Thakkar, Quentin Cappart, David Vazquez, Nicolas Chapados, Alexandre Lacoste \\
+    International Conference on Machine Learning (ICML) 2024.  \hfill
+\faLink \,\href{https://servicenow.github.io/WorkArena/}{Project}\quad \faCode\, \href{https://github.com/ServiceNow/WorkArena}{Code}\quad \faFilePdf \, \href{https://openreview.net/forum?id=BRfqYrikdo}{PDF}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced, rounded corners, colback=white, colframe=black!10!white, boxrule=0.5mm, left=10pt, right=10pt, top=6pt, bottom=3pt]
+    \textbf{The Unsolved Challenges of LLMs as Generalist Web Agents: A Case Study} \\
+    Rim Assouel*, \textbf{Tom Marty}*, Massimo Caccia, Issam H. Laradji, Alexandre Drouin, Sai Rajeswar,\\ Hector Palacios, Quentin Cappart, David Vazquez, Nicolas Chapados, Maxime Gasse, Alexandre Lacoste \\
+    Foundation Models for Decision Making Workshop (NeurIPS FMDM) 2023. \hfill \quad \faCode\, \href{https://github.com/ServiceNow/WorkArena}{Code} \quad \faFilePdf \, \href{https://openreview.net/forum?id=jt3il4fC5B}{PDF}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced, rounded corners, colback=white, colframe=black!10!white, boxrule=0.5mm, left=10pt, right=10pt, top=6pt, bottom=3pt]
+    \textbf{Learning a Generic Value-Selection Heuristic Inside a Constraint Programming Solver} \\
+    \textbf{Tom Marty}*, Tristan François, Pierre Tessier, Louis Gautier, Louis-Martin Rousseau, Quentin Cappart \\
+    \textbf{Distinguished paper}, Constraint Programming (CP) 2023. \hfill \faCode  \, \href{https://github.com/corail-research/SeaPearl.jl}{Code} \quad
+    \faFilePdf \, \href{https://arxiv.org/abs/2301.01913}{PDF}
+\end{tcolorbox}
+
+%-----------Invited Talks-----------
+\section{Other Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{In-Context Invariant Learning}}{Dec. 2024 -- }
+          \resumeItemListStart
+            \resumeItem{Work in progress...}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{BrowserGym : an Open-Source Benchmark for evaluating Web Agents} $|$ \emph{Python}}{Apr. 2023 -- Mar. 2024}
+          \resumeItemListStart
+            \resumeItem{Paper accepted at ICML 2024 Vienna, presented at NVIDIA GTC 2024}
+
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{\href{https://3rdcore.github.io/SeaPearl.html}{SeaPearl} : an Open-Source RL-driven Constraint-Programming Solver } $|$ \emph{Julia}}{Fev. 2021 -- Jul. 2023}
+          \resumeItemListStart
+            \resumeItem{\href{https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=-YXor_wAAAAJ&citation_for_view=-YXor_wAAAAJ:2osOgNQ5qMEC}{Paper} accepted at CP2023, Toronto}
+          \resumeItemListEnd
+            \resumeProjectHeading
+          {\textbf{Adversarial Attacks on Sentiment Classification models }$|$ \emph{Python, HuggingFace}}{Fev. 2022 -- May. 2022}
+          \resumeItemListStart
+            \resumeItem{Adversarial fine-tunning on large NLP models : \href{https://www.eleuther.ai/}{Eleuther AI} GPT 125M/1.3B/2.7B/6B parameters}
+            \resumeItem{Evidence of a correlation between scaling and robustness against increasingly subtle Adversarial Attacks}
+
+          \resumeItemListEnd
+                      \resumeProjectHeading
+          {\textbf{Diffusion Geodesic distance for non-linear dimensionality reduction }$|$ \emph{Python}}{Oct. 2021 -- Jan. 2022}
+          \resumeItemListStart
+            \resumeItem{Approximated the geodesic distance using a diffusion process over the manifold}
+            \resumeItem{Proposed a new data visualization algorithm based on Multi-Dimentionnal Scaling and Diffusion Geodesic}
+
+
+          \resumeItemListEnd
+          	\resumeProjectHeading
+          {\textbf{Autonomous Drone Swarm Deployment - DGA contest }$|$ \emph{Python, PyTorch}}{Nov. 2020 -- Mar. 2021}
+          \resumeItemListStart
+            \resumeItem{Multi-agent Q-Learning method for deployment optimization }
+            \resumeItem{ Density-Based Spatial Clustering for point of interest detection}
+          \resumeItemListEnd
+          
+          \resumeProjectHeading
+          {\textbf{Realtime 3D Deep Motion Capture} $|$ \emph{C++, OpenCV, PyTorch}}{Oct. 2020 -- Dec. 2020}
+          \resumeItemListStart
+            \resumeItem{Implemented a method of inferring a full character's 3d pose using only  a camera as an input}
+            \resumeItem{Inspired by a EECV 2020 research paper to implement the algorithm}
+            
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Sketch-based Shape Retrieval} $|$ \emph{Python, C++, OpenGL}}{Sep. 2020 -- Dec. 2020}
+          \resumeItemListStart
+            \resumeItem{Implemented a method to find any specific 3d model in a database using a drawing as an input}
+            \resumeItem{Succeeded to faithfully retrieve several simple 3D shapes by using a single drawing given by a user}
+
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Visit \href{https://3rdcore.github.io/}{\faLink \,my website} to know more about me and my projects!}}{}
+    \resumeSubHeadingListEnd
+%-----------Honors and Awards-----------
+\section{Honors and Awards}
+ \resumeSubHeadingListStart
+      \resumeProjectHeading
+      {Distinguished Paper Award at CP2023, Toronto}{Sept. 2023} 
+      \resumeProjectHeading
+      {MITACS Accelerate scholarship of two units for my internship at ServiceNow Research }{Mar. 2023}
+      \resumeProjectHeading
+      {Oustanding Investment Mention, Ecole Polytechnique de Paris}{Jul. 2022}
+      \resumeProjectHeading
+      {Vallet Fondation scholarships for outstanding CPGE students}{2018}
+  \resumeSubHeadingListEnd
+
+%-----------Teaching Experience-----------
+\section{Teaching Experience}
+ \resumeSubHeadingListStart
+    \resumeSubheading
+      {Teaching Assistant}{Fall 2022}
+      {INF8215, Artificial Intelligence : Algorithms and methods}{}
+
+        \resumeSubheading
+      {Teaching Assistant}{Fall 2021}
+      {INF8215, Artificial Intelligence : Algorithms and methods}{}
+
+    \resumeSubheading
+      {Teaching Assistant}{Nov. 2018 -- Mar. 2019}
+      {Ministry of National Education}{France}
+      \resumeItemListStart
+        \resumeItem{Responsible for a group of up to 20 undergraduate students during scientific workshops}
+        \resumeItem{Worked alongside the academic team to prepare students for entrance exams}
+
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------Reviewing and Community Service-----------
+\section{Reviewing and Community service}
+ \resumeSubHeadingListStart
+        \resumeProjectHeading
+      {Reviewer:  NeurIPS2024 CALM Workshop, MAIS2024, HRAIM 2024}{2024}
+      \resumeProjectHeading
+      {Reviewer: Constraint Programming — CP2023}{2023} 
+
+  \resumeSubHeadingListEnd
+%-----------Hobbies-----------
+\section{Student Association}
+ \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Public Speaking Club: Rethorix} }{Oct. 2019 -- Oct. 2020}
+          \resumeItemListStart
+            \resumeItem{Organization of an eloquence contest between the schools of the Plateau de Saclay}
+
+          \resumeItemListEnd
+               \resumeProjectHeading
+          {\textbf{President of Nuit du Styx} }{Nov. 2020}
+          \resumeItemListStart
+            \resumeItem{General organization and logistic of an electronic music festival gathering more than 2000 peoples}
+
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+%-----------Others-----------
+% \section{Others}
+% \begin{itemize}[leftmargin=0.15in, label={}]
+%    \item{
+%    \textbf{Reviewer} : CP 2023
+% \end{itemize}
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills \& Hobbies}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item{
+    \textbf{Languages}{: French : Native $|$ English : Fluent $|$ Russian : Primary }} \\
+     \textbf{Developer Toolbox}{: Git, Pytorch, Lightning, Hydra, WandB, VScode, SLURM, CI testing} \\
+     \textbf{Programming Languages}{: Python, Julia, C++, R} \\
+    \vspace{10pt}
+    \textbf{Remote Controlled UAV}{: Conception, Building, Programmation, Testing, Adjustment } \\
+     \textbf{Activities}{: Outdoor climbing, river surf, ski, montain hiking }
+ \end{itemize}
+ %-----------Invited Talks-----------
+\section{Reference}
+ \resumeSubHeadingListStart
+       \resumeProjectHeading
+          {\textbf{Prof. Dhanya Sridhar}  (Ph.D. advisor)
+            \\ Assistant Professor at UdeM, Core academic member at MILA - AI CIFAR Chair holder 
+            \\ Email : dhanya.sridhar@mila.quebec}{}
+       \resumeProjectHeading
+          {\textbf{Dr. Alexandre Lacoste}
+            \\ Staff Research Engineer, ServiceNow Research
+            \\ Email : alexandre.lacoste@servicenow.com }{}
+       \resumeProjectHeading
+          {\textbf{Prof. Quentin Cappart}  (M.Sc. advisor)
+\\ Assistant Professor at Polytechnique Montréal 
+\\ Email : quentin.cappart@polymtl.ca }{}
+    \resumeSubHeadingListEnd
+
+
+\end{document}

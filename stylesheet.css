@@ -173,6 +173,19 @@ h2.section-heading {
   margin: 18px 0 12px 0;
 }
 
+h3.subsection-heading {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #662E7D;
+  margin: 14px 0 8px 0;
+}
+
+.lead-in {
+  font-weight: 700;
+  font-size: 1.08em;
+  margin-right: 4px;
+}
+
 /* ==============================
    PAGE STRUCTURE
    ============================== */
@@ -193,6 +206,7 @@ table.content-wrapper {
   border-spacing: 0;
   border-collapse: separate;
   margin: 0 auto;
+  counter-reset: tip-counter;
 }
 
 /* ==============================
@@ -489,6 +503,191 @@ p.social-links a {
   position: absolute;
   left: -30px;
   top: 12px;
+}
+
+/* ==============================
+   GUIDE TITLE
+   ============================== */
+.guide-title {
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+/* ==============================
+   TIP BOX
+   ============================== */
+.tip-box {
+  background: #fff8e6;
+  border: 2px solid #f09228;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  counter-increment: tip-counter;
+}
+
+.tip-box::before {
+  content: "\1F4A1 Tip n\00B0" counter(tip-counter) ":";
+  display: inline;
+  font-weight: 700;
+  color: #f09228;
+  margin-right: 6px;
+}
+
+.tip-box p {
+  margin: 0;
+}
+
+.tip-box p:first-of-type {
+  display: inline;
+}
+
+.tip-box p + p {
+  margin-top: 8px;
+}
+
+/* ==============================
+   TABLE OF CONTENTS
+   ============================== */
+.toc-box {
+  background: #f9f7fb;
+  border: 1px solid #e0d0ea;
+  border-radius: 14px;
+  padding: 22px 30px;
+  margin: 16px 0;
+}
+
+.toc-box ol {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  counter-reset: toc;
+}
+
+.toc-box > ol > li {
+  counter-increment: toc;
+  margin: 10px 0;
+}
+
+.toc-box > ol > li > a {
+  font-weight: 700;
+  color: #333;
+}
+
+.toc-box > ol > li::before {
+  content: counter(toc) ". ";
+  color: #662E7D;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.toc-box ol ol {
+  counter-reset: toc-sub;
+  padding-left: 26px;
+  margin-top: 8px;
+}
+
+.toc-box ol ol li {
+  counter-increment: toc-sub;
+  margin: 6px 0;
+  font-size: 0.95em;
+}
+
+.toc-box ol ol li::before {
+  content: counter(toc-sub, lower-alpha) ". ";
+  color: #f09228;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.toc-box ol ol li > a {
+  font-weight: 400;
+}
+
+.toc-box a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.toc-box a:hover {
+  color: #662E7D;
+  border-bottom-color: #662E7D;
+}
+
+/* ==============================
+   TOPIC DROPDOWNS
+   ============================== */
+.topic-dropdown {
+  border: 2px solid #662E7D;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.topic-dropdown summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 16px;
+  font-weight: 700;
+  color: #662E7D;
+  background: #f5f0f7;
+}
+
+.topic-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.topic-dropdown summary::before {
+  content: "\25B8";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s ease;
+}
+
+.topic-dropdown[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.topic-dropdown p,
+.topic-dropdown ul {
+  margin: 0;
+  padding: 12px 16px 12px 36px;
+}
+
+/* ==============================
+   LANGUAGE TOGGLE
+   ============================== */
+.lang-toggle {
+  display: inline-flex;
+  border: 2px solid #662E7D;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lang-toggle a,
+.lang-toggle span {
+  padding: 5px 14px;
+  display: inline-block;
+}
+
+.lang-toggle a {
+  color: #662E7D;
+  background: #fff;
+}
+
+.lang-toggle a:hover {
+  color: #fff;
+  background: #f09228;
+}
+
+.lang-toggle span.active {
+  color: #fff;
+  background: #662E7D;
 }
 
 /* ==============================

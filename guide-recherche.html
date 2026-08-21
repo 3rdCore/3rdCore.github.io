@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Tom Marty | Guide de recherche d'emploi en tech</title>
+    <meta name="author" content="Tom Marty" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="background-color: #ffffff">
+    <table class="page-wrapper">
+      <tbody>
+        <tr>
+          <td style="padding: 0">
+            <p style="text-align: center; margin: 0">
+              <a href="index.html"
+                ><img
+                  src="images/mila_full.jpg"
+                  alt="banner"
+                  style="width: 100%; display: block"
+              /></a>
+            </p>
+
+            <table class="content-wrapper">
+              <tbody>
+                <tr>
+                  <td style="padding: 0">
+                    <nav>
+                      <table id="nav-table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a href="index.html" target="_self">Home</a>
+                            </td>
+                            <td>
+                              <a href="guide-recherche.html" target="_self"
+                                >Guide</a
+                              >
+                            </td>
+                            <td><a href="fun.html" target="_self">Fun</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </nav>
+
+                    <div style="padding: 2.5%">
+                      <p style="text-align: right; margin: 0 0 10px 0">
+                        <span class="lang-toggle">
+                          <span class="active">FR</span
+                          ><a href="guide-recherche-en.html" target="_self"
+                            >EN</a
+                          >
+                        </span>
+                      </p>
+
+                      <h1 class="guide-title">
+                        Guide complet de recherche d'emploi en ML
+                      </h1>
+                      <p>
+                        <em
+                          >Par Tom Marty &mdash; En cours de
+                          r&eacute;daction</em
+                        >
+                      </p>
+                      <img
+                        src="images/profile.jpg"
+                        alt="Tom Marty"
+                        style="
+                          float: right;
+                          width: 14%;
+                          max-width: 90px;
+                          border-radius: 50%;
+                          margin: 0 0 12px 20px;
+                        "
+                      />
+                      <p>
+                        Ce guide s'adresse aux &eacute;tudiants et jeunes
+                        dipl&ocirc;m&eacute;s actuellement à la recherche d'un
+                        poste dans l'industrie de la Tech. Bien qu'il soit
+                        destiné en particulier aux profils de Research Engineer
+                        et Research Scientist, il contient nombre d'informations
+                        utiles pour l'ensemble des métiers techniques de ce
+                        secteur. Ayant moi-même cherché récemment du travail, ce
+                        guide se veut être l'héritage de ces mois de recherche,
+                        il y regroupe mes conseils,
+                        <strong
+                          >mon retour d'exp&eacute;rience honn&ecirc;te et sans
+                          filtre</strong
+                        >, avec quelques blagues au passage, et de nombreuses
+                        ressources utiles pour vous aider dans ce processus
+                        difficile. Il est librement inspiré de nombreux guides
+                        et ressources disponibles en ligne, que je cite dans la
+                        section "Ressources utiles" à la fin de ce guide.
+                      </p>
+
+                      <hr style="clear: both" />
+
+                      <!-- ================================ -->
+                      <!-- TABLE DES MATIERES              -->
+                      <!-- ================================ -->
+                      <h2 class="section-heading">Table des mati&egrave;res</h2>
+                      <div class="toc-box">
+                      <ol>
+                        <li><a href="#mindset">Mindset et organisation</a></li>
+                        <li>
+                          <a href="#profil"
+                            >Le profil : CV, site web, LinkedIn etc...</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#postuler">O&ugrave; et comment postuler</a>
+                          <ol type="a">
+                            <li>
+                              <a href="#postuler-offres"
+                                >Trouver et postuler aux offres</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#postuler-reseau"
+                                >La force du r&eacute;seau</a
+                              >
+                            </li>
+                          </ol>
+                        </li>
+                        <li>
+                          <a href="#preparation-technique"
+                            >Pr&eacute;paration technique</a
+                          >
+                          <ol type="a">
+                            <li>
+                              <a href="#preparation-types"
+                                >Les types d'entretiens techniques</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#preparation-sujets"
+                                >Domaine de connaissances</a
+                              >
+                            </li>
+                          </ol>
+                        </li>
+                        <li>
+                          <a href="#entretiens"
+                            >Déroulé d'un processus d'entretien</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#negociation"
+                            >N&eacute;gociation et choix de l'offre</a
+                          >
+                        </li>
+                        <li><a href="#ressources">Ressources utiles</a></li>
+                      </ol>
+                      </div>
+
+                      <hr />
+
+                      <!-- ================================ -->
+                      <!-- SECTIONS                         -->
+                      <!-- ================================ -->
+
+                      <h2 class="section-heading" id="mindset">
+                        1. Mindset et organisation
+                      </h2>
+
+                      <h3 class="subsection-heading" id="rester-motive">
+                        a. Rester motivé
+                      </h3>
+                      <p>
+                        Il me tenait à cœur de commencer ce guide par parler
+                        d'un sujet qui est bien souvent mis de côté dans les
+                        guides, à part dans certaines ressources disponibles en
+                        ligne. Il faut être réaliste, trouver du travail est
+                        compliqué, que ce soit pour l'employeur ou le futur
+                        employé.
+                        <strong
+                          >Le recrutement est un processus hautement
+                          stochastique</strong
+                        >, qui ne se joue des fois qu'à la qualité de votre
+                        sommeil de la veille, ou à l'apriori de votre recruteur
+                        à votre égard après un rapide survol de votre CV. Il y a
+                        des choses sur lesquelles on ne peut pas agir, et c'est
+                        important de se le rappeler afin de maintenir un bon
+                        niveau de motivation, de concentration et d'estime de
+                        soi.
+                        <strong
+                          >Enfin, il y a tout le reste, ce sur quoi vous pouvez
+                          agir : votre CV, la qualité de vos échanges par mail,
+                          votre niveau de technicité, votre préparation aux
+                          entretiens, votre connaissance du marché.</strong
+                        >
+                        C'est sur ces derniers points que ce guide se veut être
+                        votre meilleur allié.
+                      </p>
+
+                      <p>
+                        Trouver du travail dans ce secteur est difficile, il
+                        faut être réaliste : les refus que vous allez rencontrer
+                        &mdash; car il y en aura &mdash; ne doivent pas remettre
+                        en question vos connaissances ni votre estime de
+                        vous-même. Il faut toujours garder à l'esprit que vous
+                        évoluez dans l'une des sphères les plus compétitives au
+                        monde. La compétition ne se limite pas à votre ville, ni
+                        même à votre pays : elle est internationale. Si l'on ne
+                        vous a pas choisi à un moment donné, c'est aussi en
+                        partie car vous êtes des centaines, voire des milliers
+                        de candidats tout aussi diplômés à avoir tenté leur
+                        chance. Prenez la métaphore suivante : quand on
+                        progresse dans les études &mdash; licence, master,
+                        doctorat &mdash; on a tendance à penser qu'après tout
+                        ça, l'entrée sur le marché du travail sera plus simple,
+                        c'est bien souvent l'inverse. Imaginez que vous nagiez
+                        dans une piscine : quand vous progressez dans les
+                        études, c'est comme si vous nagiez dans une piscine de
+                        plus en plus petite (comprendre : avec de moins en moins
+                        de postes à la clef), et avec des nageurs qui nagent de
+                        plus en plus vite (comprendre : de plus en plus
+                        qualifiés).
+                        <strong
+                          >Il devient alors de plus en plus difficile de donner
+                          le rythme</strong
+                        >. Il faut donc garder cela en tête, et
+                        <strong>soyez indulgent avec vous même</strong>. Il est
+                        aussi primordiale de vous accorder du temps libre en
+                        dehors de votre préparation pour vous permettre de
+                        décompresser, car vous allez voir qu'on ne se sent
+                        jamais assez prêt tant les connaissances à mémoriser
+                        sont nombreuses.
+                      </p>
+
+                      <p>
+                        Enfin, gardez en tête que les recruteurs ont des
+                        centaines de candidatures à gérer, ne leur en tenez pas
+                        rigueur si ils prennent plusieurs jours à vous répondre,
+                        il n'est pas rare non plus de devoir relancer un
+                        recruteur, ou que celui-ci ne vous réponde jamais. Cela
+                        sera monnaie courante dans votre recherche d'emploi,
+                        soyez y prêt.
+                      </p>
+                      <h3 class="subsection-heading" id="logistique">
+                        b. La logistique
+                      </h3>
+                      <p>
+                        Entre le début de votre préparation technique, des
+                        premières candidatures envoyées, aux multiples
+                        entretiens, jusqu'à la signature de votre contrat, vous
+                        devrez compter au bas mot <strong>2 à 6 mois</strong>,
+                        et parfois plus si vous partez de zéro: c'est un
+                        <strong>travail à temps plein</strong>. Votre temps
+                        s'organise entre la préparation des entretiens la
+                        recherche d'offres, la rédaction de votre CV et de vos
+                        lettres de motivation, et les entretiens eux-mêmes.
+                        Enfin, chercher un emploi c'est faire preuve de
+                        <strong>beaucoup de patience</strong>, chaque processus
+                        pouvant prendre 3 à 6 semaines, essayez donc au mieux de
+                        parallèliser les processus de recrutement.
+                      </p>
+                      <div class="tip-box">
+                        <p>
+                          <strong
+                            >Partez du principe que rien n'est acquis tant que
+                            vous n'avez pas signé le dit-contrat</strong
+                          >. Rien. Ne portez jamais tout vos espoirs sur un seul
+                          processus et
+                          <strong
+                            >évitez de vous projeter dans un futur
+                            hypothétique</strong
+                          >
+                          car tous peut s'envoler d'un seul email.
+                        </p>
+                      </div>
+
+                      <p>
+                        Sur le papier, votre timeline devrait ressembler à
+                        quelque chose comme ça :
+                      </p>
+
+                      <div style="overflow-x: auto; margin: 10px 0 8px">
+                        <svg
+                          viewBox="0 0 970 380"
+                          width="100%"
+                          style="
+                            min-width: 700px;
+                            display: block;
+                            margin: 0 auto;
+                          "
+                          xmlns="http://www.w3.org/2000/svg"
+                          role="img"
+                        >
+                          <title>
+                            Timeline illustrée d'une recherche d'emploi,
+                            découpée en plusieurs étages qui se superposent dans
+                            le temps : préparation, candidatures et entretiens.
+                          </title>
+                          <defs>
+                            <filter
+                              id="sketchyBig"
+                              x="-5%"
+                              y="-5%"
+                              width="110%"
+                              height="110%"
+                            >
+                              <feTurbulence
+                                type="fractalNoise"
+                                baseFrequency="0.015"
+                                numOctaves="2"
+                                seed="7"
+                                result="n"
+                              />
+                              <feDisplacementMap
+                                in="SourceGraphic"
+                                in2="n"
+                                scale="6"
+                              />
+                            </filter>
+                            <filter
+                              id="sketchySmall"
+                              x="-30%"
+                              y="-30%"
+                              width="160%"
+                              height="160%"
+                            >
+                              <feTurbulence
+                                type="fractalNoise"
+                                baseFrequency="0.05"
+                                numOctaves="2"
+                                seed="4"
+                                result="n2"
+                              />
+                              <feDisplacementMap
+                                in="SourceGraphic"
+                                in2="n2"
+                                scale="3"
+                              />
+                            </filter>
+                            <clipPath id="arrowClip2">
+                              <polygon
+                                points="140,150 860,150 860,110 950,231 860,352 860,312 140,312"
+                              />
+                            </clipPath>
+                          </defs>
+
+                          <text
+                            x="485"
+                            y="25"
+                            text-anchor="middle"
+                            font-family="'Permanent Marker', cursive"
+                            font-size="26"
+                            fill="#333"
+                          >
+                            Ma recherche d'emploi, semaine par semaine
+                          </text>
+
+                          <!-- fond des 3 étages, à l'intérieur du contour de la flèche -->
+                          <g clip-path="url(#arrowClip2)">
+                            <rect
+                              x="140"
+                              y="150"
+                              width="820"
+                              height="202"
+                              fill="#fafafa"
+                            />
+                            <rect
+                              x="140"
+                              y="200"
+                              width="820"
+                              height="1"
+                              fill="#ddd"
+                            />
+                            <rect
+                              x="140"
+                              y="256"
+                              width="820"
+                              height="1"
+                              fill="#ddd"
+                            />
+                          </g>
+                          <polygon
+                            points="140,150 860,150 860,110 950,231 860,352 860,312 140,312"
+                            fill="none"
+                            stroke="#222"
+                            stroke-width="5"
+                            stroke-linejoin="round"
+                            filter="url(#sketchyBig)"
+                          />
+
+                          <!-- étiquettes des étages (à gauche) -->
+                          <g
+                            font-family="'Kalam', cursive"
+                            font-size="17"
+                            font-weight="700"
+                          >
+                            <text x="8" y="180" fill="#345d8a">
+                              Pr&eacute;paration
+                            </text>
+                            <text x="8" y="236" fill="#a9740d">
+                              Candidatures
+                            </text>
+                            <text x="8" y="292" fill="#4a2260">Entretiens</text>
+                          </g>
+
+                          <!-- étage 1 : préparation, semaines 0 à 3 -->
+                          <rect
+                            x="140"
+                            y="154"
+                            width="180"
+                            height="42"
+                            rx="10"
+                            fill="#4a6fa5"
+                            filter="url(#sketchySmall)"
+                          />
+                          <text
+                            x="230"
+                            y="180"
+                            text-anchor="middle"
+                            font-family="'Kalam', cursive"
+                            font-size="16"
+                            font-weight="700"
+                            fill="#fff"
+                          >
+                            3 semaines
+                          </text>
+
+                          <!-- étage 2 : candidatures Entreprise 1, à partir de la semaine 2 -->
+                          <rect
+                            x="260"
+                            y="210"
+                            width="120"
+                            height="42"
+                            rx="10"
+                            fill="#f0b429"
+                            filter="url(#sketchySmall)"
+                          />
+                          <text
+                            x="320"
+                            y="236"
+                            text-anchor="middle"
+                            font-family="'Kalam', cursive"
+                            font-size="16"
+                            font-weight="700"
+                            fill="#333"
+                          >
+                            Ent. 1
+                          </text>
+
+                          <!-- étage 3 : entretiens Entreprise 1 -->
+                          <rect
+                            x="380"
+                            y="266"
+                            width="240"
+                            height="42"
+                            rx="10"
+                            fill="#662E7D"
+                            filter="url(#sketchySmall)"
+                          />
+                          <text
+                            x="500"
+                            y="292"
+                            text-anchor="middle"
+                            font-family="'Kalam', cursive"
+                            font-size="16"
+                            font-weight="700"
+                            fill="#fff"
+                          >
+                            Ent. 1
+                          </text>
+
+                          <!-- graduation en semaines -->
+                          <g
+                            font-family="'Permanent Marker', cursive"
+                            fill="#c0392b"
+                          >
+                            <g
+                              stroke="#c0392b"
+                              stroke-width="3"
+                              filter="url(#sketchySmall)"
+                            >
+                              <line x1="140" y1="312" x2="140" y2="335" />
+                              <line x1="260" y1="312" x2="260" y2="335" />
+                              <line x1="380" y1="312" x2="380" y2="335" />
+                              <line x1="500" y1="312" x2="500" y2="335" />
+                              <line x1="620" y1="312" x2="620" y2="335" />
+                              <line x1="740" y1="312" x2="740" y2="335" />
+                              <line x1="860" y1="312" x2="860" y2="335" />
+                            </g>
+                            <text
+                              x="140"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S0
+                            </text>
+                            <text
+                              x="260"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S2
+                            </text>
+                            <text
+                              x="380"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S4
+                            </text>
+                            <text
+                              x="500"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S6
+                            </text>
+                            <text
+                              x="620"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S8
+                            </text>
+                            <text
+                              x="740"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S10
+                            </text>
+                            <text
+                              x="860"
+                              y="358"
+                              text-anchor="middle"
+                              font-size="18"
+                            >
+                              S12
+                            </text>
+                          </g>
+                        </svg>
+                      </div>
+                      <p
+                        style="
+                          font-size: 13px;
+                          color: #666;
+                          text-align: center;
+                          margin-top: 0;
+                        "
+                      >
+                        <em
+                          >Astuce : continuez &agrave; postuler m&ecirc;me
+                          pendant les phases d'entretien, c'est comme &ccedil;a
+                          qu'on garde plusieurs processus en parall&egrave;le.
+                          (Dur&eacute;es des candidatures/entretiens Entreprise
+                          1 approximatives, &agrave; ajuster.)</em
+                        >
+                      </p>
+
+                      <p>
+                        En r&eacute;alit&eacute;, il y a des chances que
+                        &ccedil;a se passe plut&ocirc;t comme &ccedil;a :
+                      </p>
+
+                      <h2 class="section-heading" id="profil">
+                        2. Le profil : CV, site web &amp; LinkedIn
+                      </h2>
+                      <p><em>Contenu &agrave; venir.</em></p>
+
+                      <h2 class="section-heading" id="postuler">
+                        3. O&ugrave; et comment postuler
+                      </h2>
+
+                      <h3 class="subsection-heading" id="postuler-offres">
+                        a. Trouver et postuler aux offres
+                      </h3>
+                      <p><em>Contenu &agrave; venir.</em></p>
+                      <!-- Lettre de motivation : paragraphes &agrave; &eacute;crire ici (fusionn&eacute; dans "Trouver et postuler aux offres")
+										<h4>Lettre de motivation</h4>
+										<p></p>
+										-->
+
+                      <h3 class="subsection-heading" id="postuler-reseau">
+                        b. La force du r&eacute;seau
+                      </h3>
+                      <p><em>Contenu &agrave; venir.</em></p>
+
+                      <h2 class="section-heading" id="preparation-technique">
+                        4. Pr&eacute;paration technique
+                      </h2>
+                      <h3 class="subsection-heading" id="entretiens-quoi">
+                        a. Quoi réviser?
+                      </h3>
+                      <p>
+                        <strong class="lead-in"
+                          >Entretien de connaissance.</strong
+                        >
+                        Les entretiens de connaissance sont souvent des
+                        questions (ML, Deep Learning, modèle génératif), avec
+                        éventuellement des questions spécifiques à votre domaine
+                        d'application. Ce qu'on cherche à savoir c'est votre
+                        <strong
+                          >intuition sur des concepts basiques de ML</strong
+                        >
+                        (régression, clustering, bias-variance tradeoff...) avec
+                        des questions du style
+                        <em>"Si je modifie [], alors cela entraine []"</em>
+                        mais aussi votre
+                        <strong
+                          >capacité à raisonner sur des concepts plus
+                          abstraits</strong
+                        >
+                        (espace latent, diffusion, transformers, RL, ...). Dans
+                        ce genre d'entretien, vous êtes bombardé de questions
+                        (10-15) et vous devez répondre précisément, sans vous
+                        étaler.
+                        <strong
+                          >Le piège classique est de répondre au delà de la
+                          question posée</strong
+                        >, soyez concis. J'ai listé dans ce menu déroulant les
+                        sujets les plus importants à connaitre :
+						
+                      <p>
+                        Voici une liste des principaux sujets &agrave;
+                        r&eacute;viser* selon moi, class&eacute;s par domaine :
+                      </p>
+                      <details class="topic-dropdown">
+                        <summary>Linear Algebra</summary>
+                        <ul>
+                          <li>Eigenvectors / Eigenvalues</li>
+                          <li>Rank, Determinant</li>
+                          <li>Kernel space</li>
+                          <li>Positive Semi-Definite</li>
+                          <li>Jacobian</li>
+                          <li>Hessian</li>
+                          <li>Orthogonality</li>
+                          <li>Singular matrices</li>
+                        </ul>
+                      </details>
+
+                      <details class="topic-dropdown">
+                        <summary>General ML</summary>
+                        <ul>
+                          <li>Unsupervised vs Supervised</li>
+                          <li>Clustering Algorithms (e.g. k-means)</li>
+                          <li>K-Nearest Neighbours</li>
+                          <li>SVMs</li>
+                          <li>Trees: Bagging, Boosting, Ensemble Methods</li>
+                          <li>Decision tree split logic (Gini / Entropy)</li>
+                          <li>Inductive biases</li>
+                          <li>Bayes Theorem</li>
+                          <li>Precision / Recall / F1 / AUC-ROC</li>
+                          <li>KL Divergence</li>
+                          <li>Linear Regression, Logistic Regression</li>
+                          <li>Cross validation</li>
+                          <li>
+                            Architectures: MLPs / CNNs / RNNs / LSTMs /
+                            Transformers
+                          </li>
+                          <li>MLE vs MAP</li>
+                          <li>Newton's Method</li>
+                          <li>Geometric interpretations of gradients</li>
+                          <li>Activation Functions</li>
+                          <li>No Free Lunch Theorem</li>
+                          <li>BatchNorm / LayerNorm / RMSNorm</li>
+                          <li>First and Second order optimization Methods</li>
+                          <li>Adam / AdamW / Adagrad</li>
+                          <li>Backprop</li>
+                          <li>
+                            Regularisation Methods (L1, L2, early-stopping)
+                          </li>
+                          <li>Bias-Variance Tradeoff</li>
+                          <li>Gumbel-Softmax trick</li>
+                          <li>Weight initialisation</li>
+                          <li>Gradient Descent / SGD</li>
+                          <li>Domain Adaptation</li>
+                          <li>Dimensionality Reduction</li>
+                          <li>Few shot / In-Context Learning</li>
+                          <li>Entropy</li>
+                          <li>Curse of dimensionality</li>
+                        </ul>
+                      </details>
+
+                      <details class="topic-dropdown">
+                        <summary>Applied ML</summary>
+                        <ul>
+                          <li>Optimizer for NNs (SGD, Adam, MUON...)</li>
+                          <li>Tensor Parallelism</li>
+                          <li>Data Parallelism</li>
+                          <li>
+                            Pipeline Parallelism (1F1B scheduling, mitigating
+                            Pipeline Bubbles)
+                          </li>
+                          <li>FSDP</li>
+                          <li>ZeRO 1 / 2 / 3 state sharding</li>
+                          <li>
+                            Communication Primitives: Broadcast, Scatter,
+                            All-Reduce, Reduce-Scatter, All-Gather
+                          </li>
+                          <li>3D Topology: NVLink vs InfiniBand</li>
+                          <li>Mixed precision training</li>
+                          <li>Float representations (FP32, FP16, BF16)</li>
+                          <li>
+                            Stable training (clipping, gradient accumulation,
+                            precision tricks, exploding/vanishing gradients)
+                          </li>
+                          <li>Debugging NaN loss spikes</li>
+                          <li>
+                            Debugging OOM: Parameters vs Activations vs
+                            Optimizer states
+                          </li>
+                          <li>Checkpointing</li>
+                          <li>Numerical precision tricks</li>
+                          <li>PyTorch primitive</li>
+                          <li>HP sweep</li>
+                          <li>
+                            Data Curation: Deduplication (MinHash LSH), PII
+                            redaction, heuristic filtering
+                          </li>
+                          <li>
+                            Streaming multi-GPU Dataloader (iter/yield,
+                            file/line sharding)
+                          </li>
+                        </ul>
+                      </details>
+
+                      <details class="topic-dropdown">
+                        <summary>Deep Learning at Scale</summary>
+                        <ul>
+                          <li>Fundamentals: Attention is all you need</li>
+                          <li>SwiGLU activations</li>
+                          <li>Causal Attention</li>
+                          <li>Cross Attention</li>
+						  <li>Linear Attention</li>
+                          <li>Attention Variants: GQA vs MQA vs MHA</li>
+                          <li>Flash Attention 1, 2, 3</li>
+                          <li>Sliding Window Attention (SWA), Ring Attention</li>
+                          <li>LoRA</li>
+                          <li>Mixture of Experts</li>
+                          <li>LLM scaling laws</li>
+                          <li>Learned / Sinusoidal / RoPE embeddings</li>
+                          <li>LLM vs RNN vs Mamba</li>
+                          <li>Tokenisation</li>
+                          <li>Pretraining</li>
+                          <li>SFT: Supervised Finetuning (packing, masking user prompts)</li>
+                          <li>
+                            RLHF: Reinforcement Learning from Human Feedback
+                            (Reward Modeling, KL penalties)
+                          </li>
+                          <li>KV Cache memory growth, PagedAttention (vLLM)</li>
+                          <li>Decoding Schemes: Nucleus (Top-p), Top-k sampling, Speculative decoding</li>
+						  <li>Compilation: Torch.compile, Kernel fusion candidates, Chinchilla scaling laws.</li>
+                          <li>Vision Basics: 2D Conv, Max Pooling, NMS</li>
+                          <li>Vision-Language: SigLIP / CLIP, Multimodal, cross-Attention for VLMs</li>
+                          <li>Architectures: BERT, DINO</li>
+                        </ul>
+                      </details>
+
+                      <details class="topic-dropdown">
+                        <summary>Generative Modelling</summary>
+                        <ul>
+                          <li>GANs</li>
+                          <li>AEs, VAEs, VQ-VAEs</li>
+                          <li>Score Function</li>
+                          <li>Diffusion Forward Process</li>
+                          <li>Diffusion Reverse Process (DDIM / DDPM)</li>
+                          <li>Diffusion Forward / Reverse SDE</li>
+                          <li>
+                            Flow Matching, Discrete Flow Matching, OT-Flow
+                            Matching
+                          </li>
+                          <li>Classifier-based / Classifier-Free Guidance</li>
+                        </ul>
+                      </details>
+
+                      <details class="topic-dropdown">
+                        <summary>Reinforcement Learning</summary>
+                        <ul>
+                          <li>Markov Decision Process</li>
+                          <li>Q-Learning / TD Learning / SARSA</li>
+                          <li>DPO (Direct Preference Optimisation)</li>
+                          <li>Policy Gradient methods</li>
+                          <li>PPO</li>
+                          <li>GRPO</li>
+                          <li>Actor Critic</li>
+                          <li>On-Policy vs Off-Policy</li>
+                          <li>Exploration vs Exploitation Dilemma</li>
+                          <li>World Models / Dreamer</li>
+                          <li>AlphaZero, AlphaGo</li>
+                          <li>Model-Based vs Model-Free</li>
+                          <li>Importance Sampling</li>
+                        </ul>
+                      </details>
+
+                      <p style="font-size: 13px; color: #666">
+                        <em
+                          >* Liste compl&eacute;t&eacute;e &agrave; partir de
+                          celle de
+                          <a
+                            href="https://silviasapora.github.io/blog/ml-interviews.html"
+                            target="_blank"
+                            >Silvia Sapora</a
+                          >.</em
+                        >
+                      </p>
+
+
+                      </p>
+                      <p>
+                        <strong class="lead-in">Entretien de code.</strong>
+                        C'est <strong>le</strong> type d'entretien le plus
+                        important à mes yeux, là ou vous pouvez à la fois
+                        montrer votre capacité à coder (qui s'avère de moins en
+                        moins utile mais passons), mais surtout votre capacité à
+                        modéliser un problème et à le décomposer en
+                        sous-problèmes adressables. Ces entretiens peuvent être
+                        de 3 sortes :
+                      </p>
+                      <ul>
+                        <li>
+                          <strong>Machine Learning</strong> On cherche à
+                          connaitre votre maitrise de python/pytorch et des
+                          modules de base d'un pipeline de Deep Learning
+                          (Dataloader, Model, Trainer...), votre compréhension
+                          des tenseurs (dimension, reshape, contiguité), et des
+                          opérations sur ces tenseurs et leur implication à bas
+                          niveau (compute, mémoire).
+                        </li>
+
+                        <li>Algorithmique et Data structure</li>
+                        <li>Debugging et optimisation de code</li>
+                      </ul>
+                      <p>
+                        <strong class="lead-in">Entretien de recherche.</strong>
+                        Pour ce type d'entretien, que j'ai eu dans 2 de mes
+                        processus, vous êtes amené à présenter un projet de
+                        recherche que vous avez mené, que vous avez commencé à
+                        explorer. L'entreprise peut également vous demander de
+                        faire une présentation de papier. Pour ce genre
+                        d'entretien, l'important est d'arriver à
+                        <strong>donner du signal</strong> : convaincre votre
+                        audience que vous connaissez très bien votre sujet et
+                        que vous êtes capable de condenser les points importants
+                        de votre projet en quelques minutes. Le corps de la
+                        présentation devrait durer
+                        <strong>environ 20-25 minutes</strong>, afin de vous
+                        laisser du temps pour aborder certaines subtilités et
+                        discuter avec vos interlocuteurs.
+                      </p>
+
+                      <p>
+                        Pour ce type d'entretien, ne perdez pas votre temps à
+                        faire un powerpoint tiré à quatre épingles, à part si
+                        vous l'avez déjà sous la main, vous allez perdre des
+                        heures à le rendre nickel, et vous ne pourrez pas tout
+                        le temps le réutiliser. De mon côté, je fait mes
+                        présentations sur mon Ipad avec l'application Concept,
+                        une sorte de canvas infinis sur lequel je peux dessiner,
+                        annoter, et faire des schémas. J'ai toujours eu un
+                        retour très positif de mes interlocuteurs sur ces
+                        présentation "tableau blanc", qui invite plus à la
+                        discussion et à l'échange qu'une présentation plus
+                        formelle.
+                      </p>
+                      <h3 class="subsection-heading" id="entretiens-comment">
+                        b. Comment réviser?
+                      </h3>
+                      <p>
+                        <strong class="lead-in"
+                          >Entretien de connaissance.</strong
+                        >
+                        La meilleure façon d'apprendre un volume important
+                        d'informations est propre à chacun, dans ce paragraphe
+                        je ne vais donc pas vous dire quelle est la meilleure
+                        méthode mais plutôt quelle est celle qui a fonctionné
+                        pour moi. Personnellement, je suis plutôt à l'ancienne :
+                        j'ai opté pour le bon vieux carnet de notes papier, sur
+                        lequel j'écrivais religieusement les informations
+                        cruciales à savoir sur tel ou tel sujet, à l'instar
+                        d'une fiche de révision, pour ceux qui se rappellent
+                        leurs premières années d'études ;). Je laissais toujours
+                        de la place dans chaque fiche pour la complèter si
+                        besoin. Je consulte alors mon petit carnet dès que j'ai
+                        un temps à perdre. En soi, le simple fait d'avoir passé
+                        du temps à la prise de notes me permettait déjà de
+                        commencer à mémoriser le concept en question.
+                      </p>
+
+                      <p>
+                        En parallèle de cette prise de notes, il est primordial
+                        de vérifier l'état de ses connaissances en se testant,
+                        c'est la base de la consolidation du savoir. Si vous
+                        pouvez trouver quelqu'un aussi en recherche d'emploi
+                        avec qui réviser mutuellement, c'est idéal : vous
+                        pourrez alors chacun votre tour vous tester sur des
+                        sujets.
+                      </p>
+
+                      <div class="tip-box">
+                        <p>
+                          Gemini (ou any modèle de langue) en mode
+                          conversationnel m'a été très utile pour vérifier
+                          l'état de mes connaissances et me tester dans mes
+                          retranchements, en me posant des questions non
+                          triviales. Je n'ai commencé à l'utiliser que vers la
+                          fin de ma recherche d'emploi, ce qui s'est avéré très
+                          utile.
+                        </p>
+                      </div>
+
+                      <p>
+                        Contrairement à ce qu'on pourrait croire, échanger avec
+                        une IA de cette façon ne produisait pas du tout l'effet
+                        "vallée de l'étrange", l'échange restait naturel ç mes
+                        yeux. Les agents conversationnels ayant une tendance
+                        récurrente à l'éloge pompeux, mon intruction était
+                        d'être le plus factuel dans la réponse en se concentrant
+                        sur les questions non-triviales.
+                      </p>
+
+                      <p><strong class="lead-in">Entretien de code.</strong></p>
+
+                      <p>
+                        Pour les entretiens de code, trouver des ressources en
+                        ligne peut s'avérer bien plus compliqué, le domaine
+                        évolue tellement vite, il est difficile de trouver des
+                        ressources pertinentes. Il existe également des sites
+                        qui recensent de réel problème donnée en entretien,
+                        accessible avec un paywall (<a
+                          href="https://leetcode.com"
+                          target="_blank"
+                          >Leetcode</a
+                        >,
+                        <a href="https://www.1point3acres.com" target="_blank"
+                          >1point3acres</a
+                        >, ou encore
+                        <a href="https://www.deep-ml.com" target="_blank"
+                          >Deep-ML</a
+                        >, une sorte de Leetcode pour du ML). J'ai utilisé
+                        deep-ML au début, mais j'ai trouvé que les problèmes
+                        étaient assez trop basiques par rapport à ceux
+                        rencontrés en interview.
+                      </p>
+
+                      <div class="tip-box">
+                        <p>
+                          Le meilleur conseil que je puisse vous donner est de
+                          pratiquer lors de vos véritables entretiens.
+                          <strong
+                            >Vos premières prestations ne seront pas terrible,
+                            et c'est ok.</strong
+                          >
+                          Essayez de planifier les entretiens par ordre
+                          décroissant de vos préférences pour le job. J'ai
+                          trouvé que les recruteurs faisaient vraiment preuve
+                          d'originalité dans les coding interview,
+                          <strong
+                            >et il n'était pas possible de simplement bachoter
+                            les quelques exemples les plus classiques.</strong
+                          >
+                        </p>
+                      </div>
+
+                      <p>
+                        Voici quelques exemples d'entretien de code ML à la mode
+                        :
+                      </p>
+                      <ul>
+                        <li>Impl&eacute;menter Flash Attention 1</li>
+                        <li>
+                          Un dataloader "online" multi-GPU sur une base de
+                          donn&eacute;es massive (maitrise du
+                          <code>yield</code>)
+                        </li>
+                        <li>Un MoE avec load balancing</li>
+                        <li>Un KV-cache pour l'inference</li>
+                      </ul>
+                      <p>
+                        Pour m'entrainer, sur mon IDE VS Code, je partais d'une
+                        base générée par Gemini sur un bon vieux
+                        <strong>notebook Jupyter</strong>, avec les parties
+                        manquantes correspondant au problème posé. Après
+                        rédaction de la solution, je demandais à ce dernier
+                        d'évaluer rigoureusement ma proposition.
+                        <strong
+                          >J'ai trouvé aussi fort utile de partir de zéro et
+                          d'implémenter tout un module (e.g. encoder-decoder
+                          transformer) <em>from scratch</em>.</strong
+                        >
+                      </p>
+                      <p>
+                        <strong class="lead-in">Entretien de recherche.</strong>
+                        Pour ce genre d'entretien, la meilleure astuce que je
+                        puisse vous donner est
+                        <strong>de pratiquer avec vos pairs,</strong> notamment
+                        des gens qui ne
+                        <strong>connaissent pas votre recherche</strong> sur le
+                        bout des doigts, et qui peuvent vous faire un retour
+                        critique sur le fond et la forme.
+                      </p>
+
+                      <p>
+                        <strong class="lead-in"
+                          >Les erreurs que j'aurais pu éviter :</strong
+                        >
+                      </p>
+                      <ul>
+                        <li>
+                          <strong
+                            >J'ai perdu du temps à réviser les problèmes
+                            d'algorithmique</strong
+                          >, type LeetCode. La résolution de ce genre de
+                          problème se réduit souvent à mémoriser les algos de
+                          base (dynamic programming, LIFO, FIFO, ...), et à
+                          savoir reconnaître le problème générique sous-jacent.
+                          C'est très chronophage, et pas super intéressant. Je
+                          n'ai eu qu'un seul entretien d'algorithmique pour un
+                          poste de Research Engineer (spin-off de GAFAM), il
+                          s'est avéré éliminatoire. A refaire j'y passerai quand
+                          même moins de temps.
+                        </li>
+                      </ul>
+                      <ul>
+                        <li>
+                          <strong
+                            >J'ai perdu du temps à réviser les concepts de base
+                            (SVM, PCA, SVD ...)</strong
+                          >
+                          pour être certain d'en connaitre les subtilités. Cela
+                          était plaisant mais ne m'a pas tant servis dans mes
+                          entretiens.
+                        </li>
+                      </ul>
+                      <ul>
+                        <li><strong>...</strong></li>
+                      </ul>
+                      <h2 class="section-heading" id="entretiens">
+                        5. Entretiens techniques et RH
+                      </h2>
+                      <p>
+                        Si comme moi il y a 6 mois vous en étiez à votre premier
+                        processus de candidature sachez qu'en général, un
+                        processus de recrutement se déroule de la manière
+                        suivante :
+                      </p>
+                      <ol>
+                        <li>
+                          [1 entretien RH] Un premier entretien avec un
+                          représentant des Ressources Humaines (RH) qui vous
+                          suivera tout au long du processus, pour vous présenter
+                          brièvement le processus de recrutement, et
+                          <strong
+                            >s'assurer de certains pré-requis (localisation,
+                            permis de travail,...).
+                          </strong>
+                          Cet entretien est souvent très court, vous pouvez être
+                          amené à présenter votre parcours, vos motivations,
+                          mais
+                          <strong
+                            >cela n'a que peu d'importance dans le processus.
+                            Gardez votre jus pour plus tard.</strong
+                          >
+                          A la suite de cet entretien, vous recevrez un email
+                          vous invitant à schedule votre premier entretien
+                          technique.
+                        </li>
+                        <li>
+                          [3-6 entretiens techniques] Dépendamment de la
+                          structure et du type de poste (stage, RE, RS, ...),
+                          vous aurez entre
+                          <strong>3 et 6 entretiens techniques</strong>. C'est
+                          l'occasion de rencontrer les différents membres de
+                          votre future équipe. Ces entretiens peuvent être soit
+                          des entretiens de connaissance, des entretiens de
+                          code, ou encore des présentations de recherche. Ils
+                          durent systématiquement 1 heure (5 minutes de
+                          présentation, 50 minutes d'exercice, 5 minutes à la
+                          fin si vous avez des questions pour l'intervieweur),
+                          et sont espacés d'environ<strong> 1 semaine </strong>
+                          chaque, c'est ce qui étend le processus sur plusieurs
+                          mois.
+                        </li>
+                        <li>
+                          [1 entretien RH] Si vous êtes toujours en un seul
+                          morceau d'ici là, vous devriez recevoir un dernier
+                          entretien avec le RH, qui est la plupart du temps
+                          <strong>synonyme de bonne nouvelle</strong>!
+                          Autrement, vous devrez vous contentez d'un email de
+                          refus, il est souvent générique et laisse un petit
+                          goût amer, mais j'ai été agréablement surpris par
+                          certaines entreprises qui prennent le temps de vous
+                          expliquer les raisons précises du refus. Il est
+                          possible de recevoir une offre par mail mais c'est
+                          plus rare.
+                        </li>
+                        <li>
+                          [1 entretien de décision] Enfin vient la phase de
+                          décision après négociation de l'offre, qui peut donner
+                          lieu à un entretien si nécessaire qui est un sujet à
+                          part entière que je détaillerai dans une prochaine
+                          section.
+                        </li>
+                      </ol>
+
+                      <h2 class="section-heading" id="negociation">
+                        6. N&eacute;gociation et choix de l'offre
+                      </h2>
+                      <p><em>Contenu &agrave; venir.</em></p>
+
+                      <h2 class="section-heading" id="ressources">
+                        7. Ressources utiles
+                      </h2>
+                      <ul>
+                        <li>
+                          <a
+                            href="https://silviasapora.github.io/blog/ml-interviews.html"
+                            target="_blank"
+                            >Silvia Sapora &mdash; ML interview notes</a
+                          >
+                          &mdash; retour d'exp&eacute;rience et notes de
+                          pr&eacute;paration aux entretiens ML.
+                        </li>
+                        <li>
+                          <a href="https://hackmd.io/hHg8VokOTLCW8yCWm1wy5A">
+                            Alexandre Piché - Interview Prep</a
+                          >
+                          &mdash; Plein de questions techniques collectées par
+                          un ancien collègue
+                        </li>
+                        <li>
+                          <a
+                            href="http://kuchaev.com/2020/02/ml-internship.html"
+                            target="_blank"
+                            >Oleksii Kuchaiev &mdash; How to get an ML
+                            internship</a
+                          >
+                          &mdash; conseils pour d&eacute;crocher un stage/poste
+                          en ML.
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.interviewbit.com/machine-learning-interview-questions/"
+                            target="_blank"
+                            >InterviewBit &mdash; Basic &amp; Advanced ML
+                            Interview Questions</a
+                          >
+                          &mdash; liste de sujets et questions d'entretiens
+                          techniques.
+                        </li>
+                        <li>
+                          <a href="#">[Nom de la ressource]</a> &mdash; system
+                          design primer.
+                        </li>
+                        <li>
+                          <a href="#">[Nom de la ressource]</a> &mdash;
+                          questions RH / comportementales fr&eacute;quentes.
+                        </li>
+                        <li>
+                          <a href="#">[Nom de la ressource]</a> &mdash; guide de
+                          n&eacute;gociation salariale dans la tech.
+                        </li>
+                      </ul>
+
+                      <hr />
+
+                      <h2 class="section-heading">Contribution</h2>
+                      <p>
+                        Ce guide est amen&eacute; &agrave; &eacute;voluer. Si
+                        vous avez des remarques, des suggestions, ou souhaitez
+                        partager votre propre retour d'exp&eacute;rience,
+                        n'h&eacute;sitez pas &agrave; me contacter par email.
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

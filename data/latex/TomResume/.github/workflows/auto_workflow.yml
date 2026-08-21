@@ -1,0 +1,14 @@
+# .github/workflows/dispatch.yml
+name: Dispatch Workflow
+on: [push, pull_request] # or any other event that should trigger the dispatch
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }} # a secret that holds your GitHub token
+          repository: 3rdCore/3rdCore.github.io # replace with the owner and repo name
+          event-type: trigger-event
