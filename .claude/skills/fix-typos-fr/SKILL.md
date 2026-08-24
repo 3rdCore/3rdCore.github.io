@@ -46,6 +46,7 @@ absente à un endroit évident.
   la tournure voulue par l'auteur (dictée trop garbled), NE DEVINE PAS
   une réécriture : signale le passage à l'utilisateur avec ta meilleure
   hypothèse plutôt que de trancher silencieusement.
+- utiliser des &mdash;
 
 ## Méthode
 
