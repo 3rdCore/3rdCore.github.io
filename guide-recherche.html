@@ -28,6 +28,226 @@
                   style="width: 100%; display: block"
               /></a>
             </p>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script>
+              // Enhanced TOC: clone compact floating TOC on the left, show while scrolling, disable on small screens
+              document.addEventListener("DOMContentLoaded", function () {
+                document.documentElement.style.scrollBehavior = "smooth";
+
+                const tocBox = document.querySelector(".toc-box");
+                if (!tocBox) return;
+
+                // Create floating side TOC (compact) and append to body
+                const side = document.createElement("nav");
+                side.className = "toc-side";
+                side.innerHTML = tocBox.innerHTML;
+                document.body.appendChild(side);
+
+                const getLinks = () =>
+                  Array.from(
+                    document.querySelectorAll(".toc-box a, .toc-side a"),
+                  );
+
+                // Map heading ids from the content TOC
+                const tocLinks = Array.from(
+                  document.querySelectorAll(".toc-box a"),
+                );
+                const headingIds = tocLinks
+                  .map((a) => a.getAttribute("href"))
+                  .filter((h) => h && h.startsWith("#"))
+                  .map((h) => h.slice(1));
+
+                const headings = headingIds
+                  .map((id) => document.getElementById(id))
+                  .filter(Boolean);
+
+                // Prepare links mapping
+                const clearActive = () =>
+                  getLinks().forEach((l) => l.classList.remove("active"));
+
+                // Robust scroll-based active heading detection (highlights subsections too)
+                const offset = 120; // px from top to consider
+                function setActiveById(id) {
+                  clearActive();
+                  const sel = `.toc-box a[href="#${id}"], .toc-side a[href="#${id}"]`;
+                  document
+                    .querySelectorAll(sel)
+                    .forEach((el) => el.classList.add("active"));
+                }
+
+                function updateActive() {
+                  if (!headings.length) return;
+                  let current = null;
+                  for (let i = 0; i < headings.length; i++) {
+                    const r = headings[i].getBoundingClientRect();
+                    if (r.top - offset <= 0) current = headings[i];
+                  }
+                  if (!current) current = headings[0];
+                  if (current && current.id) setActiveById(current.id);
+                }
+
+                // initial highlight
+                updateActive();
+
+                // Sticky header updating: show current h2 and its current h3 (if any)
+                const stickyH2El = document.querySelector(".sticky-h2");
+                const stickyH3El = document.querySelector(".sticky-h3");
+                // only consider headings that have an id (skip the TOC heading)
+                const h2s = Array.from(
+                  document.querySelectorAll("h2.section-heading[id]"),
+                );
+                const h3s = Array.from(
+                  document.querySelectorAll("h3.subsection-heading[id]"),
+                );
+
+                function updateSticky() {
+                  if (!stickyH2El) return;
+                  const headerEl = document.getElementById("sticky-headers");
+                  const headerHeight = headerEl
+                    ? Math.round(headerEl.getBoundingClientRect().height)
+                    : 0;
+                  const offsetTop = headerHeight > 0 ? headerHeight - 35 : 10;
+
+                  let currentH2 = null;
+                  for (let i = 0; i < h2s.length; i++) {
+                    const r = h2s[i].getBoundingClientRect();
+                    if (r.top - offsetTop <= 0) currentH2 = h2s[i];
+                  }
+
+                  // If no heading has crossed the offset, hide the mirror
+                  if (!currentH2) {
+                    stickyH2El.textContent = "";
+                    stickyH3El.textContent = "";
+                    if (headerEl) {
+                      headerEl.classList.remove("visible");
+                      headerEl.setAttribute("aria-hidden", "true");
+                    }
+                    return;
+                  }
+
+                  stickyH2El.textContent = currentH2
+                    ? currentH2.textContent.trim()
+                    : "";
+
+                  // show the header only when the current h2 has actually crossed the offset
+                  if (
+                    headerEl &&
+                    currentH2.getBoundingClientRect().top - offsetTop <= 0
+                  ) {
+                    headerEl.classList.add("visible");
+                    headerEl.setAttribute("aria-hidden", "false");
+                  } else if (headerEl) {
+                    headerEl.classList.remove("visible");
+                    headerEl.setAttribute("aria-hidden", "true");
+                  }
+
+                  // find h3s within this h2 block (until next h2)
+                  let currentH3 = null;
+                  if (currentH2) {
+                    const startIndex = h3s.findIndex((h) =>
+                      h.compareDocumentPosition(currentH2) &
+                      Node.DOCUMENT_POSITION_PRECEDING
+                        ? false
+                        : h === currentH2,
+                    );
+                    // simpler: pick last h3 whose top <= offset and that appears after currentH2
+                    for (let i = 0; i < h3s.length; i++) {
+                      const h = h3s[i];
+                      const hRect = h.getBoundingClientRect();
+                      const h2Rect = currentH2.getBoundingClientRect();
+                      if (
+                        hRect.top - offsetTop <= 0 &&
+                        hRect.top > h2Rect.top - 100
+                      ) {
+                        currentH3 = h;
+                      }
+                    }
+                  }
+
+                  if (currentH3) {
+                    stickyH3El.textContent = currentH3.textContent.trim();
+                    stickyH3El.style.display = "block";
+                  } else {
+                    stickyH3El.textContent = "";
+                    stickyH3El.style.display = "none";
+                  }
+                }
+
+                // run on scroll and resize
+                window.addEventListener(
+                  "scroll",
+                  function () {
+                    updateActive();
+                    updateSticky();
+                  },
+                  { passive: true },
+                );
+                window.addEventListener("resize", function () {
+                  updateActive();
+                  updateSticky();
+                });
+                // initial update
+                updateSticky();
+
+                // NOTE: removed section-block wrapping/observer to avoid
+                // making entire content blocks sticky. Only headings are
+                // intended to be sticky now (see CSS rules).
+
+                // Show side TOC while scrolling, hide after pause
+                let scrollTimer = null;
+                const sideEl = side;
+
+                // only show side TOC after we've scrolled past the central TOC
+                const tocRect = tocBox.getBoundingClientRect();
+                const tocBottom = tocRect.top + window.scrollY + tocRect.height;
+
+                // Remplacez la fonction showSide existante par celle-ci :
+                // Détecte le premier titre de section ("Mindset et organisation") ou le sommaire lui-même
+                const targetSection =
+                  document.getElementById("mindset") || tocBox;
+
+                const showSide = () => {
+                  if (window.innerWidth <= 900) return; // Désactivé sur les petits écrans
+
+                  // Récupère la position par rapport au haut de la fenêtre
+                  const targetRect = targetSection.getBoundingClientRect();
+
+                  // Si le haut de la section cible est supérieur ou égal à 0,
+                  // cela signifie qu'elle est encore visible (ou en train de disparaître par le haut).
+                  // Dès qu'elle passe sous 0 (targetRect.top < 0), le sommaire latéral s'affiche.
+                  if (targetRect.top < 0) {
+                    sideEl.classList.add("visible");
+                  } else {
+                    sideEl.classList.remove("visible");
+                  }
+                };
+
+                window.addEventListener("scroll", showSide, { passive: true });
+                // Exécute une fois au chargement au cas où la page est rafraîchie en cours de lecture
+                showSide();
+                window.addEventListener("scroll", showSide, { passive: true });
+
+                // Also show when focusing TOC links (keyboard navigation)
+                getLinks().forEach((link) =>
+                  link.addEventListener("focus", () =>
+                    sideEl.classList.add("visible"),
+                  ),
+                );
+
+                // Clicking links should scroll smoothly and keep side visible briefly
+                getLinks().forEach((link) =>
+                  link.addEventListener("click", () => {
+                    if (window.innerWidth <= 900) return;
+                    sideEl.classList.add("visible");
+                    if (scrollTimer) clearTimeout(scrollTimer);
+                    scrollTimer = setTimeout(
+                      () => sideEl.classList.remove("visible"),
+                      2000,
+                    );
+                  }),
+                );
+              });
+            </script>
 
             <table class="content-wrapper">
               <tbody>
@@ -108,6 +328,16 @@
 
                       <hr style="clear: both" />
 
+                      <!-- Sticky headers that mirror current h2/h3 while scrolling -->
+                      <div
+                        id="sticky-headers"
+                        class="sticky-headers"
+                        aria-hidden="true"
+                      >
+                        <div class="sticky-h2" aria-hidden="true"></div>
+                        <div class="sticky-h3" aria-hidden="true"></div>
+                      </div>
+
                       <!-- ================================ -->
                       <!-- TABLE DES MATIERES              -->
                       <!-- ================================ -->
@@ -118,9 +348,7 @@
                             <a href="#mindset">Mindset et organisation</a>
                           </li>
                           <li>
-                            <a href="#profil"
-                              >Ton profil : CV, site web, LinkedIn etc...</a
-                            >
+                            <a href="#profil">Optimiser son profil</a>
                             <ol type="a">
                               <li>
                                 <a href="#profil-cv">CV</a>
@@ -139,30 +367,26 @@
                             >
                             <ol type="a">
                               <li>
-                                <a href="#postuler-offres"
-                                  >Trouver et postuler aux offres</a
-                                >
+                                <a href="#trouver-offres">Trouver les offres</a>
                               </li>
                               <li>
-                                <a href="#postuler-reseau"
-                                  >La force du r&eacute;seau</a
+                                <a href="#postuler-offres"
+                                  >Postuler aux offres</a
                                 >
                               </li>
                             </ol>
                           </li>
                           <li>
                             <a href="#preparation-technique"
-                              >Pr&eacute;paration technique</a
+                              >La pr&eacute;paration technique</a
                             >
                             <ol type="a">
                               <li>
-                                <a href="#preparation-types"
-                                  >Les types d'entretiens techniques</a
-                                >
+                                <a href="#entretiens-quoi">Quoi réviser ?</a>
                               </li>
                               <li>
-                                <a href="#preparation-sujets"
-                                  >Domaine de connaissances</a
+                                <a href="#entretiens-comment"
+                                  >Comment réviser ?</a
                                 >
                               </li>
                             </ol>
@@ -611,7 +835,7 @@
                       <hr />
 
                       <h2 class="section-heading" id="profil">
-                        2. Le profil : CV, site web &amp; LinkedIn
+                        2. Optimizer son profil
                       </h2>
 
                       <h3 class="subsection-heading" id="profil-cv">a. CV</h3>
@@ -630,7 +854,7 @@
                       <hr />
 
                       <h2 class="section-heading" id="postuler">
-                        3. O&ugrave; et comment postuler
+                        3. O&ugrave; et comment postuler ?
                       </h2>
 
                       <h3 class="subsection-heading" id="trouver-offres">
@@ -788,14 +1012,14 @@
                       <hr />
 
                       <h2 class="section-heading" id="preparation-technique">
-                        4. Pr&eacute;paration technique
+                        4. La pr&eacute;paration technique
                       </h2>
                       <h3 class="subsection-heading" id="entretiens-quoi">
                         a. Quoi réviser?
                       </h3>
                       <p>
                         <strong class="lead-in"
-                          >Entretien de connaissance.</strong
+                          >Entretien de connaissance</strong
                         >
                         Les entretiens de connaissance sont souvent des
                         questions générales de Machine Learning et de Deep
@@ -1018,9 +1242,16 @@
                           >.</em
                         >
                       </p>
-
                       <p>
-                        <strong class="lead-in">Entretien de code.</strong>
+                        Bien entendu, c'est pour vous, mais n'espèrez pas non
+                        plus tout maitrîser parfaitement, soyez solide sur les
+                        bases, et essayer de consolider vos connaissances sur
+                        autres concepts qui ne sont pas directement relié avec
+                        votre recherche ou les centres d'intêret de la boite
+                        auquel vous postulez.
+                      </p>
+                      <p>
+                        <strong class="lead-in">Entretien de code</strong>
                         C'est le type d'entretien le plus important à mes yeux,
                         là où vous pouvez à la fois montrer votre capacité à
                         coder, mais surtout votre capacité à modéliser un
@@ -1047,10 +1278,10 @@
                                 <strong class="lead-in"
                                   >Deep Learning Pipeline:</strong
                                 >
-                                entrainer vous à écrire des modules de A à Z
-                                pour vous redonner les automatismes:
-                                <code>Dataloader, Model, Loss, Optimizer</code>,
-                                a full training loop.
+                                entrainer vous à écrire des modules de A à Z, ou
+                                une training loop pour vous redonner les
+                                automatismes:
+                                <code>Dataloader, Model, Loss, Optimizer</code>.
                               </li>
                               <li>
                                 <strong class="lead-in"
@@ -1061,8 +1292,8 @@
                                 <code>numpy</code>:
                                 <code
                                   >dimension, reshape/view, broadcasting,
-                                  flatten, squeeze, unsqueeze, where, indexing,
-                                  cumsum, bincount, gather, scatter, </code
+                                  flatten, , gather, scatter, squeeze,
+                                  unsqueeze, where, indexing, cumsum, bincount, </code
                                 >. Des ressources des utiles
                                 <a
                                   href="https://github.com/srush/tensor-puzzles"
@@ -1223,7 +1454,7 @@
                         </li>
                       </ul>
                       <p>
-                        <strong class="lead-in">Entretien de recherche.</strong>
+                        <strong class="lead-in">Entretien de recherche</strong>
                         Pour ce type d'entretien, que j'ai eu dans 2 de mes
                         processus, vous êtes amené à présenter un projet de
                         recherche que vous avez mené, que vous avez commencé à
@@ -1259,7 +1490,7 @@
                       </h3>
                       <p>
                         <strong class="lead-in"
-                          >Entretien de connaissance.</strong
+                          >Entretien de connaissance</strong
                         >
                         La meilleure façon d'apprendre un volume important
                         d'informations est propre à chacun, dans ce paragraphe
@@ -1301,24 +1532,24 @@
                       </div>
 
                       <p>
-                        Contrairement à ce qu'on pourrait croire, échanger avec
-                        une IA de cette façon ne produisait pas du tout l'effet
-                        "vallée de l'étrange", l'échange restait naturel à mes
-                        yeux. Les agents conversationnels ayant une tendance
-                        récurrente à l'éloge pompeux, mon instruction était
-                        d'être le plus factuel dans la réponse en se concentrant
-                        sur les questions non-triviales.
+                        Contrairement à ce que je pensais au début, échanger
+                        avec un modèle de langue de cette façon ne produit pas
+                        tant l'effet
+                        <em>uncanny</em> auquel on s'attend, l'échange restait
+                        assez naturel à mes yeux. Les agents conversationnels
+                        ayant une tendance récurrente à l'éloge pompeux, je leur
+                        demande d'être le plus factuel dans la réponse en se
+                        concentrant sur les questions non-triviales.
                       </p>
 
-                      <p><strong class="lead-in">Entretien de code.</strong></p>
-
                       <p>
-                        Pour les entretiens de code, trouver des ressources en
-                        ligne peut s'avérer bien plus compliqué, le domaine
-                        évolue tellement vite, il est difficile de trouver des
-                        ressources pertinentes. Il existe également des sites
-                        qui recensent de réel problème donnée en entretien,
-                        accessible avec un paywall (<a
+                        <strong class="lead-in">Entretien de code</strong> Pour
+                        les entretiens de code, trouver des ressources en ligne
+                        est assez compliqué, le domaine évolue tellement vite,
+                        il est difficile de trouver des ressources pertinentes.
+                        Il existe bien des sites qui recensent de réel problème
+                        donnée en entretien, notamment certains accessible avec
+                        un paywall (<a
                           href="https://leetcode.com"
                           target="_blank"
                           >Leetcode</a
@@ -1328,11 +1559,13 @@
                         >, ou encore
                         <a href="https://www.deep-ml.com" target="_blank"
                           >Deep-ML</a
-                        >, une sorte de Leetcode pour du ML). J'ai utilisé
-                        deep-ML au début, mais j'ai trouvé que les problèmes
-                        étaient trop basiques par rapport à ceux rencontrés en
-                        interview. J'ai trouvé que les recruteurs faisaient
-                        vraiment preuve d'originalité dans les coding interview,
+                        >, une sorte de Leetcode pour du ML), mais assez peu
+                        représentatif à mon sens de ce que j'ai eu en entretien,
+                        c'est un bon début. J'ai utilisé deep-ML au début, mais
+                        j'ai trouvé que les problèmes étaient trop basiques par
+                        rapport à ceux rencontrés en interview. J'ai trouvé que
+                        les recruteurs faisaient vraiment preuve d'originalité
+                        dans les coding interview,
                         <strong
                           >et il n'était pas possible de simplement bachoter les
                           quelques exemples les plus classiques.</strong
@@ -1359,7 +1592,7 @@
                       <ul>
                         <li>Impl&eacute;menter Flash Attention 1</li>
                         <li>
-                          Un dataloader "online" multi-GPU sur une base de
+                          Un dataloader "online" sur un dataset de fichiers JSON
                           donn&eacute;es massive (maitrise du
                           <code>yield</code>)
                         </li>
@@ -1374,7 +1607,7 @@
                         rédaction de la solution, je demandais à ce dernier
                         d'évaluer rigoureusement ma proposition.
                         <strong
-                          >J'ai trouvé aussi fort utile de partir de zéro et
+                          >J'ai trouvé aussi très utile de partir de zéro et
                           d'implémenter tout un module (e.g. encoder-decoder
                           transformer) <em>from scratch</em>.</strong
                         >
@@ -1382,14 +1615,16 @@
                         minimal.
                       </p>
                       <p>
-                        <strong class="lead-in">Entretien de recherche.</strong>
+                        <strong class="lead-in">Entretien de recherche</strong>
                         Pour ce genre d'entretien, la meilleure astuce que je
                         puisse vous donner est
-                        <strong>de pratiquer avec vos pairs,</strong> notamment
-                        des gens qui ne
+                        <strong>de pratiquer avec votre entourage,</strong>
+                        notamment des gens qui ne
                         <strong>connaissent pas votre recherche</strong> sur le
                         bout des doigts, et qui peuvent vous faire un retour
-                        critique sur le fond et la forme.
+                        critique sur le fond et la forme et de vous chronométrer
+                        un minimum pour ne pas être complétement dans les choux
+                        niveau timming le jour J.
                       </p>
 
                       <p>
@@ -1538,6 +1773,15 @@
                           , liste de sujets et questions d'entretiens
                           techniques.
                         </li>
+                        <li>
+                          <a
+                            href="https://haseebq.com/my-ten-rules-for-negotiating-a-job-offer/"
+                            target="_blank"
+                            >Haseeb Qureshi — My Ten Rules for Negotiating a Job
+                            Offer</a
+                          >, conseils pratiques et règles pour négocier une
+                          offre d'emploi.
+                        </li>
                       </ul>
 
                       <hr />
@@ -1555,6 +1799,9 @@
                           2026</em
                         >
                       </p>
+
+                      <!-- Spacer to allow extra scroll room at page bottom -->
+                      <div class="page-bottom-spacer" aria-hidden="true"></div>
                     </div>
                   </td>
                 </tr>

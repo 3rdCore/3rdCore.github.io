@@ -189,8 +189,8 @@ h3.subsection-heading {
 }
 
 .lead-in {
-  font-weight: 700;
-  font-size: 1.15em;
+  font-weight: 900;
+  font-size: 1.23em;
   margin-right: 4px;
 }
 
@@ -521,6 +521,65 @@ p.social-links a {
   margin: 10px 0;
 }
 
+/* Sticky header area that shows current section/subsection */
+.sticky-headers {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 80;
+  padding: 8px 0 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  /* smooth fade/slide when content updates */
+  transition: opacity 160ms ease, transform 160ms ease;
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.sticky-headers.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.sticky-headers .sticky-h2 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  /* match main h2 */
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  padding: 0 2.5%;
+  line-height: 1.1;
+  margin: 0;
+}
+.sticky-headers .sticky-h3 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  /* match main h3 */
+  font-size: 24px;
+  font-weight: 700;
+  color: #662E7D;
+  padding: 4px 2.5% 0 2.5%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* If we convert sections to sticky blocks, hide the old sticky mirror */
+
+
+/* Removed .section-block sticky styles to avoid fixing whole content blocks.
+   Only the `#sticky-headers` mirror will remain sticky and display current
+   h2/h3. */
+
+/* Harmonize TOC typography with main headings */
+.toc-box > ol > li > a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+.toc-box ol ol li > a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #662E7D;
+  font-weight: 700;
+}
+
 /* ==============================
    TIP BOX
    ============================== */
@@ -551,6 +610,15 @@ p.social-links a {
 
 .tip-box p + p {
   margin-top: 8px;
+}
+
+/* Page bottom spacer to allow extra scrolling space */
+.page-bottom-spacer {
+  height: 800px;
+}
+
+@media (max-width: 900px) {
+  .page-bottom-spacer { height: 360px; }
 }
 
 /* ==============================
@@ -601,17 +669,20 @@ p.social-links a {
 .code-toggle code {
   font-family: Consolas, "Courier New", monospace;
 }
-
 /* ==============================
-   TABLE OF CONTENTS
+   TABLE OF CONTENTS (FIXED & SIDE)
    ============================== */
 .toc-box {
-  background: #f9f7fb;
-  border: 1px solid #e0d0ea;
-  border-radius: 14px;
+  background: #f5f0f7;
+  border: 2px solid #662E7D;
+  border-radius: 10px;
   padding: 22px 30px;
   margin: 16px 0;
   font-size: 17px;
+  position: relative; /* Ne suit plus le scroll, reste en haut */
+  max-height: none;
+  overflow-y: visible;
+  z-index: 40;
 }
 
 .toc-box ol {
@@ -642,6 +713,7 @@ p.social-links a {
   counter-reset: toc-sub;
   padding-left: 26px;
   margin-top: 8px;
+  list-style: none;
 }
 
 .toc-box ol ol li {
@@ -661,6 +733,34 @@ p.social-links a {
   font-weight: 400;
 }
 
+/* Layout nested TOC items horizontally on wide screens */
+@media (min-width: 901px) {
+  .toc-box ol ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+  .toc-box ol ol li {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+  }
+  .toc-box ol ol li::before {
+    display: inline-block;
+    width: 22px; /* fixed width so letters align vertically */
+    text-align: right;
+    margin-right: 6px;
+  }
+}
+
+/* Keep nested TOC vertical on small screens */
+@media (max-width: 900px) {
+  .toc-box ol ol { display: block; padding-left: 26px; }
+  .toc-box ol ol li { display: list-item; margin: 6px 0; }
+}
+
 .toc-box a {
   color: #333;
   text-decoration: none;
@@ -668,11 +768,107 @@ p.social-links a {
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.toc-box a:hover {
-  color: #662E7D;
-  border-bottom-color: #662E7D;
+.toc-box a:hover,
+.toc-box a.active {
+  color: #f09228;
+  background: transparent;
+  font-weight: 700;
 }
 
+/* Floating left-side compact TOC */
+.toc-side {
+  position: fixed;
+  left: calc(50% - 790px);
+  top: 20px;
+  width: 300px;
+  background: #f5f0f7;
+  color: #111;
+  border: 1px solid #662E7D;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  font-size: 13px;
+  line-height: 1.35;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 320ms ease, transform 320ms ease;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.toc-side.visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.toc-side ol { 
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  counter-reset: toc-side;
+}
+
+.toc-side > ol > li {
+  counter-increment: toc-side;
+  margin: 8px 0;
+}
+
+.toc-side > ol > li::before {
+  content: counter(toc-side) ". ";
+  color: #662E7D;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.toc-side ol ol {
+  counter-reset: toc-side-sub;
+  padding-left: 20px;
+  margin-top: 4px;
+  list-style: none;
+}
+
+.toc-side ol ol li {
+  counter-increment: toc-side-sub;
+  margin: 4px 0;
+}
+
+.toc-side ol ol li::before {
+  content: counter(toc-side-sub, lower-alpha) ". ";
+  color: #f09228;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.toc-side a { 
+  color: #333; 
+  text-decoration: none; 
+  display: inline-block; 
+  padding: 2px 4px; 
+  border-radius: 4px; 
+}
+
+.toc-side a:hover,
+.toc-side a.active { 
+  background: transparent; 
+  color: #f09228; 
+  font-weight: 700; 
+}
+
+.toc-side ol > li > a { font-weight: 700; }
+.toc-side ol ol > li > a { font-weight: 400; font-size: 12px; }
+
+@media (min-width: 901px) {
+  .toc-box { display: block; }
+  .toc-side { display: block; }
+}
+
+@media (max-width: 900px) {
+  .toc-side { display: none !important; }
+  .toc-box { position: relative; max-height: none; overflow: visible; }
+}
 /* ==============================
    TOPIC DROPDOWNS
    ============================== */
