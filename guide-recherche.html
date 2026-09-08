@@ -13,6 +13,26 @@
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Examples row: when one detail is open, hide the other and let the open one take full width */
+      .examples-row.single-open {
+        gap: 1rem;
+      }
+      .examples-row.single-open details:not([open]) {
+        display: none;
+      }
+      .examples-row details {
+        min-width: 0;
+      }
+      @media (max-width: 700px) {
+        .examples-row {
+          flex-direction: column;
+        }
+        .examples-row details {
+          display: block !important;
+        }
+      }
+    </style>
   </head>
 
   <body style="background-color: #ffffff">
@@ -428,7 +448,7 @@
                         Trouver du travail dans notre secteur est difficile, il
                         faut être réaliste.
                         <strong
-                          >En plus de ça le recrutement est un processus
+                          >Un processus de recrutement est un processus
                           hautement stochastique, que ce soit pour l'employeur
                           ou le futur employé.</strong
                         >
@@ -501,8 +521,8 @@
                         premières candidatures envoyées, aux multiples
                         entretiens, en passant par la négociation et jusqu'à la
                         signature de votre contrat, vous devrez compter au bas
-                        mot <strong>2 à 6 mois</strong>, et parfois plus si vous
-                        partez de zéro: c'est un
+                        mot entre <strong>3 à 6 mois</strong>, et parfois plus
+                        si vous partez de zéro: c'est un
                         <strong>travail à temps plein</strong>. Il est évident
                         que vous aller finir par oublier certains concepts
                         abordé au cours de votre préparation, dans mon cas, je
@@ -837,19 +857,27 @@
                         toute, afin de pouvoir vous rafraicher la mémoire
                         facilement plus tard.
                       </p>
+                      <div class="tip-box">
+                        <p>
+                          Au fur et à mesure du processus, c'est à vous de
+                          programmer le prochain entretien. L'idée c'est de
+                          tempo les processus qui sont en avance par rapport aux
+                          autres afin qu'ils se terminent tous en même temps, et
+                          que vous puissiez négocier les offres les unes avec
+                          les autres.
+                        </p>
+                      </div>
 
                       <hr />
 
                       <h2 class="section-heading" id="profil">
                         2. Optimizer son profil
                       </h2>
-
+                      Le Pour maximiser vos chances de retenir l'attention des
+                      recruteurs, il faut commencer par s'attaquer à ce qu'ils
+                      vont juger en premier de vous: votre CV, votre site web,
+                      et éventuellement votre profil LinkedIn.
                       <h3 class="subsection-heading" id="profil-cv">a. CV</h3>
-                      <p><em>Contenu &agrave; venir.</em></p>
-
-                      <h3 class="subsection-heading" id="profil-linkedin">
-                        b. LinkedIn
-                      </h3>
                       <p><em>Contenu &agrave; venir.</em></p>
 
                       <h3 class="subsection-heading" id="profil-siteweb">
@@ -857,6 +885,10 @@
                       </h3>
                       <p><em>Contenu &agrave; venir.</em></p>
 
+                      <h3 class="subsection-heading" id="profil-linkedin">
+                        b. LinkedIn
+                      </h3>
+                      <p><em>Contenu &agrave; venir.</em></p>
                       <hr />
 
                       <h2 class="section-heading" id="postuler">
@@ -1093,6 +1125,41 @@ Pour la faire courte, je suis en 3ème année de thèse au Mila et j'aimerai me 
                             </pre>
                           </details>
                         </div>
+                        <script>
+                          (function () {
+                            const row = document.querySelector(".examples-row");
+                            if (!row) return;
+                            const details = Array.from(
+                              row.querySelectorAll("details"),
+                            );
+                            function updateClass() {
+                              const anyOpen = details.some((d) => d.open);
+                              if (anyOpen) row.classList.add("single-open");
+                              else row.classList.remove("single-open");
+                            }
+                            details.forEach((d) => {
+                              d.addEventListener("toggle", (e) => {
+                                if (!d.open) {
+                                  // closed: just update class
+                                  updateClass();
+                                  return;
+                                }
+                                // close others
+                                details.forEach((other) => {
+                                  if (other !== d) other.open = false;
+                                });
+                                updateClass();
+                                // ensure the open details scroll into view inside its container
+                                d.scrollIntoView({
+                                  behavior: "smooth",
+                                  block: "nearest",
+                                });
+                              });
+                            });
+                            // init
+                            updateClass();
+                          })();
+                        </script>
                       </div>
                       <p>
                         Pour certains postes on peut également vous demander de
@@ -1107,7 +1174,7 @@ Pour la faire courte, je suis en 3ème année de thèse au Mila et j'aimerai me 
                       </p>
                       <p>
                         Enfin, essayez d'avoir de la compassion pour vos
-                        recruteurs - je sais que c'est dur tant le processus
+                        recruteurs, je sais que c'est dur tant le processus
                         peut-être cruel, mais gardez en tête que les recruteurs
                         ont des centaines de candidatures à gérer, ne leur en
                         tenez pas rigueur si ils prennent plusieurs jours à vous
